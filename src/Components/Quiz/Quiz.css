@@ -1,57 +1,86 @@
-.container{
-    width: 640px;
-    margin: auto;
-    margin-top: 150px;
-    background: white;
-    color: #262626;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    border-radius: 10px;
-    padding: 40px 50px
-}
-.container hr{
-    height: 2px;
-    border: none;
-    background: #707070;
-}
-.container h2{
-    font-size: 27px;
-    font-weight: 500;
-}
-.container ul li{
-    display: flex;
-    align-items: center;
-    height: 70px;
-    padding-left: 15px;
-    border: 1px solid #686868;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    font-size: 20px;
-    cursor: pointer;
+/* Reset */
+* {
+  box-sizing: border-box;
 }
 
-.container button{
-    margin: auto;
-    width: 250px;
-    height: 65px;
-    background: #553f9a;
-    color: white;
-    font-size: 25px;
-    font-weight: 500;
-    border-radius: 8px;
-    cursor: pointer;
+/* Container */
+.container {
+  max-width: 640px;        /* instead of width */
+  width: 100%;
+  margin: 1rem auto;       /* flexible spacing */
+  background: white;
+  color: #262626;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 10px;
+  padding: 1.2rem;
 }
+
+/* Desktop spacing */
+@media (min-width: 768px) {
+  .container {
+    margin-top: 150px;
+    padding: 40px 50px;
+  }
+}
+
+.container hr {
+  height: 2px;
+  border: none;
+  background: #707070;
+}
+
+/* Question */
+.container h2 {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Options */
+.container ul {
+  padding: 0;
+}
+
+.container ul li {
+  display: flex;
+  align-items: center;
+  min-height: 56px;        /* touch-friendly */
+  padding: 0.8rem;
+  border: 1px solid #686868;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Button */
+.container button {
+  margin: 0.5rem auto;
+  width: 100%;
+  max-width: 250px;
+  height: 52px;
+  background: #553f9a;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Progress */
 .container .index {
-    margin: auto;
-    font-size: 18px;
+  text-align: center;
+  font-size: 0.9rem;
 }
-.container .correct{
-    background: #dffff2;
-    border-color: aquamarine;
+
+/* Correct / Wrong */
+.container .correct {
+  background: #dffff2;
+  border-color: aquamarine;
 }
 
 .container .wrong {
-    background: #FFEBEB;
-    border-color: #FF4A4A;
+  background: #FFEBEB;
+  border-color: #FF4A4A;
 }
