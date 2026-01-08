@@ -1,10 +1,9 @@
 import React, { useRef, useState, useEffect } from 'react';
 import './Quiz.css';
 import { data } from '../../assets/data';
+import logo from '../../assets/logoldx.jpeg';
 import { MathJax, MathJaxContext } from "better-react-mathjax";
 import emailjs from "emailjs-com";
-
-// import emailjs from "emailjs-com"; // ← uncomment when ready
 
 /* ================= MathJax config ================= */
 const mathJaxConfig = {
@@ -130,7 +129,9 @@ const Quiz = () => {
 
   return (
     <div className="container">
-      <h1>Quiz App</h1>
+      <h1>PDV LEADEX EDUCATION </h1>
+      <h1>National Quiz</h1>
+      <img src={logo} alt="Logo" className="logo" />
       <hr />
 
       {/* ================= START PAGE ================= */}
@@ -203,8 +204,14 @@ const Quiz = () => {
             <>
               <h2>
                 {index + 1}.{" "}
-                <MathJax dynamic>{question.question}</MathJax>
-              </h2>
+                {question.question && question.question.includes("<table") ? (
+                  <MathJax dynamic>
+                    <div className="table-wrapper" dangerouslySetInnerHTML={{ __html: question.question }} />
+                  </MathJax>
+                ) : (
+                  <MathJax dynamic>{question.question}</MathJax>
+                )}
+              </h2> 
 
               <ul>
                 <li ref={option1} onClick={(e) => checkAns(e, 1)}>

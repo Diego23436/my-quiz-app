@@ -179,6 +179,75 @@ export const data = [
   option4: "$[1,\\infty)$",
   ans: 2,
 },
-
+{
+  question: `The table below shows the marks obtained by 5 students in Mathematics:
+  <table border="1" style="border-collapse:collapse; text-align:center;">
+    <tr><th>Student</th><th>Marks</th></tr>
+    <tr><td>A</td><td>12</td></tr>
+    <tr><td>B</td><td>15</td></tr>
+    <tr><td>C</td><td>18</td></tr>
+    <tr><td>D</td><td>10</td></tr>
+    <tr><td>E</td><td>20</td></tr>
+  </table>
+  What is the average mark?`,
+  option1: "$13$",
+  option2: "$15$",
+  option3: "$16$",
+  option4: "$17$",
+  ans: 2,
+},
+{
+  question: `Consider the sequence: 2, 4, 8, 16, ...  
+  Which term of the sequence is 128?`,
+  option1: "6",
+  option2: "7",
+  option3: "8",
+  option4: "9",
+  ans: 3,
+},
+{
+  question: `The table below shows the frequency of numbers:
+  <table border="1" style="border-collapse:collapse; text-align:center;">
+    <tr><th>Number</th><th>Frequency</th></tr>
+    <tr><td>1</td><td>2</td></tr>
+    <tr><td>2</td><td>3</td></tr>
+    <tr><td>3</td><td>5</td></tr>
+    <tr><td>4</td><td>0</td></tr>
+  </table>
+  Find the total number of data points.`,
+  option1: "10",
+  option2: "9",
+  option3: "8",
+  option4: "7",
+  ans: 1,
+},
+{
+  question: `If $x$ and $y$ satisfy the table below, find $x+y$.
+  <table border="1" style="border-collapse:collapse; text-align:center;">
+    <tr><th>x</th><th>y</th></tr>
+    <tr><td>3</td><td>5</td></tr>
+  </table>`,
+  option1: "$7$",
+  option2: "$8$",
+  option3: "$5$",
+  option4: "$8$",
+  ans: 2,
+},
+{
+  question: `The following table shows the sales of a shop:
+  <table border="1" style="border-collapse:collapse; text-align:center;">
+    <tr><th>Day</th><th>Items Sold</th></tr>
+    <tr><td>Mon</td><td>10</td></tr>
+    <tr><td>Tue</td><td>12</td></tr>
+    <tr><td>Wed</td><td>15</td></tr>
+    <tr><td>Thu</td><td>13</td></tr>
+  </table>
+  What is the total items sold from Monday to Thursday?`,
+  option1: "50",
+  option2: "48",
+  option3: "45",
+  option4: "40",
+  ans: 2,
+},
 ];
 

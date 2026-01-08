@@ -17,6 +17,12 @@
   padding: 1.2rem;
 }
 
+.container h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #553f9a;
+}
+
 /* Desktop spacing */
 @media (min-width: 768px) {
   .container {
@@ -126,4 +132,29 @@
 .container p {
   font-size: 0.95rem;
   margin: 4px 0;
+}
+
+.container .logo  {
+  display: block;
+  margin: 0.5rem auto;
+  max-width: 150px;
+  width: 100%;
+}
+
+/* Table wrapper for questions that include HTML tables */
+.table-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-wrapper th,
+.table-wrapper td {
+  padding: 6px 8px;
+  border: 1px solid #707070;
+  text-align: center;
+}
+
+.table-wrapper th {
+  background: #f4f4f4;
+  font-weight: 600;
 }
