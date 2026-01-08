@@ -24,7 +24,7 @@
 }
 
 /* Desktop spacing */
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .container {
     margin-top: 150px;
     padding: 40px 50px;
