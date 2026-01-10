@@ -257,3 +257,8 @@
     font-size: 0.9rem;
   }
 }
+
+/* Quick hide toggle: add 'hidden-app' class to <body> to hide the quiz container */
+.hidden-app .container {
+  display: none !important;
+} 
