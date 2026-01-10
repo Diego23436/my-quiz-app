@@ -207,13 +207,15 @@
   }
 
   .container {
-    margin: 0;
+    /* center horizontally and avoid overflow on small screens */
+    margin: 0 auto;
     padding: 10px;
     border-radius: 8px;
     gap: 10px;
-    width: 120%;
+    width: 100%;
     max-width: 360px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    box-sizing: border-box;
   }
 
   .container h1 {
