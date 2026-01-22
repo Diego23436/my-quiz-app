@@ -3,11 +3,12 @@ import "./Quiz.css";
 import logo from "../../assets/logoldx.jpeg";
 import img2 from "../../assets/img2.jpg";
 import { MathJax, MathJaxContext } from "better-react-mathjax";
-
-// FIREBASE IMPORTS
 import { db, auth } from "../../firebaseConfig"; 
 import { collection, getDocs, addDoc, doc, getDoc, query, where } from "firebase/firestore";
 import { signInWithEmailAndPassword } from "firebase/auth";
+
+// Import local questions as fallback
+import questionsData from "./questions.json";
 
 const mathJaxConfig = {
   loader: { load: ["input/tex", "output/chtml"] },
@@ -15,15 +16,15 @@ const mathJaxConfig = {
     inlineMath: [["$", "$"], ["\\(", "\\)"]],
     displayMath: [["$$", "$$"], ["\\[", "\\]"]],
     processEscapes: true,
+    processEnvironments: true,
   },
-  // STABILIZER: Prevents the raw code from flashing during render
   options: {
     enableMenu: false,
     ignoreHtmlClass: "tex2jax_ignore",
     processHtmlClass: "tex2jax_process",
   },
   chtml: {
-    displayAlign: 'left',
+    fontURL: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2"
   }
 };
 
@@ -48,25 +49,23 @@ const Quiz = () => {
   const question = questions[index] || {};
   const option_array = [useRef(null), useRef(null), useRef(null), useRef(null)];
 
-  /* ================= FIXED RENDER CONTENT: NO FLICKER ================= */
   const renderContent = (content) => {
     if (!content) return null;
 
-    // We use a unique key={index} so React resets the element completely 
-    // when moving to the next question. This stops the "slow motion" jumps.
-    return (
-      <div className="tex2jax_process" key={index}>
-        {content.includes("<table") ? (
+    // Check if content contains HTML (like tables)
+    if (content.includes('<table>') || content.includes('<')) {
+      return (
+        <MathJax dynamic>
           <div dangerouslySetInnerHTML={{ __html: content }} />
-        ) : (
-          <MathJax dynamic hideUntilTypeset={"always"}>
-            <div 
-              dangerouslySetInnerHTML={{ __html: content }} 
-              style={{ visibility: 'visible', opacity: 1 }} 
-            />
-          </MathJax>
-        )}
-      </div>
+        </MathJax>
+      );
+    }
+
+    // For pure LaTeX/math content, render as text
+    return (
+      <MathJax dynamic>
+        {content}
+      </MathJax>
     );
   };
 
@@ -75,17 +74,36 @@ const Quiz = () => {
     try {
       const q = query(collection(db, "quizzes"), where("subject", "==", subjectName));
       const querySnapshot = await getDocs(q);
-      const data = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      const firebaseData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
       
-      if (data.length > 0) {
-        setQuestions(data);
+      if (firebaseData.length > 0) {
+        // Use Firebase data if available
+        setQuestions(firebaseData);
         setSelectedSubject(subjectName);
         setPage("quiz");
       } else {
-        alert("No questions found for " + subjectName);
+        // Fallback to local questions if no Firebase data
+        console.log(`No Firebase questions found for ${subjectName}, using local questions`);
+        const localQuestions = questionsData.map(q => ({
+          ...q,
+          subject: subjectName, // Add subject to local questions
+          id: `local_${q.id}`
+        }));
+        setQuestions(localQuestions);
+        setSelectedSubject(subjectName);
+        setPage("quiz");
       }
     } catch (error) {
-      console.error("Firebase error:", error);
+      console.error("Firebase error, using local questions:", error);
+      // Fallback to local questions on error
+      const localQuestions = questionsData.map(q => ({
+        ...q,
+        subject: subjectName,
+        id: `local_${q.id}`
+      }));
+      setQuestions(localQuestions);
+      setSelectedSubject(subjectName);
+      setPage("quiz");
     } finally {
       setLoading(false);
     }
@@ -222,9 +240,7 @@ const Quiz = () => {
               <option value="teacher">Teacher</option>
               <option value="admin">Admin</option>
             </select>
-            
             <input type="email" placeholder="Email" onChange={(e) => setUser({...user, email: e.target.value})} />
-            
             {user.role === "user" ? (
               <>
                 <input type="text" placeholder="Full Name" onChange={(e) => setUser({...user, name: e.target.value})} />

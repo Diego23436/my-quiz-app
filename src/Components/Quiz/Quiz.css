@@ -1,11 +1,5 @@
-/* ================= RESET ================= */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ================= CONTAINER ================= */
 .container {
   max-width: 640px;
   width: 100%;
@@ -20,13 +14,7 @@
   overflow-x: hidden; 
 }
 
-/* ================= WELCOME PAGE ================= */
-.welcome-page {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+.welcome-page { width: 100%; display: flex; justify-content: center; align-items: center; }
 
 .container .welcome-card {
   width: 100%;
@@ -39,93 +27,22 @@
   animation: fadeIn 1.2s ease-in-out;
 }
 
-.container .welcome-image {
-  flex: 1;
-  min-height: 360px;
-}
+.container .welcome-image { flex: 1; min-height: 360px; }
+.container .welcome-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.welcome-text { flex: 1; padding: 30px; display: flex; flex-direction: column; justify-content: center; }
+.container .welcome-text h2 { font-size: 1.8rem; color: #553f9a; margin-bottom: 12px; }
+.welcome-text p { font-size: 1rem; line-height: 1.65; color: #333; margin-bottom: 20px; }
+.welcome-text button { align-self: flex-start; padding: 14px 30px; font-size: 1.05rem; font-weight: 600; border-radius: 8px; background: #553f9a; color: white; cursor: pointer; animation: pulse 1.8s infinite; border: none; }
 
-.container .welcome-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(85, 63, 154, 0.6); } 70% { box-shadow: 0 0 0 18px rgba(85, 63, 154, 0); } 100% { box-shadow: 0 0 0 0 rgba(85, 63, 154, 0); } }
 
-.welcome-text {
-  flex: 1;
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+.container h1 { text-align: center; font-size: 1.5rem; color: #553f9a; }
+.container hr { height: 2px; border: none; background: #707070; }
 
-.container .welcome-text h2 {
-  font-size: 1.8rem;
-  color: #553f9a;
-  margin-bottom: 12px;
-}
+.container h2 { font-size: 1.1rem; font-weight: 500; line-height: 1.4; color: #262626; min-height: 1.5em; }
 
-.welcome-text p {
-  font-size: 1rem;
-  line-height: 1.65;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.welcome-text button {
-  align-self: flex-start;
-  padding: 14px 30px;
-  font-size: 1.05rem;
-  font-weight: 600;
-  border-radius: 8px;
-  background: #553f9a;
-  color: white;
-  cursor: pointer;
-  animation: pulse 1.8s infinite;
-  border: none;
-}
-
-/* ================= ANIMATIONS ================= */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(85, 63, 154, 0.6); }
-  70% { box-shadow: 0 0 0 18px rgba(85, 63, 154, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(85, 63, 154, 0); }
-}
-
-/* ================= HEADINGS ================= */
-.container h1 {
-  text-align: center;
-  font-size: 1.5rem;
-  color: #553f9a;
-}
-
-.container hr {
-  height: 2px;
-  border: none;
-  background: #707070;
-}
-
-/* ================= QUESTION ================= */
-.container h2 {
-  font-size: 1.1rem;
-  font-weight: 500;
-  line-height: 1.4;
-  color: #262626;
-  /* STABILIZER: Reserve height to stop jumping */
-  min-height: 1.5em; 
-}
-
-/* ================= OPTIONS ================= */
-.container ul {
-  padding: 0;
-  list-style: none;
-}
-
+.container ul { padding: 0; list-style: none; }
 .container ul li {
   display: flex;
   align-items: center;
@@ -137,218 +54,51 @@
   font-size: 1rem;
   cursor: pointer;
   user-select: none;
-  /* STABILIZER: Set transition to 0 to stop "slow motion" movement */
   transition: none !important; 
-  overflow: visible; 
 }
 
-.container ul li:hover {
-  background: #f5f5f5;
-}
+.container ul li:hover { background: #f5f5f5; }
+.container ul li * { background: transparent !important; }
 
-.container ul li * {
-  background: transparent !important;
-  user-select: none !important;
-}
-
-/* ================= MATHJAX STABILIZERS ================= */
-/* Force immediate visibility and stop layout shift */
-.mjx-container {
-  display: inline-block !important;
+.content-wrapper, .tex2jax_process, .mjx-container {
   visibility: visible !important;
   opacity: 1 !important;
-  color: inherit !important;
-  max-width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  vertical-align: middle;
-  /* Kill any inherited animations */
-  transition: none !important; 
-  animation: none !important;
+  display: block !important;
+  min-height: 1.2em;
+  color: #262626 !important;
 }
 
-/* Hide raw LaTeX code that "flickers" before the symbol appears */
-.mjx-copytext, .mjx-assistive-mml {
-  display: none !important;
-}
+.mjx-container { transition: none !important; margin: 0 !important; }
+.mjx-copytext, .mjx-assistive-mml { display: none !important; }
 
-.mjx-container * {
-  background: transparent !important;
-  user-select: none !important;
-  pointer-events: none;
-}
+.container button { margin: 0.5rem auto; width: 100%; max-width: 250px; height: 52px; background: #553f9a; color: white; font-size: 1.1rem; font-weight: 500; border-radius: 8px; border: none; cursor: pointer; transition: all 0.3s ease; }
+.container button:hover { opacity: 0.95; transform: translateY(-2px); }
+.container button:disabled { opacity: 0.5; cursor: not-allowed; }
 
-/* ================= BUTTONS ================= */
-.container button {
-  margin: 0.5rem auto;
-  width: 100%;
-  max-width: 250px;
-  height: 52px;
-  background: #553f9a;
-  color: white;
-  font-size: 1.1rem;
-  font-weight: 500;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
+.subject-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; width: 100%; margin-top: 10px; }
+.subject-btn { background: white !important; color: #553f9a !important; border: 2px solid #553f9a !important; height: 60px !important; max-width: none !important; font-weight: 700 !important; }
+.subject-btn:hover { background: #553f9a !important; color: white !important; }
 
-.container button:hover {
-  opacity: 0.95;
-  transform: translateY(-2px);
-}
+.container .correct { background: #dffff2 !important; border-color: aquamarine !important; }
+.container .wrong { background: #FFEBEB !important; border-color: #FF4A4A !important; }
 
-.container button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  transform: none;
-}
+.start-page { display: flex; flex-direction: column; gap: 14px; margin-top: 10px; }
+.start-page h2 { text-align: center; font-size: 1.2rem; }
+.start-page input, .start-page select { width: 100%; padding: 12px; font-size: 1rem; border-radius: 6px; border: 1px solid #aaa; }
 
-/* ================= SUBJECT SELECTION GRID ================= */
-.subject-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 15px;
-  width: 100%;
-  margin-top: 10px;
-}
+table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+table th, table td { padding: 12px; border: 1px solid #eee; text-align: left; }
+table th { background-color: #553f9a; color: white; }
 
-.subject-btn {
-  background: white !important;
-  color: #553f9a !important;
-  border: 2px solid #553f9a !important;
-  height: 60px !important;
-  max-width: none !important;
-  font-weight: 700 !important;
-}
+.quiz-header { display: flex; justify-content: space-between; font-weight: 600; color: #553f9a; padding: 5px 0; }
+.container .logo { display: block; margin: 0.5rem auto; max-width: 120px; }
 
-.subject-btn:hover {
-  background: #553f9a !important;
-  color: white !important;
-}
+.spinner { border: 5px solid #f3f3f3; border-top: 5px solid #553f9a; border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite; margin: 10px auto; }
+@keyframes spin { to { transform: rotate(360deg); } }
 
-/* ================= ANSWER STATES ================= */
-.container .correct {
-  background: #dffff2 !important;
-  border-color: aquamarine !important;
-}
-
-.container .wrong {
-  background: #FFEBEB !important;
-  border-color: #FF4A4A !important;
-}
-
-/* ================= START PAGE & DASHBOARDS ================= */
-.start-page {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-top: 10px;
-}
-
-.start-page h2 {
-  text-align: center;
-  font-size: 1.2rem;
-}
-
-.start-page input,
-.start-page select,
-.start-page textarea {
-  width: 100%; 
-  padding: 12px;
-  font-size: 1rem;
-  border-radius: 6px;
-  border: 1px solid #aaa;
-  background-color: white;
-}
-
-.start-page input:focus,
-.start-page select:focus {
-  outline: none;
-  border-color: #553f9a;
-}
-
-/* ================= TABLES ================= */
-.admin-container {
-  width: 100%;
-  overflow-x: auto;
-  margin-top: 1rem;
-  border-radius: 8px;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 500px;
-  margin: 10px 0;
-}
-
-table th, table td {
-  padding: 12px;
-  border: 1px solid #eee;
-  text-align: left;
-  font-size: 0.9rem;
-}
-
-table th {
-  background-color: #553f9a;
-  color: white;
-}
-
-/* ================= TIMER & HEADER ================= */
-.quiz-header {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #553f9a;
-  padding: 5px 0;
-}
-
-/* ================= LOGO ================= */
-.container .logo {
-  display: block;
-  margin: 0.5rem auto;
-  max-width: 120px;
-}
-
-/* ================= LOADING ================= */
-.loading-container {
-  text-align: center;
-  padding: 3rem;
-}
-
-.spinner {
-  border: 5px solid #f3f3f3;
-  border-top: 5px solid #553f9a;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  animation: spin 1s linear infinite;
-  margin: 10px auto;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-/* ================= MOBILE RESPONSIVENESS ================= */
 @media (max-width: 768px) {
-  .welcome-card {
-    flex-direction: column;
-  }
-  .welcome-image {
-    min-height: 220px;
-    flex: none;
-  }
-  .welcome-text {
-    padding: 20px;
-  }
-  .subject-grid {
-    grid-template-columns: 1fr; 
-  }
-  .container button {
-    max-width: 100%; 
-  }
+  .welcome-card { flex-direction: column; }
+  .welcome-image { min-height: 220px; flex: none; }
+  .subject-grid { grid-template-columns: 1fr; }
+  .container button { max-width: 100%; }
 }
