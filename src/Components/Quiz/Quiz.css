@@ -17,20 +17,91 @@
   gap: 20px;
   border-radius: 10px;
   padding: 1.2rem;
+  overflow-x: hidden; 
 }
 
+/* ================= WELCOME PAGE ================= */
+.welcome-page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .welcome-card {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.container .welcome-image {
+  flex: 1;
+  min-height: 360px;
+}
+
+.container .welcome-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.welcome-text {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container .welcome-text h2 {
+  font-size: 1.8rem;
+  color: #553f9a;
+  margin-bottom: 12px;
+}
+
+.welcome-text p {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.welcome-text button {
+  align-self: flex-start;
+  padding: 14px 30px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 8px;
+  background: #553f9a;
+  color: white;
+  cursor: pointer;
+  animation: pulse 1.8s infinite;
+  border: none;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(85, 63, 154, 0.6); }
+  70% { box-shadow: 0 0 0 18px rgba(85, 63, 154, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(85, 63, 154, 0); }
+}
+
+/* ================= HEADINGS ================= */
 .container h1 {
   text-align: center;
   font-size: 1.5rem;
   color: #553f9a;
-}
-
-/* Desktop spacing */
-@media (min-width: 680px) {
-  .container {
-    margin-top: 150px;
-    padding: 30px 40px;
-  }
 }
 
 .container hr {
@@ -44,6 +115,9 @@
   font-size: 1.1rem;
   font-weight: 500;
   line-height: 1.4;
+  color: #262626;
+  /* STABILIZER: Reserve height to stop jumping */
+  min-height: 1.5em; 
 }
 
 /* ================= OPTIONS ================= */
@@ -52,48 +126,59 @@
   list-style: none;
 }
 
-/* OPTION ITEM */
 .container ul li {
   display: flex;
   align-items: center;
-  min-height: 56px;
+  min-height: 48px; 
   padding: 0.8rem;
   border: 1px solid #686868;
   border-radius: 8px;
   margin-bottom: 0.75rem;
   font-size: 1rem;
   cursor: pointer;
-
-  /* 🔑 BLOCK TEXT SELECTION COMPLETELY */
   user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-
-  transition: background 0.2s ease, border-color 0.2s ease;
+  /* STABILIZER: Set transition to 0 to stop "slow motion" movement */
+  transition: none !important; 
+  overflow: visible; 
 }
 
-/* Hover feedback */
 .container ul li:hover {
   background: #f5f5f5;
 }
 
-/* Disable selection inside ALL option children */
-.container ul li *,
-.container ul li *::selection,
-.container ul li *::-moz-selection {
+.container ul li * {
   background: transparent !important;
   user-select: none !important;
 }
 
-/* 🔥 Kill MathJax highlighting & clicks */
-.mjx-container,
+/* ================= MATHJAX STABILIZERS ================= */
+/* Force immediate visibility and stop layout shift */
+.mjx-container {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: inherit !important;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  vertical-align: middle;
+  /* Kill any inherited animations */
+  transition: none !important; 
+  animation: none !important;
+}
+
+/* Hide raw LaTeX code that "flickers" before the symbol appears */
+.mjx-copytext, .mjx-assistive-mml {
+  display: none !important;
+}
+
 .mjx-container * {
   background: transparent !important;
   user-select: none !important;
   pointer-events: none;
 }
 
-/* ================= BUTTON ================= */
+/* ================= BUTTONS ================= */
 .container button {
   margin: 0.5rem auto;
   width: 100%;
@@ -106,30 +191,55 @@
   border-radius: 8px;
   border: none;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .container button:hover {
   opacity: 0.95;
+  transform: translateY(-2px);
 }
 
-/* ================= PROGRESS ================= */
-.container .index {
-  text-align: center;
-  font-size: 0.9rem;
+.container button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ================= SUBJECT SELECTION GRID ================= */
+.subject-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.subject-btn {
+  background: white !important;
+  color: #553f9a !important;
+  border: 2px solid #553f9a !important;
+  height: 60px !important;
+  max-width: none !important;
+  font-weight: 700 !important;
+}
+
+.subject-btn:hover {
+  background: #553f9a !important;
+  color: white !important;
 }
 
 /* ================= ANSWER STATES ================= */
 .container .correct {
-  background: #dffff2;
-  border-color: aquamarine;
+  background: #dffff2 !important;
+  border-color: aquamarine !important;
 }
 
 .container .wrong {
-  background: #FFEBEB;
-  border-color: #FF4A4A;
+  background: #FFEBEB !important;
+  border-color: #FF4A4A !important;
 }
 
-/* ================= START PAGE ================= */
+/* ================= START PAGE & DASHBOARDS ================= */
 .start-page {
   display: flex;
   flex-direction: column;
@@ -142,123 +252,103 @@
   font-size: 1.2rem;
 }
 
-.start-page input {
+.start-page input,
+.start-page select,
+.start-page textarea {
+  width: 100%; 
   padding: 12px;
   font-size: 1rem;
   border-radius: 6px;
   border: 1px solid #aaa;
+  background-color: white;
 }
 
-.start-page input:focus {
+.start-page input:focus,
+.start-page select:focus {
   outline: none;
   border-color: #553f9a;
 }
 
-/* ================= TIMER ================= */
+/* ================= TABLES ================= */
+.admin-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 1rem;
+  border-radius: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 500px;
+  margin: 10px 0;
+}
+
+table th, table td {
+  padding: 12px;
+  border: 1px solid #eee;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+table th {
+  background-color: #553f9a;
+  color: white;
+}
+
+/* ================= TIMER & HEADER ================= */
 .quiz-header {
-  text-align: right;
+  display: flex;
+  justify-content: space-between;
   font-size: 0.95rem;
   font-weight: 600;
   color: #553f9a;
+  padding: 5px 0;
 }
 
-/* ================= RESULT ================= */
-.container p {
-  font-size: 0.95rem;
-  margin: 4px 0;
-}
-
-/* Logo sizing */
+/* ================= LOGO ================= */
 .container .logo {
   display: block;
   margin: 0.5rem auto;
   max-width: 120px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
 }
 
-/* ================= TABLE SUPPORT ================= */
-.table-wrapper table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.table-wrapper th,
-.table-wrapper td {
-  padding: 6px 8px;
-  border: 1px solid #707070;
+/* ================= LOADING ================= */
+.loading-container {
   text-align: center;
+  padding: 3rem;
 }
 
-.table-wrapper th {
-  background: #f4f4f4;
-  font-weight: 600;
+.spinner {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #553f9a;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 10px auto;
 }
 
-/* ================= MOBILE ================= */
-@media (max-width: 480px) {
-  body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ================= MOBILE RESPONSIVENESS ================= */
+@media (max-width: 768px) {
+  .welcome-card {
+    flex-direction: column;
+  }
+  .welcome-image {
+    min-height: 220px;
+    flex: none;
+  }
+  .welcome-text {
     padding: 20px;
-    min-height: 100vh;
   }
-
-  .container {
-    /* center horizontally and avoid overflow on small screens */
-    margin: 0 auto;
-    padding: 10px;
-    border-radius: 8px;
-    gap: 10px;
-    width: 100%;
-    max-width: 360px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-    box-sizing: border-box;
+  .subject-grid {
+    grid-template-columns: 1fr; 
   }
-
-  .container h1 {
-    font-size: 1.15rem;
-  }
-
-  .container h2 {
-    font-size: 0.98rem;
-  }
-
-  .container ul li {
-    min-height: 46px;
-    padding: 0.6rem;
-    font-size: 0.95rem;
-  }
-
   .container button {
-    height: 44px;
-    font-size: 0.98rem;
-    max-width: 220px;
-  }
-
-  .container .logo {
-    max-width: 90px;
-    width: auto;
-  }
-
-  .quiz-header {
-    font-size: 0.9rem;
-  }
-
-  .start-page input {
-    padding: 10px;
-  }
-
-  .table-wrapper th,
-  .table-wrapper td {
-    padding: 4px 6px;
-    font-size: 0.9rem;
+    max-width: 100%; 
   }
 }
-
-/* Quick hide toggle: add 'hidden-app' class to <body> to hide the quiz container */
-.hidden-app .container {
-  display: none !important;
-} 

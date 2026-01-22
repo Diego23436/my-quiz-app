@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "question": "Evaluate $2x + 5$ when $x = 3$.",
+    "option1": "9",
+    "option2": "11",
+    "option3": "13",
+    "option4": "15",
+    "ans": 2
+  },
+  {
+    "id": 2,
+    "question": "Solve: $$\\int x^2\\,dx$$",
+    "option1": "$\\frac{x^3}{3} + C$",
+    "option2": "$2x + C$",
+    "option3": "$x^2 + C$",
+    "option4": "$\\frac{x^2}{2} + C$",
+    "ans": 1
+  },
+  {
+    "id": 3,
+    "question": "<table><tr><th>A</th><th>B</th></tr><tr><td>2</td><td>4</td></tr></table> What is the value of A + B?",
+    "option1": "4",
+    "option2": "5",
+    "option3": "6",
+    "option4": "8",
+    "ans": 3
+  }
+]
