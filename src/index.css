@@ -8,7 +8,15 @@ body{
   overflow: auto;
   background-image: linear-gradient(#D8c7ff, #19006c);
   font-family: 'poppins';
-  
-  
 
+
+}
+/* This hides all math source code before MathJax renders it */
+.tex2jax_ignore {
+  visibility: hidden;
+}
+
+/* This is the class MathJax adds once it finishes rendering */
+.MathJax_Processed {
+  visibility: visible !important;
 }
