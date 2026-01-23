@@ -4,11 +4,9 @@ import logo from "../../assets/logoldx.jpeg";
 import img2 from "../../assets/img2.jpg";
 import { MathJax, MathJaxContext } from "better-react-mathjax";
 import { db, auth } from "../../firebaseConfig"; 
-import { collection, getDocs, addDoc, doc, getDoc, query, where } from "firebase/firestore";
+import { collection, addDoc, doc, getDoc } from "firebase/firestore";
 import { signInWithEmailAndPassword } from "firebase/auth";
-
-// Import local questions as fallback
-import questionsData from "./questions.json";
+import localData from "./questions.json"; // ✅ Import your partitioned JSON
 
 const mathJaxConfig = {
   loader: { load: ["input/tex", "output/chtml"] },
@@ -16,16 +14,8 @@ const mathJaxConfig = {
     inlineMath: [["$", "$"], ["\\(", "\\)"]],
     displayMath: [["$$", "$$"], ["\\[", "\\]"]],
     processEscapes: true,
-    processEnvironments: true,
   },
-  options: {
-    enableMenu: false,
-    ignoreHtmlClass: "tex2jax_ignore",
-    processHtmlClass: "tex2jax_process",
-  },
-  chtml: {
-    fontURL: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2"
-  }
+  options: { enableMenu: false }
 };
 
 const QUIZ_TIME = 30 * 60; 
@@ -47,65 +37,21 @@ const Quiz = () => {
   const [saved, setSaved] = useState(false);
 
   const question = questions[index] || {};
-  const option_array = [useRef(null), useRef(null), useRef(null), useRef(null)];
+  const option1 = useRef(null);
+  const option2 = useRef(null);
+  const option3 = useRef(null);
+  const option4 = useRef(null);
+  const option_array = [option1, option2, option3, option4];
 
-  const renderContent = (content) => {
-    if (!content) return null;
-
-    // Check if content contains HTML (like tables)
-    if (content.includes('<table>') || content.includes('<')) {
-      return (
-        <MathJax dynamic>
-          <div dangerouslySetInnerHTML={{ __html: content }} />
-        </MathJax>
-      );
-    }
-
-    // For pure LaTeX/math content, render as text
-    return (
-      <MathJax dynamic>
-        {content}
-      </MathJax>
-    );
-  };
-
-  const startSubjectQuiz = async (subjectName) => {
-    setLoading(true);
-    try {
-      const q = query(collection(db, "quizzes"), where("subject", "==", subjectName));
-      const querySnapshot = await getDocs(q);
-      const firebaseData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-      
-      if (firebaseData.length > 0) {
-        // Use Firebase data if available
-        setQuestions(firebaseData);
-        setSelectedSubject(subjectName);
-        setPage("quiz");
-      } else {
-        // Fallback to local questions if no Firebase data
-        console.log(`No Firebase questions found for ${subjectName}, using local questions`);
-        const localQuestions = questionsData.map(q => ({
-          ...q,
-          subject: subjectName, // Add subject to local questions
-          id: `local_${q.id}`
-        }));
-        setQuestions(localQuestions);
-        setSelectedSubject(subjectName);
-        setPage("quiz");
-      }
-    } catch (error) {
-      console.error("Firebase error, using local questions:", error);
-      // Fallback to local questions on error
-      const localQuestions = questionsData.map(q => ({
-        ...q,
-        subject: subjectName,
-        id: `local_${q.id}`
-      }));
-      setQuestions(localQuestions);
+  // ✅ UPDATED: Loads from JSON instead of Firebase
+  const startSubjectQuiz = (subjectName) => {
+    const data = localData[subjectName];
+    if (data && data.length > 0) {
+      setQuestions(data);
       setSelectedSubject(subjectName);
       setPage("quiz");
-    } finally {
-      setLoading(false);
+    } else {
+      alert("No questions found locally for " + subjectName);
     }
   };
 
@@ -199,7 +145,7 @@ const Quiz = () => {
       };
       saveResult();
     }
-  }, [result, saved]);
+  }, [result, saved, questions.length, score, selectedSubject, timeLeft, user]);
 
   const reset = () => {
     setPage("welcome");
@@ -224,8 +170,17 @@ const Quiz = () => {
             <div className="welcome-card">
               <div className="welcome-image"><img src={img2} alt="Welcome" /></div>
               <div className="welcome-text">
-                <h2>Empowering Your Future</h2>
-                <p>Join the national challenge and test your knowledge across all major subjects.</p>
+                <h2>Welcome to LEADEX National Quiz</h2>
+                <p>Dear Candidate,<br /><br />
+          You are welcome to the <strong>LEADEX National Quiz Application</strong>,
+          a carefully structured academic platform designed to strengthen your
+          examination readiness.
+          <br /><br />
+          This quiz environment simulates real examination conditions, helping
+          you improve accuracy, time management, and confidence.
+          <br /><br />
+          Read each question carefully and manage your time wisely.
+          This is a vital step toward achieving academic excellence.</p>
                 <button onClick={() => setPage("login")}>Get Started</button>
               </div>
             </div>
@@ -258,7 +213,8 @@ const Quiz = () => {
           <div className="start-page">
             <h2>Select Your Subject</h2>
             <div className="subject-grid">
-              {["Mathematics", "Physics", "Chemistry", "Biology", "ICT"].map((sub) => (
+              {/* Added Further Maths to the grid */}
+              {["Mathematics", "Further Maths", "Physics", "Chemistry", "Biology", "ICT"].map((sub) => (
                 <button key={sub} className="subject-btn" onClick={() => startSubjectQuiz(sub)}>{sub}</button>
               ))}
             </div>
@@ -267,24 +223,45 @@ const Quiz = () => {
 
         {page === "quiz" && (
           <>
-            {loading ? (
-              <div className="loading-container"><div className="spinner"></div></div>
-            ) : !result ? (
+            {!result ? (
               <>
                 <div className="quiz-header">
                   <span>Subject: {selectedSubject}</span>
                   <span>⏱ {Math.floor(timeLeft / 60)}:{String(timeLeft % 60).padStart(2, "0")}</span>
                 </div>
-                <h2>{index + 1}. {renderContent(question.question)}</h2>
+                
+                <h2>
+                  {index + 1}.{" "}
+                  <MathJax dynamic key={`q-${index}`}>
+                    <span dangerouslySetInnerHTML={{ __html: question.question }} />
+                  </MathJax>
+                </h2>
+
                 <ul>
-                  {option_array.map((opt, i) => (
-                    <li key={i} ref={opt} onClick={(e) => checkAns(e, i + 1)}>
-                      {renderContent(question[`option${i + 1}`])}
-                    </li>
-                  ))}
+                  <li ref={option1} onClick={(e) => checkAns(e, 1)}>
+                    <MathJax dynamic key={`o1-${index}`}>
+                       <span dangerouslySetInnerHTML={{ __html: question.option1 }} />
+                    </MathJax>
+                  </li>
+                  <li ref={option2} onClick={(e) => checkAns(e, 2)}>
+                    <MathJax dynamic key={`o2-${index}`}>
+                       <span dangerouslySetInnerHTML={{ __html: question.option2 }} />
+                    </MathJax>
+                  </li>
+                  <li ref={option3} onClick={(e) => checkAns(e, 3)}>
+                    <MathJax dynamic key={`o3-${index}`}>
+                       <span dangerouslySetInnerHTML={{ __html: question.option3 }} />
+                    </MathJax>
+                  </li>
+                  <li ref={option4} onClick={(e) => checkAns(e, 4)}>
+                    <MathJax dynamic key={`o4-${index}`}>
+                       <span dangerouslySetInnerHTML={{ __html: question.option4 }} />
+                    </MathJax>
+                  </li>
                 </ul>
+
                 <button onClick={next} disabled={!lock}>{index === questions.length - 1 ? "Finish Quiz" : "Next"}</button>
-                <div className="index">{index + 1} of {questions.length}</div>
+                <div className="index">{index + 1} of {questions.length} questions</div>
               </>
             ) : (
               <div className="result">

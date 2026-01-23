@@ -1,29 +1,254 @@
-[
-  {
-    "id": 1,
-    "question": "Evaluate $2x + 5$ when $x = 3$.",
-    "option1": "9",
-    "option2": "11",
-    "option3": "13",
-    "option4": "15",
-    "ans": 2
-  },
-  {
-    "id": 2,
-    "question": "Solve: $$\\int x^2\\,dx$$",
-    "option1": "$\\frac{x^3}{3} + C$",
-    "option2": "$2x + C$",
-    "option3": "$x^2 + C$",
-    "option4": "$\\frac{x^2}{2} + C$",
-    "ans": 1
-  },
-  {
-    "id": 3,
-    "question": "<table><tr><th>A</th><th>B</th></tr><tr><td>2</td><td>4</td></tr></table> What is the value of A + B?",
-    "option1": "4",
-    "option2": "5",
-    "option3": "6",
-    "option4": "8",
-    "ans": 3
-  }
-]
+{
+  "Mathematics": [
+    {
+      "question": "Evaluate the definite integral $\\int_{0}^{\\pi/2} \\sin^3(x) \\cos(x) \\, dx$.",
+      "option1": "1/2",
+      "option2": "1/4",
+      "option3": "1",
+      "option4": "0",
+      "ans": 2
+    },
+    {
+      "question": "The table below shows a mapping $f: A \\to B$. Find the rule of the function.<br><table><tr><th>x</th><td>1</td><td>2</td><td>3</td></tr><tr><th>f(x)</th><td>3</td><td>7</td><td>11</td></tr></table>",
+      "option1": "$f(x) = 2x + 1$",
+      "option2": "$f(x) = 4x - 1$",
+      "option3": "$f(x) = 3x$",
+      "option4": "$f(x) = x^2 + 2$",
+      "ans": 2
+    },
+    {
+      "question": "Solve the differential equation $\\frac{dy}{dx} + 2xy = x$.",
+      "option1": "$y = \\frac{1}{2} + Ce^{-x^2}$",
+      "option2": "$y = Ce^{x^2}$",
+      "option3": "$y = x^2 + C$",
+      "option4": "$y = e^{-x} + C$",
+      "ans": 1
+    },
+    {
+      "question": "If $\\sin(\\theta) = 3/5$ and $\\theta$ is obtuse, find $\\cos(2\\theta)$.",
+      "option1": "7/25",
+      "option2": "-7/25",
+      "option3": "16/25",
+      "option4": "24/25",
+      "ans": 1
+    },
+    {
+      "question": "Which of the following describes a 'one-to-many' relation?",
+      "option1": "Function",
+      "option2": "Surjection",
+      "option3": "Not a function",
+      "option4": "Injection",
+      "ans": 3
+    }
+  ],
+  "Further Maths": [
+    {
+      "question": "Find the general solution of $y'' - 4y' + 4y = 0$.",
+      "option1": "$y = (A+Bx)e^{2x}$",
+      "option2": "$y = Ae^{2x} + Be^{-2x}$",
+      "option3": "$y = A\\cos(2x) + B\\sin(2x)$",
+      "option4": "$y = Ae^{4x}$",
+      "ans": 1
+    },
+    {
+      "question": "What is the polar form of the complex number $z = 1 + i\\sqrt{3}$?",
+      "option1": "$2(\\cos 60^\\circ + i\\sin 60^\\circ)$",
+      "option2": "$2(\\cos 30^\\circ + i\\sin 30^\\circ)$",
+      "option3": "$\\sqrt{2}(\\cos 45^\\circ + i\\sin 45^\\circ)$",
+      "option4": "$4(\\cos 60^\\circ + i\\sin 60^\\circ)$",
+      "ans": 1
+    },
+    {
+      "question": "Calculate the determinant of matrix $M = \\begin{pmatrix} 2 & 1 \\\\ 4 & 3 \\end{pmatrix}$.",
+      "option1": "10",
+      "option2": "2",
+      "option3": "6",
+      "option4": "-2",
+      "ans": 2
+    },
+    {
+      "question": "The Taylor series expansion of $e^x$ about $x=0$ is:",
+      "option1": "$\\sum_{n=0}^{\\infty} \\frac{x^n}{n!}$",
+      "option2": "$\\sum_{n=1}^{\\infty} \\frac{x^n}{n}$",
+      "option3": "$\\sum_{n=0}^{\\infty} x^n$",
+      "option4": "$\\sum_{n=0}^{\\infty} \\frac{(-1)^n x^{2n}}{(2n)!}$",
+      "ans": 1
+    },
+    {
+      "question": "In numerical methods, the Newton-Raphson formula is given by:",
+      "option1": "$x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}$",
+      "option2": "$x_{n+1} = x_n + \\frac{f(x_n)}{f'(x_n)}$",
+      "option3": "$x_{n+1} = \\frac{x_n + x_{n-1}}{2}$",
+      "option4": "$x_{n+1} = f(x_n)$",
+      "ans": 1
+    }
+  ],
+  "Chemistry": [
+    {
+      "question": "What is the IUPAC name for $CH_3CH(OH)CH_2CHO$?",
+      "option1": "3-hydroxybutanal",
+      "option2": "2-hydroxybutanal",
+      "option3": "Butane-1,3-diol",
+      "option4": "3-oxobutanol",
+      "ans": 1
+    },
+    {
+      "question": "Calculate the mass of $0.5$ moles of $CaCO_3$ (Relative atomic masses: $Ca=40, C=12, O=16$).",
+      "option1": "100g",
+      "option2": "50g",
+      "option3": "25g",
+      "option4": "75g",
+      "ans": 2
+    },
+    {
+      "question": "Which transition metal ion is responsible for the blue color in aqueous solution?",
+      "option1": "$Fe^{2+}$",
+      "option2": "$Mn^{2+}$",
+      "option3": "$Cu^{2+}$",
+      "option4": "$Cr^{3+}$",
+      "ans": 3
+    },
+    {
+      "question": "What is the pH of a $0.01M$ solution of $HCl$?",
+      "option1": "1",
+      "option2": "7",
+      "option3": "12",
+      "option4": "2",
+      "ans": 4
+    },
+    {
+      "question": "In the Phase Diagram of water, the point where solid, liquid, and gas coexist is called:",
+      "option1": "Critical point",
+      "option2": "Triple point",
+      "option3": "Boiling point",
+      "option4": "Eutectic point",
+      "ans": 2
+    }
+  ],
+  "Physics": [
+    {
+      "question": "The gravitational field strength $g$ at a distance $r$ from a mass $M$ is given by:",
+      "option1": "$GM/r$",
+      "option2": "$GM/r^2$",
+      "option3": "$GMr^2$",
+      "option4": "$mgh$",
+      "ans": 2
+    },
+    {
+      "question": "A wave has a frequency of $500Hz$ and a wavelength of $0.6m$. Calculate its speed.",
+      "option1": "300 m/s",
+      "option2": "833 m/s",
+      "option3": "120 m/s",
+      "option4": "500.6 m/s",
+      "ans": 1
+    },
+    {
+      "question": "Which law states that the induced e.m.f is proportional to the rate of change of magnetic flux linkage?",
+      "option1": "Lenz's Law",
+      "option2": "Faraday's Law",
+      "option3": "Coulomb's Law",
+      "option4": "Ampere's Law",
+      "ans": 2
+    },
+    {
+      "question": "In simple harmonic motion, where is the velocity maximum?",
+      "option1": "At the amplitude",
+      "option2": "At the equilibrium position",
+      "option3": "Halfway to the amplitude",
+      "option4": "At the turning points",
+      "ans": 2
+    },
+    {
+      "question": "Calculate the electric force between two $1C$ charges separated by $1m$ in a vacuum.",
+      "option1": "$1N$",
+      "option2": "$9 \\times 10^9 N$",
+      "option3": "$8.85 \\times 10^{-12} N$",
+      "option4": "$100N$",
+      "ans": 2
+    }
+  ],
+  "ICT": [
+    {
+      "question": "Consider the following Truth Table for a Logic Gate. Which gate is it?<br><table><tr><th>A</th><th>B</th><th>Output</th></tr><tr><td>0</td><td>0</td><td>1</td></tr><tr><td>0</td><td>1</td><td>1</td></tr><tr><td>1</td><td>0</td><td>1</td></tr><tr><td>1</td><td>1</td><td>0</td></tr></table>",
+      "option1": "NOR",
+      "option2": "NAND",
+      "option3": "AND",
+      "option4": "XOR",
+      "ans": 2
+    },
+    {
+      "question": "Convert the binary number $1011_2$ to decimal.",
+      "option1": "11",
+      "option2": "13",
+      "option3": "9",
+      "option4": "15",
+      "ans": 1
+    },
+    {
+      "question": "Which C programming operator is used for the 'modulo' operation?",
+      "option1": "/",
+      "option2": "%",
+      "option3": "&",
+      "option4": "#",
+      "ans": 2
+    },
+    {
+      "question": "In networking, which OSI layer is responsible for IP addressing?",
+      "option1": "Data Link Layer",
+      "option2": "Transport Layer",
+      "option3": "Network Layer",
+      "option4": "Physical Layer",
+      "ans": 3
+    },
+    {
+      "question": "Which SQL command is used to retrieve data from a database?",
+      "option1": "INSERT",
+      "option2": "UPDATE",
+      "option3": "SELECT",
+      "option4": "DELETE",
+      "ans": 3
+    }
+  ],
+  "Biology": [
+    {
+      "question": "In genetics, a cross between a heterozygous individual ($Aa$) and a homozygous recessive ($aa$) is called a:",
+      "option1": "Monohybrid cross",
+      "option2": "Test cross",
+      "option3": "Dihybrid cross",
+      "option4": "Back cross",
+      "ans": 2
+    },
+    {
+      "question": "Where does the Link Reaction of aerobic respiration occur?",
+      "option1": "Cytoplasm",
+      "option2": "Mitochondrial matrix",
+      "option3": "Cristae",
+      "option4": "Ribosome",
+      "ans": 2
+    },
+    {
+      "question": "Which hormone triggers ovulation in human females?",
+      "option1": "Estrogen",
+      "option2": "Progesterone",
+      "option3": "LH (Luteinizing Hormone)",
+      "option4": "FSH",
+      "ans": 3
+    },
+    {
+      "question": "Which of the following is a function of the placenta?",
+      "option1": "Production of antibodies",
+      "option2": "Exchange of nutrients and waste",
+      "option3": "Production of bile",
+      "option4": "Filtering blood of the mother",
+      "ans": 2
+    },
+    {
+      "question": "In DNA replication, the enzyme that joins Okazaki fragments together is:",
+      "option1": "DNA Polymerase",
+      "option2": "Helicase",
+      "option3": "Ligase",
+      "option4": "Primase",
+      "ans": 3
+    }
+  ]
+}
