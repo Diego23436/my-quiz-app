@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useMemo } from "react";
 import "./Quiz.css";
 import logo from "../../assets/logoldx.jpeg";
 import img2 from "../../assets/img2.jpg";
@@ -6,7 +6,7 @@ import { MathJax, MathJaxContext } from "better-react-mathjax";
 import { db, auth } from "../../firebaseConfig"; 
 import { collection, addDoc, doc, getDoc } from "firebase/firestore";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import localData from "./questions.json"; // ✅ Import your partitioned JSON
+import localData from "./questions.json"; 
 
 const mathJaxConfig = {
   loader: { load: ["input/tex", "output/chtml"] },
@@ -15,7 +15,20 @@ const mathJaxConfig = {
     displayMath: [["$$", "$$"], ["\\[", "\\]"]],
     processEscapes: true,
   },
-  options: { enableMenu: false }
+  options: { 
+    enableMenu: false,
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "tex2jax_process",
+    // Fast rendering setting
+    renderActions: {
+        addMenu: [] 
+    }
+  },
+  chtml: {
+    scale: 1,                      
+    minScale: 0.5,                  
+    matchFontHeight: true           
+  }
 };
 
 const QUIZ_TIME = 30 * 60; 
@@ -27,7 +40,6 @@ const Quiz = () => {
   });
 
   const [questions, setQuestions] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [selectedSubject, setSelectedSubject] = useState(""); 
   const [index, setIndex] = useState(0);
   const [lock, setLock] = useState(false);
@@ -35,6 +47,7 @@ const Quiz = () => {
   const [result, setResult] = useState(false);
   const [timeLeft, setTimeLeft] = useState(QUIZ_TIME);
   const [saved, setSaved] = useState(false);
+  const [mathReady, setMathReady] = useState(false);
 
   const question = questions[index] || {};
   const option1 = useRef(null);
@@ -43,10 +56,10 @@ const Quiz = () => {
   const option4 = useRef(null);
   const option_array = [option1, option2, option3, option4];
 
-  // ✅ UPDATED: Loads from JSON instead of Firebase
   const startSubjectQuiz = (subjectName) => {
     const data = localData[subjectName];
     if (data && data.length > 0) {
+      setMathReady(false); 
       setQuestions(data);
       setSelectedSubject(subjectName);
       setPage("quiz");
@@ -102,13 +115,14 @@ const Quiz = () => {
     }
   };
 
+  // ✅ FIXED: Using refs directly to avoid state-triggered re-typesetting on click
   const checkAns = (e, ansIndex) => {
     if (lock || !question.ans) return;
     if (question.ans === ansIndex) {
-      e.target.classList.add("correct");
+      e.currentTarget.classList.add("correct");
       setScore((prev) => prev + 1);
     } else {
-      e.target.classList.add("wrong");
+      e.currentTarget.classList.add("wrong");
       option_array[question.ans - 1]?.current?.classList.add("correct");
     }
     setLock(true);
@@ -116,6 +130,7 @@ const Quiz = () => {
 
   const next = () => {
     if (!lock) return;
+    setMathReady(false); 
     option_array.forEach((opt) => opt.current?.classList.remove("wrong", "correct"));
     if (index === questions.length - 1) {
       setResult(true);
@@ -156,6 +171,33 @@ const Quiz = () => {
     setSaved(false);
     setTimeLeft(QUIZ_TIME);
   };
+
+  // Memoize the question content to prevent unnecessary re-renders
+  const quizContent = useMemo(() => (
+    <div className={`tex2jax_process ${mathReady ? "visible" : "hidden"}`}>
+      <MathJax 
+        dynamic 
+        key={`math-box-${index}`} 
+        onTypeset={() => setMathReady(true)}
+      >
+        <h2>
+          {index + 1}. <span dangerouslySetInnerHTML={{ __html: question.question }} />
+        </h2>
+
+        <ul>
+          {[1, 2, 3, 4].map((num) => (
+            <li 
+              key={`opt-${index}-${num}`} 
+              ref={option_array[num-1]} 
+              onClick={(e) => checkAns(e, num)}
+            >
+              <span dangerouslySetInnerHTML={{ __html: question[`option${num}`] }} />
+            </li>
+          ))}
+        </ul>
+      </MathJax>
+    </div>
+  ), [index, mathReady, question]);
 
   return (
     <MathJaxContext config={mathJaxConfig}>
@@ -213,7 +255,6 @@ const Quiz = () => {
           <div className="start-page">
             <h2>Select Your Subject</h2>
             <div className="subject-grid">
-              {/* Added Further Maths to the grid */}
               {["Mathematics", "Further Maths", "Physics", "Chemistry", "Biology", "ICT"].map((sub) => (
                 <button key={sub} className="subject-btn" onClick={() => startSubjectQuiz(sub)}>{sub}</button>
               ))}
@@ -230,37 +271,13 @@ const Quiz = () => {
                   <span>⏱ {Math.floor(timeLeft / 60)}:{String(timeLeft % 60).padStart(2, "0")}</span>
                 </div>
                 
-                <h2>
-                  {index + 1}.{" "}
-                  <MathJax dynamic key={`q-${index}`}>
-                    <span dangerouslySetInnerHTML={{ __html: question.question }} />
-                  </MathJax>
-                </h2>
+                {quizContent}
 
-                <ul>
-                  <li ref={option1} onClick={(e) => checkAns(e, 1)}>
-                    <MathJax dynamic key={`o1-${index}`}>
-                       <span dangerouslySetInnerHTML={{ __html: question.option1 }} />
-                    </MathJax>
-                  </li>
-                  <li ref={option2} onClick={(e) => checkAns(e, 2)}>
-                    <MathJax dynamic key={`o2-${index}`}>
-                       <span dangerouslySetInnerHTML={{ __html: question.option2 }} />
-                    </MathJax>
-                  </li>
-                  <li ref={option3} onClick={(e) => checkAns(e, 3)}>
-                    <MathJax dynamic key={`o3-${index}`}>
-                       <span dangerouslySetInnerHTML={{ __html: question.option3 }} />
-                    </MathJax>
-                  </li>
-                  <li ref={option4} onClick={(e) => checkAns(e, 4)}>
-                    <MathJax dynamic key={`o4-${index}`}>
-                       <span dangerouslySetInnerHTML={{ __html: question.option4 }} />
-                    </MathJax>
-                  </li>
-                </ul>
+                {!mathReady && <div className="spinner"></div>}
 
-                <button onClick={next} disabled={!lock}>{index === questions.length - 1 ? "Finish Quiz" : "Next"}</button>
+                <button onClick={next} disabled={!lock || !mathReady}>
+                  {index === questions.length - 1 ? "Finish Quiz" : "Next"}
+                </button>
                 <div className="index">{index + 1} of {questions.length} questions</div>
               </>
             ) : (

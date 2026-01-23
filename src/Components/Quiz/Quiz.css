@@ -14,6 +14,22 @@
   overflow-x: hidden; 
 }
 
+/* --- MATH LOADING STATES --- */
+/* We use visibility:hidden instead of display:none to prevent layout jumps */
+.tex2jax_process.hidden {
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.tex2jax_process.visible {
+  visibility: visible;
+  height: auto;
+  opacity: 1;
+  transition: opacity 0.1s ease-in; /* Faster transition */
+}
+
 .welcome-page { width: 100%; display: flex; justify-content: center; align-items: center; }
 
 .container .welcome-card {
@@ -54,40 +70,29 @@
   font-size: 1rem;
   cursor: pointer;
   user-select: none;
-  transition: none !important; 
 }
 
 .container ul li:hover { background: #f5f5f5; }
-.container ul li * { background: transparent !important; }
 
-.content-wrapper, .tex2jax_process, .mjx-container {
-  visibility: visible !important;
-  opacity: 1 !important;
-  display: block !important;
-  min-height: 1.2em;
-  color: #262626 !important;
-}
+/* Feedback colors */
+.container .correct { background: #dffff2 !important; border-color: #2ecc71 !important; color: #155724 !important; }
+.container .wrong { background: #FFEBEB !important; border-color: #FF4A4A !important; color: #721c24 !important; }
 
-.mjx-container { transition: none !important; margin: 0 !important; }
-.mjx-copytext, .mjx-assistive-mml { display: none !important; }
-
-.container button { margin: 0.5rem auto; width: 100%; max-width: 250px; height: 52px; background: #553f9a; color: white; font-size: 1.1rem; font-weight: 500; border-radius: 8px; border: none; cursor: pointer; transition: all 0.3s ease; }
-.container button:hover { opacity: 0.95; transform: translateY(-2px); }
-.container button:disabled { opacity: 0.5; cursor: not-allowed; }
-
+/* SUBJECT SELECTION */
 .subject-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; width: 100%; margin-top: 10px; }
 .subject-btn { background: white !important; color: #553f9a !important; border: 2px solid #553f9a !important; height: 60px !important; max-width: none !important; font-weight: 700 !important; }
 .subject-btn:hover { background: #553f9a !important; color: white !important; }
 
-.container .correct { background: #dffff2 !important; border-color: aquamarine !important; }
-.container .wrong { background: #FFEBEB !important; border-color: #FF4A4A !important; }
+.container button { margin: 0.5rem auto; width: 100%; max-width: 250px; height: 52px; background: #553f9a; color: white; font-size: 1.1rem; font-weight: 500; border-radius: 8px; border: none; cursor: pointer; transition: all 0.3s ease; }
+.container button:hover { opacity: 0.95; transform: translateY(-2px); }
+.container button:disabled { background: #ccc !important; cursor: not-allowed; }
 
 .start-page { display: flex; flex-direction: column; gap: 14px; margin-top: 10px; }
 .start-page h2 { text-align: center; font-size: 1.2rem; }
 .start-page input, .start-page select { width: 100%; padding: 12px; font-size: 1rem; border-radius: 6px; border: 1px solid #aaa; }
 
 table { width: 100%; border-collapse: collapse; margin: 10px 0; }
-table th, table td { padding: 12px; border: 1px solid #eee; text-align: left; }
+table th, table td { padding: 12px; border: 1px solid #eee; text-align: center; }
 table th { background-color: #553f9a; color: white; }
 
 .quiz-header { display: flex; justify-content: space-between; font-weight: 600; color: #553f9a; padding: 5px 0; }
