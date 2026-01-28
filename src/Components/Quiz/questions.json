@@ -1,246 +1,238 @@
 {
   "Mathematics": [
-    {
-      "question": "Evaluate the integral $\\int_{1}^{2} (3x^2 - 2x + 1) dx$.",
-      "option1": "5",
-      "option2": "6",
-      "option3": "4",
-      "option4": "7",
-      "ans": 1
-    },
-    {
-      "question": "The mapping $f: \\mathbb{R} \\to \\mathbb{R}$ is defined by $f(x) = x^2 + 1$. This mapping is:",
-      "option1": "Injective but not surjective",
-      "option2": "Surjective but not injective",
-      "option3": "Bijective",
-      "option4": "Neither injective nor surjective",
-      "ans": 4
-    },
-    {
-      "question": "Find the general solution of the differential equation $\\frac{dy}{dx} = \\frac{x}{y}$.",
-      "option1": "$y^2 = x^2 + C$",
-      "option2": "$y = x + C$",
-      "option3": "$y^2 - x^2 = C$",
-      "option4": "$y^2 + x^2 = C$",
-      "ans": 3
-    },
-    {
-      "question": "Using the Trapezium Rule with 3 ordinates, estimate $\\int_{0}^{2} \\sqrt{1+x^2} dx$. <br> <table><tr><th>x</th><td>0</td><td>1</td><td>2</td></tr><tr><th>y</th><td>1</td><td>1.414</td><td>2.236</td></tr></table>",
-      "option1": "3.032",
-      "option2": "2.414",
-      "option3": "3.236",
-      "option4": "2.814",
-      "ans": 1
-    },
-    {
-      "question": "Solve the equation $2\\cos^2 \\theta + 3\\sin \\theta = 3$ for $0^\\circ \\le \\theta \\le 180^\\circ$.",
-      "option1": "$30^\\circ, 150^\\circ$",
-      "option2": "$30^\\circ, 90^\\circ, 150^\\circ$",
-      "option3": "$60^\\circ, 120^\\circ$",
-      "option4": "$45^\\circ, 135^\\circ$",
-      "ans": 2
-    },
-    {
-      "question": "If $f(x) = e^{2x}$ and $g(x) = \\ln(x)$, find $fg(x)$.",
-      "option1": "$2x$",
-      "option2": "$x^2$",
-      "option3": "$e^{x^2}$",
-      "option4": "$\\ln(e^{2x})$",
-      "ans": 2
-    },
-    {
-      "question": "The derivative of $\\arctan(2x)$ with respect to $x$ is:",
-      "option1": "$\\frac{1}{1+4x^2}$",
-      "option2": "$\\frac{2}{1+x^2}$",
-      "option3": "$\\frac{2}{1+4x^2}$",
-      "option4": "$\\frac{1}{2(1+4x^2)}$",
-      "ans": 3
-    },
-    {
-      "question": "Identify the period of the function $y = 3\\sin(4x - \\pi)$.",
-      "option1": "$2\\pi$",
-      "option2": "$\\pi$",
-      "option3": "$\\pi/2$",
-      "option4": "$\\pi/4$",
-      "ans": 3
-    },
-    {
-      "question": "Find the remainder when $x^3 - 2x^2 + 4x - 5$ is divided by $(x - 2)$.",
-      "option1": "3",
-      "option2": "5",
-      "option3": "-5",
-      "option4": "11",
-      "ans": 1
-    },
-    {
-      "question": "Evaluate $\\lim_{x \\to 0} \\frac{\\sin 5x}{3x}$.",
-      "option1": "1",
-      "option2": "5/3",
-      "option3": "3/5",
-      "option4": "0",
-      "ans": 2
-    },
-    {
-      "question": "Given the relation $S = \\{(1,2), (2,3), (1,3)\\}$ on the set $A = \\{1,2,3\\}$. The relation is:",
-      "option1": "Reflexive",
-      "option2": "Symmetric",
-      "option3": "Transitive",
-      "option4": "Equivalence",
-      "ans": 3
-    },
-    {
-      "question": "The gradient of the curve $y = x \\ln x$ at $x = e$ is:",
-      "option1": "1",
-      "option2": "e",
-      "option3": "2",
-      "option4": "0",
-      "ans": 3
-    },
-    {
-      "question": "Integrate $\\int x e^x dx$.",
-      "option1": "$xe^x + e^x + C$",
-      "option2": "$e^x(x-1) + C$",
-      "option3": "$\\frac{x^2}{2}e^x + C$",
-      "option4": "$xe^x - x + C$",
-      "ans": 2
-    },
-    {
-      "question": "What is the value of $\\sin(105^\\circ)$ in surd form?",
-      "option1": "$\\frac{\\sqrt{6} + \\sqrt{2}}{4}$",
-      "option2": "$\\frac{\\sqrt{6} - \\sqrt{2}}{4}$",
-      "option3": "$\\frac{\\sqrt{3} + 1}{2}$",
-      "option4": "$\\frac{\\sqrt{2} + 1}{2}$",
-      "ans": 1
-    },
-    {
-      "question": "Find the sum to infinity of the geometric progression $1, \\frac{1}{3}, \\frac{1}{9}, ...$",
-      "option1": "3/2",
-      "option2": "2/3",
-      "option3": "2",
-      "option4": "1.5",
-      "ans": 1
-    },
-    {
-      "question": "The function $f(x) = |x - 3|$ is not differentiable at $x = $:",
-      "option1": "0",
-      "option2": "3",
-      "option3": "-3",
-      "option4": "Always differentiable",
-      "ans": 2
-    },
-    {
-      "question": "If $\\alpha$ and $\\beta$ are roots of $2x^2 - 4x + 5 = 0$, find $\\alpha + \\beta$.",
-      "option1": "5/2",
-      "option2": "-2",
-      "option3": "2",
-      "option4": "-5/2",
-      "ans": 3
-    },
-    {
-      "question": "Evaluate $\\int_{0}^{1} \\frac{1}{1+x^2} dx$.",
-      "option1": "$\\pi/4$",
-      "option2": "$\\pi/2$",
-      "option3": "1",
-      "option4": "$\\ln 2$",
-      "ans": 1
-    },
-    {
-      "question": "Determine the range of $f(x) = 3 + 2\\sin x$.",
-      "option1": "$[1, 5]$",
-      "option2": "$[-1, 1]$",
-      "option3": "$[3, 5]$",
-      "option4": "$[2, 5]$",
-      "ans": 1
-    },
-    {
-      "question": "Find the number of ways to arrange the letters in the word 'LEVEL'.",
-      "option1": "120",
-      "option2": "60",
-      "option3": "30",
-      "option4": "20",
-      "ans": 3
-    },
-    {
-      "question": "Solve $\\log_2(x) + \\log_2(x-2) = 3$.",
-      "option1": "4",
-      "option2": "2, 4",
-      "option3": "-2, 4",
-      "option4": "2",
-      "ans": 1
-    },
-    {
-      "question": "If $y = 2^x$, then $\\frac{dy}{dx} = $:",
-      "option1": "$x \\cdot 2^{x-1}$",
-      "option2": "$2^x \\ln 2$",
-      "option3": "$2^x$",
-      "option4": "$\\frac{2^x}{\\ln 2}$",
-      "ans": 2
-    },
-    {
-      "question": "The expansion of $(1-x)^{-1}$ for $|x| < 1$ is:",
-      "option1": "$1 - x + x^2 - ...$",
-      "option2": "$1 + x + x^2 + ...$",
-      "option3": "$1 + x + \\frac{x^2}{2} + ...$",
-      "option4": "$1 - x - x^2 - ...$",
-      "ans": 2
-    },
-    {
-      "question": "Find the coordinates of the stationary point of $y = x^2 - 4x + 7$.",
-      "option1": "$(2, 3)$",
-      "option2": "$(2, 7)$",
-      "option3": "$(4, 7)$",
-      "option4": "(-2, 19)",
-      "ans": 1
-    },
-    {
-      "question": "What is the argument of the complex number $z = -1 + i$?",
-      "option1": "$\\pi/4$",
-      "option2": "$3\\pi/4$",
-      "option3": "$-\\pi/4$",
-      "option4": "$5\\pi/4$",
-      "ans": 2
-    },
-    {
-      "question": "In a triangle ABC, $a=5, b=7, C=60^\\circ$. Find $c$.",
-      "option1": "$\\sqrt{39}$",
-      "option2": "$\\sqrt{74}$",
-      "option3": "6",
-      "option4": "$\\sqrt{109}$",
-      "ans": 1
-    },
-    {
-      "question": "The probability of hitting a target is 0.4. If 3 shots are fired, find the probability of hitting at least once.",
-      "option1": "0.064",
-      "option2": "0.216",
-      "option3": "0.784",
-      "option4": "0.936",
-      "ans": 3
-    },
-    {
-      "question": "Find the value of $k$ if $(x-1)$ is a factor of $x^3 + kx^2 - x + 2$.",
-      "option1": "-2",
-      "option2": "2",
-      "option3": "0",
-      "option4": "1",
-      "ans": 1
-    },
-    {
-      "question": "Evaluate $\\int \\frac{1}{x \\ln x} dx$.",
-      "option1": "$\\ln(\\ln x) + C$",
-      "option2": "$\\frac{1}{x^2} + C$",
-      "option3": "$\\ln x + C$",
-      "option4": "$\\frac{(\\ln x)^2}{2} + C$",
-      "ans": 1
-    },
-    {
-      "question": "A mapping is defined by the following table. Determine if it is a function. <br> <table><tr><th>Domain</th><td>1</td><td>2</td><td>1</td></tr><tr><th>Codomain</th><td>5</td><td>6</td><td>7</td></tr></table>",
-      "option1": "It is a function",
-      "option2": "It is not a function (one-to-many)",
-      "option3": "It is a bijective function",
-      "option4": "It is a constant function",
-      "ans": 2
-    }
-  ],
+  {
+    "question": "Evaluate the definite integral $\\int_{0}^{1} (3x^2 + 2x)\\,dx$.",
+    "option1": "2",
+    "option2": "1",
+    "option3": "3",
+    "option4": "4",
+    "ans": 1
+  },
+  {
+    "question": "Solve $\\frac{dy}{dx} = 4x^3$ given that $y=2$ when $x=0$.",
+    "option1": "$y = x^4 + 2$",
+    "option2": "$y = 4x^4 + 2$",
+    "option3": "$y = x^4$",
+    "option4": "$y = 2x^4 + 2$",
+    "ans": 1
+  },
+  {
+    "question": "If $\\sin\\theta = \\frac{5}{13}$ and $\\theta$ is acute, find $\\cos\\theta$.",
+    "option1": "$\\frac{12}{13}$",
+    "option2": "$\\frac{5}{13}$",
+    "option3": "$\\frac{13}{12}$",
+    "option4": "$\\frac{8}{13}$",
+    "ans": 1
+  },
+  {
+    "question": "Find the solution of $2^{x+1} = 16$.",
+    "option1": "$x=2$",
+    "option2": "$x=3$",
+    "option3": "$x=4$",
+    "option4": "$x=1$",
+    "ans": 1
+  },
+  {
+    "question": "The table below defines a relation.<br><table><tr><th>x</th><td>1</td><td>2</td><td>3</td></tr><tr><th>y</th><td>4</td><td>4</td><td>4</td></tr></table>What type of relation is this?",
+    "option1": "One-to-one",
+    "option2": "One-to-many",
+    "option3": "Many-to-one",
+    "option4": "Not a relation",
+    "ans": 3
+  },
+  {
+    "question": "Differentiate $y = 3x^2 - 4x + 1$.",
+    "option1": "$6x - 4$",
+    "option2": "$3x - 4$",
+    "option3": "$6x + 4$",
+    "option4": "$x^2 - 4$",
+    "ans": 1
+  },
+  {
+    "question": "Find the magnitude of the vector $\\vec{a} = 3\\mathbf{i} + 4\\mathbf{j}$.",
+    "option1": "7",
+    "option2": "5",
+    "option3": "25",
+    "option4": "1",
+    "ans": 2
+  },
+  {
+    "question": "If $f(x) = 2x^2 - 1$, find $f(3)$.",
+    "option1": "17",
+    "option2": "11",
+    "option3": "13",
+    "option4": "15",
+    "ans": 1
+  },
+  {
+    "question": "Solve $\\log_{10}(x) = 2$.",
+    "option1": "20",
+    "option2": "200",
+    "option3": "100",
+    "option4": "10",
+    "ans": 3
+  },
+  {
+    "question": "Find $\\int x e^{x^2} dx$.",
+    "option1": "$\\frac{1}{2}e^{x^2} + C$",
+    "option2": "$e^{x^2} + C$",
+    "option3": "$x^2e^{x^2} + C$",
+    "option4": "$2e^{x^2} + C$",
+    "ans": 1
+  },
+  {
+    "question": "If $\\tan\\theta = 1$, where $0^\\circ < \\theta < 90^\\circ$, find $\\theta$.",
+    "option1": "$30^\\circ$",
+    "option2": "$60^\\circ$",
+    "option3": "$45^\\circ$",
+    "option4": "$90^\\circ$",
+    "ans": 3
+  },
+  {
+    "question": "Solve the simultaneous equations: $x+y=7$, $x-y=3$.",
+    "option1": "$(5,2)$",
+    "option2": "$(4,3)$",
+    "option3": "$(3,4)$",
+    "option4": "$(2,5)$",
+    "ans": 1
+  },
+  {
+    "question": "Find the inverse of the function $f(x) = 2x + 5$.",
+    "option1": "$f^{-1}(x)=\\frac{x-5}{2}$",
+    "option2": "$f^{-1}(x)=2x-5$",
+    "option3": "$f^{-1}(x)=\\frac{x+5}{2}$",
+    "option4": "$f^{-1}(x)=x-5$",
+    "ans": 1
+  },
+  {
+    "question": "Evaluate $\\lim_{x \\to 0} \\frac{\\sin x}{x}$.",
+    "option1": "0",
+    "option2": "1",
+    "option3": "$\\infty$",
+    "option4": "-1",
+    "ans": 2
+  },
+  {
+    "question": "Find the solution of $\\frac{dy}{dx} + y = 0$.",
+    "option1": "$y = Ce^{-x}$",
+    "option2": "$y = Ce^{x}$",
+    "option3": "$y = x + C$",
+    "option4": "$y = 1$",
+    "ans": 1
+  },
+  {
+    "question": "If $A = \\{1,2,3\\}$ and $B = \\{a,b\\}$, how many mappings are possible from $A$ to $B$?",
+    "option1": "6",
+    "option2": "8",
+    "option3": "9",
+    "option4": "12",
+    "ans": 2
+  },
+  {
+    "question": "Expand $(x+2)^3$.",
+    "option1": "$x^3+6x^2+12x+8$",
+    "option2": "$x^3+2x^2+8$",
+    "option3": "$x^3+4x+8$",
+    "option4": "$x^3+6x^2+8$",
+    "ans": 1
+  },
+  {
+    "question": "Find the area under $y = 2x$ from $x=0$ to $x=3$.",
+    "option1": "6",
+    "option2": "9",
+    "option3": "12",
+    "option4": "3",
+    "ans": 2
+  },
+  {
+    "question": "If $|2x - 3| = 5$, find $x$.",
+    "option1": "$4$ or $-1$",
+    "option2": "$1$ or $-4$",
+    "option3": "$5$ or $2$",
+    "option4": "$0$ or $3$",
+    "ans": 1
+  },
+  {
+    "question": "Find the equation of the line with gradient $3$ passing through $(1,2)$.",
+    "option1": "$y=3x-1$",
+    "option2": "$y=3x+2$",
+    "option3": "$y=3x-3$",
+    "option4": "$y=3x+1$",
+    "ans": 1
+  },
+  {
+    "question": "Solve $x^2 - 9 = 0$.",
+    "option1": "$x=3$",
+    "option2": "$x=-3$",
+    "option3": "$x=\\pm3$",
+    "option4": "$x=0$",
+    "ans": 3
+  },
+  {
+    "question": "Find the value of $\\sin(90^\\circ - \\theta)$.",
+    "option1": "$\\sin\\theta$",
+    "option2": "$\\cos\\theta$",
+    "option3": "$\\tan\\theta$",
+    "option4": "$\\sec\\theta$",
+    "ans": 2
+  },
+  {
+    "question": "The vector $\\vec{AB}$ where $A(1,2)$ and $B(4,6)$ is:",
+    "option1": "$(3,4)$",
+    "option2": "$(5,8)$",
+    "option3": "$(2,3)$",
+    "option4": "$(4,6)$",
+    "ans": 1
+  },
+  {
+    "question": "Find $\\int \\cos x \\, dx$.",
+    "option1": "$\\sin x + C$",
+    "option2": "$-\\sin x + C$",
+    "option3": "$\\cos x + C$",
+    "option4": "$-\\cos x + C$",
+    "ans": 1
+  },
+  {
+    "question": "Which of the following relations is a function?",
+    "option1": "One-to-many",
+    "option2": "Many-to-many",
+    "option3": "Many-to-one",
+    "option4": "None",
+    "ans": 3
+  },
+  {
+    "question": "Find the solution of $\\sin x = 0$ for $0 \\le x \\le 2\\pi$.",
+    "option1": "$0, \\pi$",
+    "option2": "$\\pi/2, 3\\pi/2$",
+    "option3": "$0, \\pi, 2\\pi$",
+    "option4": "$2\\pi$ only",
+    "ans": 3
+  },
+  {
+    "question": "If $f(x)=x^2$, find $f(-2)$.",
+    "option1": "-4",
+    "option2": "2",
+    "option3": "4",
+    "option4": "-2",
+    "ans": 3
+  },
+  {
+    "question": "Find the gradient of the curve $y = x^3$ at $x=2$.",
+    "option1": "6",
+    "option2": "12",
+    "option3": "8",
+    "option4": "4",
+    "ans": 2
+  },
+  {
+    "question": "Evaluate $\\int_0^2 x^2 dx$.",
+    "option1": "$\\frac{4}{3}$",
+    "option2": "$\\frac{8}{3}$",
+    "option3": "$\\frac{2}{3}$",
+    "option4": "$4$",
+    "ans": 2
+  }
+],
   "Chemistry": [
     {
       "question": "What is the IUPAC name for the following compound? <br> $CH_3CH(Cl)CH(CH_3)CHO$",

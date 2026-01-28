@@ -30,12 +30,12 @@ const mathJaxConfig = {
   }
 };
 
-const QUIZ_TIME = 30 * 60; 
+const QUIZ_TIME = 10 * 60; 
 
 const Quiz = () => {
   const [page, setPage] = useState("welcome");
   const [user, setUser] = useState({
-    name: "", school: "", email: "", phone: "", password: "", role: "user",
+    name: "", school: "", email: "", phone: "", password: "", role: "user", town: "", series: "",
   });
 
   const [questions, setQuestions] = useState([]);
@@ -107,7 +107,7 @@ const Quiz = () => {
 
   const handleUnifiedLogin = async () => {
     if (user.role === "user") {
-      if (!user.name || !user.email || !user.school || !user.phone) {
+      if (!user.name || !user.email || !user.school || !user.phone || !user.town || !user.series) {
         alert("Please fill all required fields");
         return;
       }
@@ -185,6 +185,8 @@ const Quiz = () => {
             student_email: user.email,
             school: user.school,
             phone: user.phone,
+            town: user.town,
+            series: user.series,
             subject: selectedSubject, 
             score: score,
             total: questions.length,
@@ -282,6 +284,8 @@ const Quiz = () => {
               <>
                 <input type="text" placeholder="Full Name" onChange={(e) => setUser({...user, name: e.target.value})} />
                 <input type="text" placeholder="School Name" onChange={(e) => setUser({...user, school: e.target.value})} />
+                <input type="text" placeholder="Town" onChange={(e) => setUser({...user, town: e.target.value})} />
+                <input type="text" placeholder="Series" onChange={(e) => setUser({...user, series: e.target.value})} />
                 <input 
                   type="text" 
                   placeholder="Phone Number (6xx-xxx-xxx)" 

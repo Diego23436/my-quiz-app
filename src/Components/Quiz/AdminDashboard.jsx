@@ -31,6 +31,8 @@ const AdminDashboard = () => {
           map[email] = {
             name: res.student_name,
             school: res.school,
+            town: res.town,
+            series: res.series,
             email: email,
             date: res.submitted_at,
             scores: {}, 
@@ -110,6 +112,8 @@ const AdminDashboard = () => {
             <tr>
               <th>Student Name</th>
               <th>School</th>
+              <th>Town</th>
+              <th>Series</th>
               <th>Email</th>
               {subjectsList.map(sub => <th key={sub}>{sub}</th>)}
               <th style={{background: '#e3f2fd', color: '#1976d2'}}>TOTAL</th>
@@ -120,6 +124,8 @@ const AdminDashboard = () => {
               <tr key={index}>
                 <td>{student.name}</td>
                 <td>{student.school}</td>
+                <td>{student.town}</td>
+                <td>{student.series}</td>
                 <td style={{fontSize: '0.8rem'}}>{student.email}</td>
                 
                 {/* Subject Columns with Conditional Red Color for Fails */}
@@ -143,7 +149,7 @@ const AdminDashboard = () => {
               </tr>
             ))}
             {Object.values(studentMap).length === 0 && (
-              <tr><td colSpan={subjectsList.length + 4}>No records found</td></tr>
+              <tr><td colSpan={subjectsList.length + 6}>No records found</td></tr>
             )}
           </tbody>
         </table>
