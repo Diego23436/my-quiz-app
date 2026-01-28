@@ -210,6 +210,18 @@ const Quiz = () => {
     setTimeLeft(QUIZ_TIME);
   };
 
+  const returnToSubjectPage = () => {
+    setPage("subject-select");
+    setIndex(0);
+    setScore(0);
+    setLock(false);
+    setResult(false);
+    setSaved(false);
+    setTimeLeft(QUIZ_TIME);
+    setQuestions([]);
+    setSelectedSubject("");
+  };
+
   const quizContent = useMemo(() => (
     <div className={`tex2jax_process ${mathReady ? "visible" : "hidden"}`}>
       <MathJax 
@@ -344,7 +356,7 @@ const Quiz = () => {
                 <h2>Quiz Completed</h2>
                 <h3>Score: {score}/{questions.length}</h3>
                 <p>Your results have been sent to the board.</p>
-                <button onClick={reset}>Restart</button>
+                <button onClick={returnToSubjectPage}>Return to Subject Page</button>
               </div>
             )}
           </>
