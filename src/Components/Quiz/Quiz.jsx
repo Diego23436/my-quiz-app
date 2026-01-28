@@ -4,7 +4,7 @@ import logo from "../../assets/logoldx.jpeg";
 import img2 from "../../assets/img2.jpg";
 import { MathJax, MathJaxContext } from "better-react-mathjax";
 import { db, auth } from "../../firebaseConfig"; 
-import { collection, addDoc, doc, getDoc } from "firebase/firestore";
+import { collection, addDoc, doc, getDoc, setDoc } from "firebase/firestore"; // Added setDoc
 import { signInWithEmailAndPassword } from "firebase/auth";
 import localData from "./questions.json"; 
 
@@ -19,7 +19,6 @@ const mathJaxConfig = {
     enableMenu: false,
     ignoreHtmlClass: "tex2jax_ignore",
     processHtmlClass: "tex2jax_process",
-    // Fast rendering setting
     renderActions: {
         addMenu: [] 
     }
@@ -56,15 +55,38 @@ const Quiz = () => {
   const option4 = useRef(null);
   const option_array = [option1, option2, option3, option4];
 
-  const startSubjectQuiz = (subjectName) => {
-    const data = localData[subjectName];
-    if (data && data.length > 0) {
-      setMathReady(false); 
-      setQuestions(data);
-      setSelectedSubject(subjectName);
-      setPage("quiz");
-    } else {
-      alert("No questions found locally for " + subjectName);
+  // Logic to lock session on Firebase when starting
+  const startSubjectQuiz = async (subjectName) => {
+    // Generate unique ID for this student and this subject to prevent restart
+    const sessionID = `${user.email.toLowerCase().trim()}_${subjectName.replace(/\s+/g, '')}`;
+    const sessionRef = doc(db, "active_sessions", sessionID);
+
+    try {
+      const sessionSnap = await getDoc(sessionRef);
+      if (sessionSnap.exists()) {
+        alert(`Access Denied: You have already attempted or started ${subjectName}. You cannot restart.`);
+        return;
+      }
+
+      // Record the start of the session in Firebase
+      await setDoc(sessionRef, {
+        student_email: user.email.toLowerCase().trim(),
+        subject: subjectName,
+        startTime: new Date().toLocaleString(),
+        status: "in-progress"
+      });
+
+      const data = localData[subjectName];
+      if (data && data.length > 0) {
+        setMathReady(false); 
+        setQuestions(data);
+        setSelectedSubject(subjectName);
+        setPage("quiz");
+      } else {
+        alert("No questions found locally for " + subjectName);
+      }
+    } catch (error) {
+      alert("Error checking session: " + error.message);
     }
   };
 
@@ -89,8 +111,22 @@ const Quiz = () => {
         alert("Please fill all required fields");
         return;
       }
+
+      // EMAIL CONSTRAINT: Only @gmail.com or @icloud.com
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@(gmail|icloud)\.com$/;
+      if (!emailRegex.test(user.email.toLowerCase().trim())) {
+        alert("Access Denied: Please use a valid @gmail.com or @icloud.com email address.");
+        return;
+      }
+
+      // PHONE CONSTRAINT: 6xx-xxx-xxx
+      const phoneRegex = /^6\d{2}-\d{3}-\d{3}$/;
+      if (!phoneRegex.test(user.phone)) {
+        alert("Invalid Phone Format: Please use the format 6xx-xxx-xxx");
+        return;
+      }
+
       try {
-        
         const docRef = doc(db, "acredited_students", user.email.toLowerCase().trim());
         const docSnap = await getDoc(docRef);
         if ( true || docSnap.exists()) {
@@ -116,7 +152,6 @@ const Quiz = () => {
     }
   };
 
-  // ✅ FIXED: Using refs directly to avoid state-triggered re-typesetting on click
   const checkAns = (e, ansIndex) => {
     if (lock || !question.ans) return;
     if (question.ans === ansIndex) {
@@ -173,7 +208,6 @@ const Quiz = () => {
     setTimeLeft(QUIZ_TIME);
   };
 
-  // Memoize the question content to prevent unnecessary re-renders
   const quizContent = useMemo(() => (
     <div className={`tex2jax_process ${mathReady ? "visible" : "hidden"}`}>
       <MathJax 
@@ -238,12 +272,32 @@ const Quiz = () => {
               <option value="teacher">Teacher</option>
               <option value="admin">Admin</option>
             </select>
-            <input type="email" placeholder="Email" onChange={(e) => setUser({...user, email: e.target.value})} />
+            <input 
+              type="email" 
+              placeholder="Email (@gmail or @icloud)" 
+              value={user.email}
+              onChange={(e) => setUser({...user, email: e.target.value})} 
+            />
             {user.role === "user" ? (
               <>
                 <input type="text" placeholder="Full Name" onChange={(e) => setUser({...user, name: e.target.value})} />
                 <input type="text" placeholder="School Name" onChange={(e) => setUser({...user, school: e.target.value})} />
-                <input type="text" placeholder="Phone Number" onChange={(e) => setUser({...user, phone: e.target.value})} />
+                <input 
+                  type="text" 
+                  placeholder="Phone Number (6xx-xxx-xxx)" 
+                  value={user.phone}
+                  onChange={(e) => {
+                    let val = e.target.value.replace(/\D/g, ""); 
+                    if (val.length > 9) val = val.slice(0, 9);
+                    let formatted = val;
+                    if (val.length > 3 && val.length <= 6) {
+                      formatted = `${val.slice(0, 3)}-${val.slice(3)}`;
+                    } else if (val.length > 6) {
+                      formatted = `${val.slice(0, 3)}-${val.slice(3, 6)}-${val.slice(6)}`;
+                    }
+                    setUser({...user, phone: formatted});
+                  }} 
+                />
               </>
             ) : (
               <input type="password" placeholder="Password" onChange={(e) => setUser({...user, password: e.target.value})} />
