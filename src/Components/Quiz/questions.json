@@ -1,237 +1,398 @@
 {
   "Mathematics": [
   {
-    "question": "Evaluate the definite integral $\\int_{0}^{1} (3x^2 + 2x)\\,dx$.",
-    "option1": "2",
-    "option2": "1",
-    "option3": "3",
-    "option4": "4",
+    "question": "Evaluate $\\int_0^2 (3x^2 + 2x) dx$",
+    "option1": "12",
+    "option2": "8",
+    "option3": "10",
+    "option4": "6",
+    "ans": 2
+  },
+  {
+    "question": "Solve $\\frac{dy}{dx}=6x^2$ given y=1 when x=0",
+    "option1": "$y=2x^3+1$",
+    "option2": "$y=x^3+1$",
+    "option3": "$y=6x^3+1$",
+    "option4": "$y=3x^3+1$",
     "ans": 1
   },
   {
-    "question": "Solve $\\frac{dy}{dx} = 4x^3$ given that $y=2$ when $x=0$.",
-    "option1": "$y = x^4 + 2$",
-    "option2": "$y = 4x^4 + 2$",
-    "option3": "$y = x^4$",
-    "option4": "$y = 2x^4 + 2$",
+    "question": "If $f(x)=x^3-2x$, find f'(2)",
+    "option1": "10",
+    "option2": "8",
+    "option3": "12",
+    "option4": "6",
     "ans": 1
   },
   {
-    "question": "If $\\sin\\theta = \\frac{5}{13}$ and $\\theta$ is acute, find $\\cos\\theta$.",
-    "option1": "$\\frac{12}{13}$",
-    "option2": "$\\frac{5}{13}$",
-    "option3": "$\\frac{13}{12}$",
-    "option4": "$\\frac{8}{13}$",
+    "question": "Find determinant |1 2 3; 0 1 4; 5 6 0|",
+    "option1": "1",
+    "option2": "-1",
+    "option3": "5",
+    "option4": "0",
     "ans": 1
   },
   {
-    "question": "Find the solution of $2^{x+1} = 16$.",
-    "option1": "$x=2$",
-    "option2": "$x=3$",
-    "option3": "$x=4$",
-    "option4": "$x=1$",
-    "ans": 1
-  },
-  {
-    "question": "The table below defines a relation.<br><table><tr><th>x</th><td>1</td><td>2</td><td>3</td></tr><tr><th>y</th><td>4</td><td>4</td><td>4</td></tr></table>What type of relation is this?",
-    "option1": "One-to-one",
-    "option2": "One-to-many",
-    "option3": "Many-to-one",
-    "option4": "Not a relation",
-    "ans": 3
-  },
-  {
-    "question": "Differentiate $y = 3x^2 - 4x + 1$.",
-    "option1": "$6x - 4$",
-    "option2": "$3x - 4$",
-    "option3": "$6x + 4$",
-    "option4": "$x^2 - 4$",
-    "ans": 1
-  },
-  {
-    "question": "Find the magnitude of the vector $\\vec{a} = 3\\mathbf{i} + 4\\mathbf{j}$.",
+    "question": "Magnitude of vector 2i + 3j + 6k",
     "option1": "7",
     "option2": "5",
-    "option3": "25",
-    "option4": "1",
-    "ans": 2
-  },
-  {
-    "question": "If $f(x) = 2x^2 - 1$, find $f(3)$.",
-    "option1": "17",
-    "option2": "11",
-    "option3": "13",
-    "option4": "15",
+    "option3": "49",
+    "option4": "6",
     "ans": 1
   },
   {
-    "question": "Solve $\\log_{10}(x) = 2$.",
-    "option1": "20",
+    "question": "Solve $2^{x+2}=32$",
+    "option1": "3",
+    "option2": "4",
+    "option3": "5",
+    "option4": "2",
+    "ans": 1
+  },
+  {
+    "question": "If $\\sin\\theta=12/13$, acute θ, find cosθ",
+    "option1": "5/13",
+    "option2": "12/5",
+    "option3": "13/5",
+    "option4": "5/12",
+    "ans": 1
+  },
+  {
+    "question": "Find stationary points of $y=x^3-6x^2+9x$",
+    "option1": "x=1,3",
+    "option2": "x=2 only",
+    "option3": "x=0,3",
+    "option4": "x=1 only",
+    "ans": 1
+  },
+  {
+    "question": "Evaluate $\\lim_{x→0} \\frac{e^x-1}{x}$",
+    "option1": "1",
+    "option2": "0",
+    "option3": "e",
+    "option4": "∞",
+    "ans": 1
+  },
+  {
+    "question": "Solve $y'' - y =0$",
+    "option1": "$Ae^x + Be^{-x}$",
+    "option2": "$Ax + B$",
+    "option3": "$A\\sin x + B\\cos x$",
+    "option4": "$Ae^x$",
+    "ans": 1
+  },
+  {
+    "question": "Find sum of first 10 terms of AP: 3,7,11...",
+    "option1": "210",
     "option2": "200",
-    "option3": "100",
-    "option4": "10",
-    "ans": 3
-  },
-  {
-    "question": "Find $\\int x e^{x^2} dx$.",
-    "option1": "$\\frac{1}{2}e^{x^2} + C$",
-    "option2": "$e^{x^2} + C$",
-    "option3": "$x^2e^{x^2} + C$",
-    "option4": "$2e^{x^2} + C$",
+    "option3": "220",
+    "option4": "180",
     "ans": 1
   },
   {
-    "question": "If $\\tan\\theta = 1$, where $0^\\circ < \\theta < 90^\\circ$, find $\\theta$.",
-    "option1": "$30^\\circ$",
-    "option2": "$60^\\circ$",
-    "option3": "$45^\\circ$",
-    "option4": "$90^\\circ$",
-    "ans": 3
-  },
-  {
-    "question": "Solve the simultaneous equations: $x+y=7$, $x-y=3$.",
-    "option1": "$(5,2)$",
-    "option2": "$(4,3)$",
-    "option3": "$(3,4)$",
-    "option4": "$(2,5)$",
+    "question": "If sum infinite GP = 20, a=5, find r",
+    "option1": "3/4",
+    "option2": "1/4",
+    "option3": "4/5",
+    "option4": "2/3",
     "ans": 1
   },
   {
-    "question": "Find the inverse of the function $f(x) = 2x + 5$.",
-    "option1": "$f^{-1}(x)=\\frac{x-5}{2}$",
-    "option2": "$f^{-1}(x)=2x-5$",
-    "option3": "$f^{-1}(x)=\\frac{x+5}{2}$",
-    "option4": "$f^{-1}(x)=x-5$",
+    "question": "Resolve (5x+7)/(x^2+3x+2)",
+    "option1": "3/(x+1)+2/(x+2)",
+    "option2": "2/(x+1)+3/(x+2)",
+    "option3": "1/(x+1)+4/(x+2)",
+    "option4": "4/(x+1)+1/(x+2)",
     "ans": 1
   },
   {
-    "question": "Evaluate $\\lim_{x \\to 0} \\frac{\\sin x}{x}$.",
-    "option1": "0",
-    "option2": "1",
-    "option3": "$\\infty$",
-    "option4": "-1",
-    "ans": 2
-  },
-  {
-    "question": "Find the solution of $\\frac{dy}{dx} + y = 0$.",
-    "option1": "$y = Ce^{-x}$",
-    "option2": "$y = Ce^{x}$",
-    "option3": "$y = x + C$",
-    "option4": "$y = 1$",
+    "question": "Solve inequality x^2 - 4x +3 ≤0",
+    "option1": "1≤x≤3",
+    "option2": "x≤1 or x≥3",
+    "option3": "x≥1",
+    "option4": "x≤3",
     "ans": 1
   },
   {
-    "question": "If $A = \\{1,2,3\\}$ and $B = \\{a,b\\}$, how many mappings are possible from $A$ to $B$?",
-    "option1": "6",
+    "question": "Equation circle centre (2,3) radius 5",
+    "option1": "$(x-2)^2+(y-3)^2=25$",
+    "option2": "$(x+2)^2+(y+3)^2=25$",
+    "option3": "$(x-2)^2+(y-3)^2=5$",
+    "option4": "$(x+2)^2+(y+3)^2=5$",
+    "ans": 1
+  },
+  {
+    "question": "Newton-Raphson works best when",
+    "option1": "Initial guess near root",
+    "option2": "Derivative zero",
+    "option3": "Function discontinuous",
+    "option4": "Random guess",
+    "ans": 1
+  },
+  {
+    "question": "Find gradient normal to y=x^2 at x=1",
+    "option1": "-1/2",
+    "option2": "2",
+    "option3": "-2",
+    "option4": "1/2",
+    "ans": 1
+  },
+  {
+    "question": "Evaluate $\\int xe^{x^2} dx$",
+    "option1": "½e^{x^2}+C",
+    "option2": "e^{x^2}+C",
+    "option3": "xe^{x^2}",
+    "option4": "2e^{x^2}",
+    "ans": 1
+  },
+  {
+    "question": "If tanθ=√3, acute θ",
+    "option1": "60°",
+    "option2": "30°",
+    "option3": "45°",
+    "option4": "90°",
+    "ans": 1
+  },
+  {
+    "question": "Mappings from 4 elements to 2 elements",
+    "option1": "16",
+    "option2": "8",
+    "option3": "4",
+    "option4": "12",
+    "ans": 1
+  },
+  {
+    "question": "Expand (x+3)^4 coefficient x^3",
+    "option1": "12",
+    "option2": "9",
+    "option3": "6",
+    "option4": "3",
+    "ans": 1
+  },
+  {
+    "question": "Area under y=3x from 0 to 4",
+    "option1": "24",
+    "option2": "12",
+    "option3": "18",
+    "option4": "20",
+    "ans": 1
+  },
+  {
+    "question": "Solve |3x-2|=4",
+    "option1": "2 or -2/3",
+    "option2": "1 or -1",
+    "option3": "3 or 0",
+    "option4": "4 or -4",
+    "ans": 1
+  },
+  {
+    "question": "Line gradient 2 through (1,3)",
+    "option1": "y=2x+1",
+    "option2": "y=2x-1",
+    "option3": "y=x+2",
+    "option4": "y=3x",
+    "ans": 1
+  },
+  {
+    "question": "Solve x^2-16=0",
+    "option1": "±4",
+    "option2": "4",
+    "option3": "-4",
+    "option4": "0",
+    "ans": 1
+  },
+  {
+    "question": "sin(90-θ)=",
+    "option1": "cosθ",
+    "option2": "sinθ",
+    "option3": "tanθ",
+    "option4": "secθ",
+    "ans": 1
+  },
+  {
+    "question": "Vector AB A(2,1) B(5,7)",
+    "option1": "(3,6)",
+    "option2": "(7,8)",
+    "option3": "(2,6)",
+    "option4": "(5,7)",
+    "ans": 1
+  },
+  {
+    "question": "∫cosx dx",
+    "option1": "sinx + C",
+    "option2": "-sinx + C",
+    "option3": "cosx + C",
+    "option4": "-cosx + C",
+    "ans": 1
+  },
+  {
+    "question": "Relation many inputs one output is",
+    "option1": "Function",
+    "option2": "Not function",
+    "option3": "One-many",
+    "option4": "None",
+    "ans": 1
+  },
+  {
+    "question": "Solve sinx=0 (0 to 2π)",
+    "option1": "0,π,2π",
+    "option2": "π/2 only",
+    "option3": "π only",
+    "option4": "2π only",
+    "ans": 1
+  },
+  {
+    "question": "f(x)=x^2+1 find f(-3)",
+    "option1": "10",
     "option2": "8",
     "option3": "9",
-    "option4": "12",
-    "ans": 2
-  },
-  {
-    "question": "Expand $(x+2)^3$.",
-    "option1": "$x^3+6x^2+12x+8$",
-    "option2": "$x^3+2x^2+8$",
-    "option3": "$x^3+4x+8$",
-    "option4": "$x^3+6x^2+8$",
+    "option4": "7",
     "ans": 1
   },
   {
-    "question": "Find the area under $y = 2x$ from $x=0$ to $x=3$.",
-    "option1": "6",
-    "option2": "9",
-    "option3": "12",
-    "option4": "3",
-    "ans": 2
-  },
-  {
-    "question": "If $|2x - 3| = 5$, find $x$.",
-    "option1": "$4$ or $-1$",
-    "option2": "$1$ or $-4$",
-    "option3": "$5$ or $2$",
-    "option4": "$0$ or $3$",
-    "ans": 1
-  },
-  {
-    "question": "Find the equation of the line with gradient $3$ passing through $(1,2)$.",
-    "option1": "$y=3x-1$",
-    "option2": "$y=3x+2$",
-    "option3": "$y=3x-3$",
-    "option4": "$y=3x+1$",
-    "ans": 1
-  },
-  {
-    "question": "Solve $x^2 - 9 = 0$.",
-    "option1": "$x=3$",
-    "option2": "$x=-3$",
-    "option3": "$x=\\pm3$",
-    "option4": "$x=0$",
-    "ans": 3
-  },
-  {
-    "question": "Find the value of $\\sin(90^\\circ - \\theta)$.",
-    "option1": "$\\sin\\theta$",
-    "option2": "$\\cos\\theta$",
-    "option3": "$\\tan\\theta$",
-    "option4": "$\\sec\\theta$",
-    "ans": 2
-  },
-  {
-    "question": "The vector $\\vec{AB}$ where $A(1,2)$ and $B(4,6)$ is:",
-    "option1": "$(3,4)$",
-    "option2": "$(5,8)$",
-    "option3": "$(2,3)$",
-    "option4": "$(4,6)$",
-    "ans": 1
-  },
-  {
-    "question": "Find $\\int \\cos x \\, dx$.",
-    "option1": "$\\sin x + C$",
-    "option2": "$-\\sin x + C$",
-    "option3": "$\\cos x + C$",
-    "option4": "$-\\cos x + C$",
-    "ans": 1
-  },
-  {
-    "question": "Which of the following relations is a function?",
-    "option1": "One-to-many",
-    "option2": "Many-to-many",
-    "option3": "Many-to-one",
-    "option4": "None",
-    "ans": 3
-  },
-  {
-    "question": "Find the solution of $\\sin x = 0$ for $0 \\le x \\le 2\\pi$.",
-    "option1": "$0, \\pi$",
-    "option2": "$\\pi/2, 3\\pi/2$",
-    "option3": "$0, \\pi, 2\\pi$",
-    "option4": "$2\\pi$ only",
-    "ans": 3
-  },
-  {
-    "question": "If $f(x)=x^2$, find $f(-2)$.",
-    "option1": "-4",
+    "question": "Gradient y=x^4 at x=1",
+    "option1": "4",
     "option2": "2",
-    "option3": "4",
-    "option4": "-2",
-    "ans": 3
+    "option3": "1",
+    "option4": "8",
+    "ans": 1
   },
   {
-    "question": "Find the gradient of the curve $y = x^3$ at $x=2$.",
-    "option1": "6",
-    "option2": "12",
-    "option3": "8",
-    "option4": "4",
-    "ans": 2
+    "question": "∫0→1 x^3 dx",
+    "option1": "1/4",
+    "option2": "1/2",
+    "option3": "1/3",
+    "option4": "1",
+    "ans": 1
   },
   {
-    "question": "Evaluate $\\int_0^2 x^2 dx$.",
-    "option1": "$\\frac{4}{3}$",
-    "option2": "$\\frac{8}{3}$",
-    "option3": "$\\frac{2}{3}$",
-    "option4": "$4$",
-    "ans": 2
+    "question": "Det |2 0 1; 3 0 0; 5 1 1|",
+    "option1": "3",
+    "option2": "5",
+    "option3": "1",
+    "option4": "0",
+    "ans": 1
+  },
+  {
+    "question": "Velocity from r=ti + t^2 j",
+    "option1": "i + 2t j",
+    "option2": "t i + j",
+    "option3": "2i + j",
+    "option4": "i + j",
+    "ans": 1
+  },
+  {
+    "question": "tanA + cotA =2 gives A",
+    "option1": "45°",
+    "option2": "30°",
+    "option3": "60°",
+    "option4": "90°",
+    "ans": 1
+  },
+  {
+    "question": "Negation of 'All passed'",
+    "option1": "Some failed",
+    "option2": "All failed",
+    "option3": "None passed",
+    "option4": "Some passed",
+    "ans": 1
+  },
+  {
+    "question": "Trapezium rule estimates",
+    "option1": "Area",
+    "option2": "Gradient",
+    "option3": "Limit",
+    "option4": "Matrix",
+    "ans": 1
+  },
+  {
+    "question": "If P(A)=0.5 P(B)=0.4 independent find P(A∩B)",
+    "option1": "0.2",
+    "option2": "0.9",
+    "option3": "0.1",
+    "option4": "0.5",
+    "ans": 1
+  },
+  {
+    "question": "∫lnx dx",
+    "option1": "xlnx-x+C",
+    "option2": "lnx+C",
+    "option3": "xlnx+C",
+    "option4": "x+lnx",
+    "ans": 1
+  },
+  {
+    "question": "If roots α,β of x^2-5x+6=0 find α+β",
+    "option1": "5",
+    "option2": "6",
+    "option3": "11",
+    "option4": "3",
+    "ans": 1
+  },
+  {
+    "question": "Differentiate sin(x^2)",
+    "option1": "2x cos(x^2)",
+    "option2": "cos(x^2)",
+    "option3": "2x sin(x^2)",
+    "option4": "sin(x^2)",
+    "ans": 1
+  },
+  {
+    "question": "Find unit vector of 3i+4j",
+    "option1": "3/5 i + 4/5 j",
+    "option2": "4/3 i + 5/3 j",
+    "option3": "5i + 5j",
+    "option4": "3i + 4j",
+    "ans": 1
+  },
+  {
+    "question": "If log10 x = 3",
+    "option1": "1000",
+    "option2": "100",
+    "option3": "10",
+    "option4": "3000",
+    "ans": 1
+  },
+  {
+    "question": "Find ∫ sec^2 x dx",
+    "option1": "tanx + C",
+    "option2": "secx + C",
+    "option3": "cosx + C",
+    "option4": "sinx + C",
+    "ans": 1
+  },
+  {
+    "question": "Distance between (1,2) and (4,6)",
+    "option1": "5",
+    "option2": "4",
+    "option3": "6",
+    "option4": "3",
+    "ans": 1
+  },
+  {
+    "question": "If a matrix has zero determinant it is",
+    "option1": "Singular",
+    "option2": "Identity",
+    "option3": "Diagonal",
+    "option4": "Orthogonal",
+    "ans": 1
+  },
+  {
+    "question": "Find derivative of ln(x^2+1)",
+    "option1": "2x/(x^2+1)",
+    "option2": "1/(x^2+1)",
+    "option3": "2/(x^2+1)",
+    "option4": "x/(x^2+1)",
+    "ans": 1
+  },
+  {
+    "question": "If sum first n natural numbers = 210 find n",
+    "option1": "20",
+    "option2": "15",
+    "option3": "21",
+    "option4": "10",
+    "ans": 1
   }
+  
 ],
   "Chemistry": [
     {
