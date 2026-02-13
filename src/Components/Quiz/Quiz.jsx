@@ -30,7 +30,17 @@ const mathJaxConfig = {
   }
 };
 
-const QUIZ_TIME = 10 * 60; 
+const QUIZ_TIME = 45 * 60; 
+
+// EXAM SCHEDULE (Year, Month (0-indexed), Day, Hour, Minute)
+const EXAM_SCHEDULE = {
+  "Mathematics": new Date(2026, 1, 13, 20, 30, 0), // Feb 13, 2026, 20:30:00
+  "Further Maths": new Date(2026, 1, 14, 0, 0, 0), 
+  "Physics": new Date(2026, 1, 14, 0, 0, 0),
+  "Chemistry": new Date(2026, 1, 14, 0, 0, 0),
+  "Biology": new Date(2026, 1, 14, 0, 0, 0),
+  "ICT": new Date(2026, 1, 14, 0, 0, 0),
+};
 
 const Quiz = () => {
   const [page, setPage] = useState("welcome");
@@ -55,8 +65,21 @@ const Quiz = () => {
   const option4 = useRef(null);
   const option_array = [option1, option2, option3, option4];
 
+  // Helper to check time availability
+  const isSubjectAvailable = (subName) => {
+    const now = new Date();
+    const scheduledTime = EXAM_SCHEDULE[subName];
+    return now >= scheduledTime;
+  };
+
   // Logic to lock session on Firebase when starting
   const startSubjectQuiz = async (subjectName) => {
+    // Check Timing Constraint first
+    if (!isSubjectAvailable(subjectName)) {
+        alert(`${subjectName} is scheduled for ${EXAM_SCHEDULE[subjectName].toLocaleString()}. Please wait until the scheduled time.`);
+        return;
+    }
+
     // Generate unique ID for this student and this subject to prevent restart
     const sessionID = `${user.email.toLowerCase().trim()}_${subjectName.replace(/\s+/g, '')}`;
     const sessionRef = doc(db, "active_sessions", sessionID);
@@ -325,10 +348,26 @@ const Quiz = () => {
         {page === "subject-select" && (
           <div className="start-page">
             <h2>Select Your Subject</h2>
+            <p style={{textAlign: 'center', fontSize: '0.9rem', color: '#553f9a'}}>
+                Mathematics is scheduled for today at 20:30.
+            </p>
             <div className="subject-grid">
-              {["Mathematics", "Further Maths", "Physics", "Chemistry", "Biology", "ICT"].map((sub) => (
-                <button key={sub} className="subject-btn" onClick={() => startSubjectQuiz(sub)}>{sub}</button>
-              ))}
+              {["Mathematics", "Further Maths", "Physics", "Chemistry", "Biology", "ICT"].map((sub) => {
+                const available = isSubjectAvailable(sub);
+                return (
+                  <button 
+                    key={sub} 
+                    className="subject-btn" 
+                    onClick={() => startSubjectQuiz(sub)}
+                    style={{
+                        opacity: available ? 1 : 0.6,
+                        filter: available ? 'none' : 'grayscale(80%)'
+                    }}
+                  >
+                    {sub} {!available && "(Locked)"}
+                  </button>
+                );
+              })}
             </div>
           </div>
         )}
