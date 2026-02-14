@@ -1,1607 +1,445 @@
 {
   "Mathematics": [
+
   {
-    "question": "Evaluate $\\int_0^2 (3x^2 + 2x) dx$",
-    "option1": "12",
-    "option2": "8",
-    "option3": "10",
-    "option4": "6",
+    "question": "Evaluate $\\int_0^1 (6x^2 - 4x + 1)dx$",
+    "option1": "1",
+    "option2": "2",
+    "option3": "3",
+    "option4": "0",
+    "ans": 1
+  },
+
+  {
+    "question": "If $y = x e^{x}$, find $\\frac{dy}{dx}$",
+    "option1": "$xe^x$",
+    "option2": "$(x+1)e^x$",
+    "option3": "$e^x$",
+    "option4": "$x^2 e^x$",
     "ans": 2
   },
+
   {
-    "question": "Solve $\\frac{dy}{dx}=6x^2$ given y=1 when x=0",
-    "option1": "$y=2x^3+1$",
-    "option2": "$y=x^3+1$",
-    "option3": "$y=6x^3+1$",
-    "option4": "$y=3x^3+1$",
-    "ans": 1
+    "question": "Solve $\\frac{dy}{dx} = y$, given $y(0)=3$",
+    "option1": "$3e^{-x}$",
+    "option2": "$e^{3x}$",
+    "option3": "$3e^x$",
+    "option4": "$3x e^x$",
+    "ans": 3
   },
+
   {
-    "question": "If $f(x)=x^3-2x$, find f'(2)",
-    "option1": "10",
-    "option2": "8",
-    "option3": "12",
-    "option4": "6",
-    "ans": 1
-  },
-  {
-    "question": "Find determinant |1 2 3; 0 1 4; 5 6 0|",
+    "question": "Find determinant $\\begin{vmatrix}1&2&3\\\\0&1&4\\\\5&6&0\\end{vmatrix}$",
     "option1": "1",
     "option2": "-1",
-    "option3": "5",
-    "option4": "0",
+    "option3": "0",
+    "option4": "5",
     "ans": 1
   },
+
   {
-    "question": "Magnitude of vector 2i + 3j + 6k",
+    "question": "If $\\vec{a}=(2,3,6)$, find $|\\vec{a}|$",
     "option1": "7",
-    "option2": "5",
-    "option3": "49",
-    "option4": "6",
+    "option2": "$\\sqrt{49}$",
+    "option3": "$\\sqrt{45}$",
+    "option4": "$\\sqrt{49}$",
+    "ans": 2
+  },
+
+  {
+    "question": "Use Newton-Raphson once for $f(x)=x^2-5$ starting at $x=2$",
+    "option1": "2.25",
+    "option2": "2.5",
+    "option3": "2.75",
+    "option4": "2.1",
     "ans": 1
   },
+
   {
-    "question": "Solve $2^{x+2}=32$",
-    "option1": "3",
-    "option2": "4",
-    "option3": "5",
-    "option4": "2",
-    "ans": 1
-  },
-  {
-    "question": "If $\\sin\\theta=12/13$, acute θ, find cosθ",
-    "option1": "5/13",
-    "option2": "12/5",
-    "option3": "13/5",
-    "option4": "5/12",
-    "ans": 1
-  },
-  {
-    "question": "Find stationary points of $y=x^3-6x^2+9x$",
-    "option1": "x=1,3",
-    "option2": "x=2 only",
-    "option3": "x=0,3",
-    "option4": "x=1 only",
-    "ans": 1
-  },
-  {
-    "question": "Evaluate $\\lim_{x→0} \\frac{e^x-1}{x}$",
-    "option1": "1",
-    "option2": "0",
-    "option3": "e",
-    "option4": "∞",
-    "ans": 1
-  },
-  {
-    "question": "Solve $y'' - y =0$",
-    "option1": "$Ae^x + Be^{-x}$",
-    "option2": "$Ax + B$",
-    "option3": "$A\\sin x + B\\cos x$",
-    "option4": "$Ae^x$",
-    "ans": 1
-  },
-  {
-    "question": "Find sum of first 10 terms of AP: 3,7,11...",
-    "option1": "210",
-    "option2": "200",
-    "option3": "220",
-    "option4": "180",
-    "ans": 1
-  },
-  {
-    "question": "If sum infinite GP = 20, a=5, find r",
-    "option1": "3/4",
-    "option2": "1/4",
-    "option3": "4/5",
-    "option4": "2/3",
-    "ans": 1
-  },
-  {
-    "question": "Resolve (5x+7)/(x^2+3x+2)",
-    "option1": "3/(x+1)+2/(x+2)",
-    "option2": "2/(x+1)+3/(x+2)",
-    "option3": "1/(x+1)+4/(x+2)",
-    "option4": "4/(x+1)+1/(x+2)",
-    "ans": 1
-  },
-  {
-    "question": "Solve inequality x^2 - 4x +3 ≤0",
-    "option1": "1≤x≤3",
-    "option2": "x≤1 or x≥3",
-    "option3": "x≥1",
-    "option4": "x≤3",
-    "ans": 1
-  },
-  {
-    "question": "Equation circle centre (2,3) radius 5",
-    "option1": "$(x-2)^2+(y-3)^2=25$",
-    "option2": "$(x+2)^2+(y+3)^2=25$",
-    "option3": "$(x-2)^2+(y-3)^2=5$",
-    "option4": "$(x+2)^2+(y+3)^2=5$",
-    "ans": 1
-  },
-  {
-    "question": "Newton-Raphson works best when",
-    "option1": "Initial guess near root",
-    "option2": "Derivative zero",
-    "option3": "Function discontinuous",
-    "option4": "Random guess",
-    "ans": 1
-  },
-  {
-    "question": "Find gradient normal to y=x^2 at x=1",
-    "option1": "-1/2",
-    "option2": "2",
-    "option3": "-2",
-    "option4": "1/2",
-    "ans": 1
-  },
-  {
-    "question": "Evaluate $\\int xe^{x^2} dx$",
-    "option1": "½e^{x^2}+C",
-    "option2": "e^{x^2}+C",
-    "option3": "xe^{x^2}",
-    "option4": "2e^{x^2}",
-    "ans": 1
-  },
-  {
-    "question": "If tanθ=√3, acute θ",
-    "option1": "60°",
-    "option2": "30°",
-    "option3": "45°",
-    "option4": "90°",
-    "ans": 1
-  },
-  {
-    "question": "Mappings from 4 elements to 2 elements",
-    "option1": "16",
-    "option2": "8",
-    "option3": "4",
-    "option4": "12",
-    "ans": 1
-  },
-  {
-    "question": "Expand (x+3)^4 coefficient x^3",
-    "option1": "12",
-    "option2": "9",
-    "option3": "6",
-    "option4": "3",
-    "ans": 1
-  },
-  {
-    "question": "Area under y=3x from 0 to 4",
-    "option1": "24",
-    "option2": "12",
-    "option3": "18",
-    "option4": "20",
-    "ans": 1
-  },
-  {
-    "question": "Solve |3x-2|=4",
-    "option1": "2 or -2/3",
-    "option2": "1 or -1",
-    "option3": "3 or 0",
-    "option4": "4 or -4",
-    "ans": 1
-  },
-  {
-    "question": "Line gradient 2 through (1,3)",
-    "option1": "y=2x+1",
-    "option2": "y=2x-1",
-    "option3": "y=x+2",
-    "option4": "y=3x",
-    "ans": 1
-  },
-  {
-    "question": "Solve x^2-16=0",
-    "option1": "±4",
-    "option2": "4",
-    "option3": "-4",
-    "option4": "0",
-    "ans": 1
-  },
-  {
-    "question": "sin(90-θ)=",
-    "option1": "cosθ",
-    "option2": "sinθ",
-    "option3": "tanθ",
-    "option4": "secθ",
-    "ans": 1
-  },
-  {
-    "question": "Vector AB A(2,1) B(5,7)",
-    "option1": "(3,6)",
-    "option2": "(7,8)",
-    "option3": "(2,6)",
-    "option4": "(5,7)",
-    "ans": 1
-  },
-  {
-    "question": "∫cosx dx",
-    "option1": "sinx + C",
-    "option2": "-sinx + C",
-    "option3": "cosx + C",
-    "option4": "-cosx + C",
-    "ans": 1
-  },
-  {
-    "question": "Relation many inputs one output is",
-    "option1": "Function",
-    "option2": "Not function",
-    "option3": "One-many",
-    "option4": "None",
-    "ans": 1
-  },
-  {
-    "question": "Solve sinx=0 (0 to 2π)",
-    "option1": "0,π,2π",
-    "option2": "π/2 only",
-    "option3": "π only",
-    "option4": "2π only",
-    "ans": 1
-  },
-  {
-    "question": "f(x)=x^2+1 find f(-3)",
-    "option1": "10",
-    "option2": "8",
-    "option3": "9",
-    "option4": "7",
-    "ans": 1
-  },
-  {
-    "question": "Gradient y=x^4 at x=1",
-    "option1": "4",
-    "option2": "2",
+    "question": "Evaluate $\\lim_{x\\to0}\\frac{e^x-1}{x}$",
+    "option1": "0",
+    "option2": "e",
     "option3": "1",
+    "option4": "$\\infty$",
+    "ans": 3
+  },
+
+  {
+    "question": "Solve $\\log_2(x)=5$",
+    "option1": "10",
+    "option2": "25",
+    "option3": "32",
+    "option4": "64",
+    "ans": 3
+  },
+
+  {
+    "question": "Find $\\int x^2 e^x dx$ (leading term form)",
+    "option1": "$e^x(x^2-2x+2)$",
+    "option2": "$e^x(x^2+2x+2)$",
+    "option3": "$x^2 e^x$",
+    "option4": "$e^x(x^2-2)$",
+    "ans": 1
+  },
+
+  {
+    "question": "Solve $|3x-2|=7$",
+    "option1": "$x=3$ or $-5/3$",
+    "option2": "$x=5$ or $-3$",
+    "option3": "$x=7$ or $-2$",
+    "option4": "$x=1$ or $3$",
+    "ans": 1
+  },
+
+  {
+    "question": "Expand $(1+x)^5$ coefficient of $x^3$",
+    "option1": "10",
+    "option2": "20",
+    "option3": "5",
+    "option4": "15",
+    "ans": 1
+  },
+
+  {
+    "question": "Find sum to infinity of GP: $3+1+1/3+...$",
+    "option1": "4",
+    "option2": "4.5",
+    "option3": "3.5",
+    "option4": "5",
+    "ans": 2
+  },
+
+  {
+    "question": "Differentiate implicitly: $x^2+y^2=25$ at (3,4). Find dy/dx",
+    "option1": "-3/4",
+    "option2": "4/3",
+    "option3": "-4/3",
+    "option4": "3/4",
+    "ans": 1
+  },
+
+  {
+    "question": "If $A={1,2,3,4}$, number of permutations taking 2 elements",
+    "option1": "12",
+    "option2": "6",
+    "option3": "24",
     "option4": "8",
     "ans": 1
   },
+
   {
-    "question": "∫0→1 x^3 dx",
-    "option1": "1/4",
-    "option2": "1/2",
-    "option3": "1/3",
-    "option4": "1",
+    "question": "Find area using trapezium rule, step=1, values 1,2,3,4",
+    "option1": "6",
+    "option2": "7.5",
+    "option3": "8",
+    "option4": "9",
+    "ans": 2
+  },
+
+  {
+    "question": "If $f(x)=x^3-3x$, find stationary points count",
+    "option1": "1",
+    "option2": "2",
+    "option3": "3",
+    "option4": "0",
+    "ans": 2
+  },
+
+  {
+    "question": "Find angle between vectors (1,0,0) and (0,1,0)",
+    "option1": "45°",
+    "option2": "60°",
+    "option3": "90°",
+    "option4": "120°",
+    "ans": 3
+  },
+
+  {
+    "question": "Solve inequality $x^2-5x+6<0$",
+    "option1": "$x<2$",
+    "option2": "$x>3$",
+    "option3": "$2<x<3$",
+    "option4": "$x>2$",
+    "ans": 3
+  },
+
+  {
+    "question": "If sinθ=3/5, find cosθ (acute)",
+    "option1": "4/5",
+    "option2": "5/4",
+    "option3": "3/4",
+    "option4": "2/5",
     "ans": 1
   },
+
   {
-    "question": "Det |2 0 1; 3 0 0; 5 1 1|",
-    "option1": "3",
+    "question": "Find radius of circle $x^2+y^2+4x-6y+9=0$",
+    "option1": "2",
+    "option2": "3",
+    "option3": "$\\sqrt{13}$",
+    "option4": "4",
+    "ans": 2
+  },
+
+  {
+    "question": "Solve $e^{2x}=7$",
+    "option1": "$\\ln7$",
+    "option2": "$\\frac12\\ln7$",
+    "option3": "$2\\ln7$",
+    "option4": "$\\ln14$",
+    "ans": 2
+  },
+
+  {
+    "question": "Find derivative of $\\ln(x^2+1)$",
+    "option1": "$2x/(x^2+1)$",
+    "option2": "$1/(x^2+1)$",
+    "option3": "$x/(x^2+1)$",
+    "option4": "$2/(x^2+1)$",
+    "ans": 1
+  },
+
+  {
+    "question": "Solve DE $dy/dx = 2y$",
+    "option1": "$Ce^{2x}$",
+    "option2": "$Ce^x$",
+    "option3": "$2Ce^x$",
+    "option4": "$Ce^{-2x}$",
+    "ans": 1
+  },
+
+  {
+    "question": "Evaluate $\\int_0^{\\pi} \\sin x dx$",
+    "option1": "1",
+    "option2": "2",
+    "option3": "0",
+    "option4": "π",
+    "ans": 2
+  },
+
+  {
+    "question": "Find binomial term independent of x in $(x+1/x)^6$",
+    "option1": "20",
+    "option2": "15",
+    "option3": "10",
+    "option4": "6",
+    "ans": 1
+  },
+
+  {
+    "question": "Solve $\\tan x=1$ in $0<x<2π$",
+    "option1": "π/4 only",
+    "option2": "π/4,5π/4",
+    "option3": "3π/4 only",
+    "option4": "π/2",
+    "ans": 2
+  },
+
+  {
+    "question": "Find sum first 20 terms AP: 3,7,11,...",
+    "option1": "820",
+    "option2": "840",
+    "option3": "860",
+    "option4": "880",
+    "ans": 2
+  },
+
+  {
+    "question": "Evaluate $\\int x\\ln x dx$",
+    "option1": "$x^2/2 \\ln x - x^2/4$",
+    "option2": "$x^2 \\ln x$",
+    "option3": "$x\\ln x$",
+    "option4": "$x^2/2$",
+    "ans": 1
+  },
+
+  {
+    "question": "Find eigenvalues of diag(2,3,5)",
+    "option1": "2,3,5",
+    "option2": "1,1,1",
+    "option3": "0,0,0",
+    "option4": "5,5,5",
+    "ans": 1
+  },
+
+  {
+    "question": "If $z=3+4i$, find |z|",
+    "option1": "7",
     "option2": "5",
-    "option3": "1",
+    "option3": "25",
+    "option4": "1",
+    "ans": 2
+  },
+
+  {
+    "question": "Evaluate $\\int_1^e 1/x dx$",
+    "option1": "1",
+    "option2": "e",
+    "option3": "ln e",
     "option4": "0",
     "ans": 1
   },
+
   {
-    "question": "Velocity from r=ti + t^2 j",
-    "option1": "i + 2t j",
-    "option2": "t i + j",
-    "option3": "2i + j",
-    "option4": "i + j",
+    "question": "Find turning points of $x^3-6x^2+9x$",
+    "option1": "x=1,3",
+    "option2": "x=2 only",
+    "option3": "x=0 only",
+    "option4": "none",
     "ans": 1
   },
+
   {
-    "question": "tanA + cotA =2 gives A",
-    "option1": "45°",
-    "option2": "30°",
-    "option3": "60°",
-    "option4": "90°",
+    "question": "If vectors are parallel condition",
+    "option1": "Dot product zero",
+    "option2": "Scalar multiple",
+    "option3": "Magnitude equal",
+    "option4": "Angle 90°",
+    "ans": 2
+  },
+
+  {
+    "question": "Find rank of identity 3x3 matrix",
+    "option1": "1",
+    "option2": "2",
+    "option3": "3",
+    "option4": "0",
+    "ans": 3
+  },
+
+  {
+    "question": "Solve $x^2+4x+5=0$ nature roots",
+    "option1": "Real equal",
+    "option2": "Complex",
+    "option3": "Real distinct",
+    "option4": "Rational",
+    "ans": 2
+  },
+
+  {
+    "question": "Evaluate $\\int e^x\\sin x dx$ structure",
+    "option1": "$e^x(A\\sin x+B\\cos x)$",
+    "option2": "$e^x\\sin x$",
+    "option3": "$\\sin x$",
+    "option4": "$e^x$",
     "ans": 1
   },
+
   {
-    "question": "Negation of 'All passed'",
-    "option1": "Some failed",
-    "option2": "All failed",
-    "option3": "None passed",
-    "option4": "Some passed",
+    "question": "Find slope normal to y=x^2 at x=1",
+    "option1": "-1/2",
+    "option2": "1/2",
+    "option3": "-2",
+    "option4": "2",
     "ans": 1
   },
+
   {
-    "question": "Trapezium rule estimates",
-    "option1": "Area",
-    "option2": "Gradient",
-    "option3": "Limit",
-    "option4": "Matrix",
+    "question": "Find volume by integration y=x, x=0→2 rotated x-axis",
+    "option1": "4π/3",
+    "option2": "8π/3",
+    "option3": "16π/3",
+    "option4": "2π",
+    "ans": 2
+  },
+
+  {
+    "question": "Solve $\\cos x=0$ in 0→2π",
+    "option1": "π/2,3π/2",
+    "option2": "0,π",
+    "option3": "π/4 only",
+    "option4": "none",
     "ans": 1
   },
+
   {
-    "question": "If P(A)=0.5 P(B)=0.4 independent find P(A∩B)",
-    "option1": "0.2",
-    "option2": "0.9",
-    "option3": "0.1",
-    "option4": "0.5",
+    "question": "Find domain of ln(x-2)",
+    "option1": "x>0",
+    "option2": "x>2",
+    "option3": "x<2",
+    "option4": "all real",
+    "ans": 2
+  },
+
+  {
+    "question": "Find Maclaurin first term e^x",
+    "option1": "x",
+    "option2": "1",
+    "option3": "x^2",
+    "option4": "2",
+    "ans": 2
+  },
+
+  {
+    "question": "Find curl zero condition meaning",
+    "option1": "Conservative field",
+    "option2": "Divergence zero",
+    "option3": "Constant field",
+    "option4": "Scalar field",
     "ans": 1
   },
+
   {
-    "question": "∫lnx dx",
-    "option1": "xlnx-x+C",
-    "option2": "lnx+C",
-    "option3": "xlnx+C",
-    "option4": "x+lnx",
+    "question": "Solve $2\\sin^2x=1$",
+    "option1": "π/4,3π/4,5π/4,7π/4",
+    "option2": "π/2 only",
+    "option3": "π only",
+    "option4": "none",
     "ans": 1
   },
+
   {
-    "question": "If roots α,β of x^2-5x+6=0 find α+β",
-    "option1": "5",
-    "option2": "6",
-    "option3": "11",
-    "option4": "3",
+    "question": "Find projection formula type",
+    "option1": "Dot ratio",
+    "option2": "Cross product",
+    "option3": "Determinant",
+    "option4": "Matrix inverse",
     "ans": 1
   },
+
   {
-    "question": "Differentiate sin(x^2)",
-    "option1": "2x cos(x^2)",
-    "option2": "cos(x^2)",
-    "option3": "2x sin(x^2)",
-    "option4": "sin(x^2)",
-    "ans": 1
-  },
-  {
-    "question": "Find unit vector of 3i+4j",
-    "option1": "3/5 i + 4/5 j",
-    "option2": "4/3 i + 5/3 j",
-    "option3": "5i + 5j",
-    "option4": "3i + 4j",
-    "ans": 1
-  },
-  {
-    "question": "If log10 x = 3",
-    "option1": "1000",
-    "option2": "100",
-    "option3": "10",
-    "option4": "3000",
-    "ans": 1
-  },
-  {
-    "question": "Find ∫ sec^2 x dx",
-    "option1": "tanx + C",
-    "option2": "secx + C",
-    "option3": "cosx + C",
-    "option4": "sinx + C",
-    "ans": 1
-  },
-  {
-    "question": "Distance between (1,2) and (4,6)",
-    "option1": "5",
-    "option2": "4",
-    "option3": "6",
-    "option4": "3",
-    "ans": 1
-  },
-  {
-    "question": "If a matrix has zero determinant it is",
+    "question": "If matrix determinant zero means",
     "option1": "Singular",
     "option2": "Identity",
     "option3": "Diagonal",
     "option4": "Orthogonal",
     "ans": 1
   },
+
   {
-    "question": "Find derivative of ln(x^2+1)",
-    "option1": "2x/(x^2+1)",
-    "option2": "1/(x^2+1)",
-    "option3": "2/(x^2+1)",
-    "option4": "x/(x^2+1)",
+    "question": "Evaluate $\\int_0^2 x dx$",
+    "option1": "2",
+    "option2": "4",
+    "option3": "1",
+    "option4": "3",
     "ans": 1
   },
   {
-    "question": "If sum first n natural numbers = 210 find n",
-    "option1": "20",
-    "option2": "15",
-    "option3": "21",
-    "option4": "10",
+    "question": "If f'(x)>0 meaning",
+    "option1": "Increasing",
+    "option2": "Decreasing",
+    "option3": "Constant",
+    "option4": "Undefined",
+    "ans": 1
+  },
+
+  {
+    "question": "Find midpoint of (2,4),(6,8)",
+    "option1": "(4,6)",
+    "option2": "(8,12)",
+    "option3": "(2,2)",
+    "option4": "(6,4)",
+    "ans": 1
+  },
+
+  {
+    "question": "Solve $x^3=8$ real root",
+    "option1": "2",
+    "option2": "-2",
+    "option3": "4",
+    "option4": "1",
     "ans": 1
   }
-  
-],
-  "Chemistry": [
-    {
-      "question": "What is the IUPAC name for the following compound? <br> $CH_3CH(Cl)CH(CH_3)CHO$",
-      "option1": "2-methyl-3-chlorobutanal",
-      "option2": "3-chloro-2-methylbutanal",
-      "option3": "2-chloro-3-methylbutanal",
-      "option4": "3-methyl-2-chlorobutanal",
-      "ans": 2
-    },
-    {
-      "question": "Calculate the mass of potassium hydroxide (KOH) required to prepare $250 cm^3$ of a $0.2 mol/dm^3$ solution. ($K=39, O=16, H=1$)",
-      "option1": "2.8 g",
-      "option2": "5.6 g",
-      "option3": "1.4 g",
-      "option4": "11.2 g",
-      "ans": 1
-    },
-    {
-      "question": "Which electronic configuration represents a transition metal in the $+3$ oxidation state with a $d^5$ configuration?",
-      "option1": "$[Ar] 3d^5 4s^0$",
-      "option2": "$[Ar] 3d^6 4s^2$",
-      "option3": "$[Ar] 3d^5$",
-      "option4": "$[Ar] 3d^4$",
-      "ans": 3
-    },
-    {
-      "question": "According to the Phase Rule, $F = C - P + 2$, what is the variance ($F$) for a system of pure water at its boiling point?",
-      "option1": "0",
-      "option2": "1",
-      "option3": "2",
-      "option4": "3",
-      "ans": 2
-    },
-    {
-      "question": "In the reaction $H_2(g) + I_2(g) \rightleftharpoons 2HI(g)$, the equilibrium concentrations were found as follows: <br> <table><tr><th>Species</th><th>$H_2$</th><th>$I_2$</th><th>$HI$</th></tr><tr><th>Conc (M)</th><td>0.10</td><td>0.20</td><td>0.40</td></tr></table> Calculate the equilibrium constant $K_c$.",
-      "option1": "8",
-      "option2": "20",
-      "option3": "4",
-      "option4": "16",
-      "ans": 1
-    },
-    {
-      "question": "Which of the following halogens is the strongest oxidizing agent?",
-      "option1": "Chlorine ($Cl_2$)",
-      "option2": "Bromine ($Br_2$)",
-      "option3": "Fluorine ($F_2$)",
-      "option4": "Iodine ($I_2$)",
-      "ans": 3
-    },
-    {
-      "question": "Determine the pH of a $0.001 mol/dm^3$ solution of $Ba(OH)_2$ assuming complete dissociation.",
-      "option1": "3",
-      "option2": "11",
-      "option3": "11.3",
-      "option4": "12",
-      "ans": 3
-    },
-    {
-      "question": "In the context of the Contact Process, what are the optimal conditions for the conversion of $SO_2$ to $SO_3$?",
-      "option1": "450°C, 2 atm, $V_2O_5$ catalyst",
-      "option2": "200°C, 200 atm, Fe catalyst",
-      "option3": "450°C, 1 atm, Pt catalyst",
-      "option4": "1000°C, 10 atm, No catalyst",
-      "ans": 1
-    },
-    {
-      "question": "The boiling point of carboxylic acids is higher than that of alcohols of similar molecular mass because:",
-      "option1": "Carboxylic acids are more acidic",
-      "option2": "They form stable cyclic dimers via hydrogen bonding",
-      "option3": "The C=O bond is highly polar",
-      "option4": "They have larger van der Waals forces",
-      "ans": 2
-    },
-    {
-      "question": "Calculate the number of molecules in $4.4 g$ of carbon dioxide ($CO_2$). ($L = 6.02 \times 10^{23}$)",
-      "option1": "0.1",
-      "option2": "$6.02 \times 10^{22}$",
-      "option3": "$6.02 \times 10^{23}$",
-      "option4": "$1.20 \times 10^{23}$",
-      "ans": 2
-    },
-    {
-      "question": "Which ligand is most likely to form a square planar complex with $Ni^{2+}$?",
-      "option1": "$H_2O$",
-      "option2": "$NH_3$",
-      "option3": "$CN^-$",
-      "option4": "$Cl^-$",
-      "ans": 3
-    },
-    {
-      "question": "Which type of isomerism is shown by $CH_3CH_2OCH_3$ and $CH_3CH(OH)CH_3$?",
-      "option1": "Chain isomerism",
-      "option2": "Position isomerism",
-      "option3": "Functional isomerism",
-      "option4": "Metamerism",
-      "ans": 3
-    },
-    {
-      "question": "The standard electrode potentials for two half-cells are: <br> $Zn^{2+}/Zn = -0.76 V$ <br> $Cu^{2+}/Cu = +0.34 V$. <br> Calculate the $E_{cell}$ for the Daniel cell.",
-      "option1": "0.42 V",
-      "option2": "1.10 V",
-      "option3": "-0.42 V",
-      "option4": "-1.10 V",
-      "ans": 2
-    },
-    {
-      "question": "Which row correctly describes the trend in solubility of Group II sulfates and hydroxides as you go down the group? <br> <table><tr><th>-</th><th>Sulfates</th><th>Hydroxides</th></tr><tr><th>A</th><td>Increases</td><td>Decreases</td></tr><tr><th>B</th><td>Decreases</td><td>Increases</td></tr><tr><th>C</th><td>Increases</td><td>Increases</td></tr><tr><th>D</th><td>Decreases</td><td>Decreases</td></tr></table>",
-      "option1": "A",
-      "option2": "B",
-      "option3": "C",
-      "option4": "D",
-      "ans": 2
-    },
-    {
-      "question": "In the reaction $CH_3CH_2Br + OH^- \to CH_3CH_2OH + Br^-$, the mechanism is:",
-      "option1": "$S_N1$",
-      "option2": "$S_N2$",
-      "option3": "Electrophilic Addition",
-      "option4": "Free Radical Substitution",
-      "ans": 2
-    },
-    {
-      "question": "The shape of the $PCl_5$ molecule is:",
-      "option1": "Octahedral",
-      "option2": "Square pyramidal",
-      "option3": "Trigonal bipyramidal",
-      "option4": "Tetrahedral",
-      "ans": 3
-    },
-    {
-      "question": "A buffer solution can be prepared by mixing:",
-      "option1": "$NaOH$ and $HCl$",
-      "option2": "$CH_3COOH$ and $CH_3COONa$",
-      "option3": "$NH_3$ and $NaOH$",
-      "option4": "$H_2SO_4$ and $Na_2SO_4$",
-      "ans": 2
-    },
-    {
-      "question": "Identify the monomer used to produce the polymer PTFE (Teflon).",
-      "option1": "$CH_2=CHCl$",
-      "option2": "$CF_2=CF_2$",
-      "option3": "$CH_2=CH_2$",
-      "option4": "$C_6H_5CH=CH_2$",
-      "ans": 2
-    },
-    {
-      "question": "What is the oxidation state of Chromium in $K_2Cr_2O_7$?",
-      "option1": "+3",
-      "option2": "+5",
-      "option3": "+6",
-      "option4": "+7",
-      "ans": 3
-    },
-    {
-      "question": "The enthalpy of neutralization of a strong acid by a strong base is approximately:",
-      "option1": "$-57.3 kJ/mol$",
-      "option2": "$+57.3 kJ/mol$",
-      "option3": "$-13.7 kJ/mol$",
-      "option4": "Variable",
-      "ans": 1
-    },
-    {
-      "question": "Which gas is evolved when sodium metal reacts with ethanol?",
-      "option1": "Oxygen",
-      "option2": "Carbon dioxide",
-      "option3": "Hydrogen",
-      "option4": "Ethane",
-      "ans": 3
-    },
-    {
-      "question": "Which of the following is a characteristic of an autocatalytic reaction?",
-      "option1": "The catalyst is in a different phase",
-      "option2": "One of the products acts as a catalyst",
-      "option3": "The reaction rate decreases over time",
-      "option4": "It requires high activation energy",
-      "ans": 2
-    },
-    {
-      "question": "What is the bond angle in a water molecule?",
-      "option1": "109.5°",
-      "option2": "120°",
-      "option3": "104.5°",
-      "option4": "180°",
-      "ans": 3
-    },
-    {
-      "question": "Which reagent is used to distinguish between an aldehyde and a ketone?",
-      "option1": "2,4-DNP",
-      "option2": "Tollens' reagent",
-      "option3": "Acidified $K_2Cr_2O_7$",
-      "option4": "Bromine water",
-      "ans": 2
-    },
-    {
-      "question": "The solubility product ($K_{sp}$) of $AgCl$ is $1.8 \times 10^{-10} mol^2/dm^6$. Calculate its solubility in water.",
-      "option1": "$1.34 \times 10^{-5} mol/dm^3$",
-      "option2": "$1.8 \times 10^{-5} mol/dm^3$",
-      "option3": "$9.0 \times 10^{-11} mol/dm^3$",
-      "option4": "$1.34 \times 10^{-10} mol/dm^3$",
-      "ans": 1
-    },
-    {
-      "question": "Which element has the highest first ionization energy?",
-      "option1": "Nitrogen",
-      "option2": "Oxygen",
-      "option3": "Fluorine",
-      "option4": "Neon",
-      "ans": 4
-    },
-    {
-      "question": "The primary structure of a protein refers to:",
-      "option1": "The folding of the polypeptide chain",
-      "option2": "The sequence of amino acids",
-      "option3": "The 3D arrangement of subunits",
-      "option4": "The presence of alpha-helices",
-      "ans": 2
-    },
-    {
-      "question": "Which of the following describes the bonding in benzene?",
-      "option1": "Three localized double bonds",
-      "option2": "Delocalized pi electron system",
-      "option3": "Alternating single and double bonds",
-      "option4": "Ionic bonding",
-      "ans": 2
-    },
-    {
-      "question": "Calculate the percentage by mass of nitrogen in urea, $CO(NH_2)_2$. ($C=12, O=16, N=14, H=1$)",
-      "option1": "23.3%",
-      "option2": "46.7%",
-      "option3": "35.0%",
-      "option4": "60.0%",
-      "ans": 2
-    },
-    {
-      "question": "In the extraction of Aluminum by electrolysis (Hall-Héroult process), cryolite is used to:",
-      "option1": "Act as an oxidizing agent",
-      "option2": "Lower the melting point of alumina",
-      "option3": "Prevent the oxidation of the anode",
-      "option4": "Purify the bauxite ore",
-      "ans": 2
-    }
-  ],
-  "Physics": [
-    {
-      "question": "A satellite orbits the Earth at a constant speed. Which statement about the satellite is true?",
-      "option1": "The acceleration is zero.",
-      "option2": "The gravitational potential energy is constant.",
-      "option3": "The velocity is constant.",
-      "option4": "The total energy is zero.",
-      "ans": 2
-    },
-    {
-      "question": "An electron enters a uniform magnetic field of $0.2 T$ at a velocity of $3 \times 10^6 ms^{-1}$ perpendicular to the field. Calculate the magnetic force on the electron. ($e = 1.6 \times 10^{-19} C$)",
-      "option1": "$9.6 \times 10^{-14} N$",
-      "option2": "$4.8 \times 10^{-14} N$",
-      "option3": "$1.2 \times 10^{-13} N$",
-      "option4": "$9.6 \times 10^{-20} N$",
-      "ans": 1
-    },
-    {
-      "question": "A progressive wave is represented by $y = 0.5 \\sin(200\\pi t - 0.5\\pi x)$, where $x$ and $y$ are in meters. Determine the speed of the wave.",
-      "option1": "$100 ms^{-1}$",
-      "option2": "$200 ms^{-1}$",
-      "option3": "$400 ms^{-1}$",
-      "option4": "$0.5 ms^{-1}$",
-      "ans": 3
-    },
-    {
-      "question": "A car of mass $1000 kg$ moving at $20 ms^{-1}$ is brought to rest in $5 s$. Calculate the average braking force.",
-      "option1": "2000 N",
-      "option2": "4000 N",
-      "option3": "5000 N",
-      "option4": "10000 N",
-      "ans": 2
-    },
-    {
-      "question": "The electric field strength $E$ at a distance $r$ from a point charge $Q$ in a vacuum is proportional to:",
-      "option1": "$r$",
-      "option2": "$1/r$",
-      "option3": "$1/r^2$",
-      "option4": "$r^2$",
-      "ans": 3
-    },
-    {
-      "question": "Two coherent sources of light produce an interference pattern. If the slit separation is doubled, the fringe width will:",
-      "option1": "Double",
-      "option2": "Remain the same",
-      "option3": "Become half",
-      "option4": "Become four times smaller",
-      "ans": 3
-    },
-    {
-      "question": "The escape velocity from the surface of a planet depends on:",
-      "option1": "The mass of the object escaping",
-      "option2": "The radius of the planet only",
-      "option3": "The mass and radius of the planet",
-      "option4": "The atmospheric pressure",
-      "ans": 3
-    },
-    {
-      "question": "A spring with force constant $k = 200 Nm^{-1}$ is compressed by $0.1 m$. The elastic potential energy stored is:",
-      "option1": "1 J",
-      "option2": "2 J",
-      "option3": "10 J",
-      "option4": "20 J",
-      "ans": 1
-    },
-    {
-      "question": "A charged particle moves in a circular path in a uniform magnetic field. If the velocity is doubled, the radius of the path will:",
-      "option1": "Stay the same",
-      "option2": "Double",
-      "option3": "Become half",
-      "option4": "Quadruple",
-      "ans": 2
-    },
-    {
-      "question": "Determine the tension in a string of length $0.5 m$ and linear mass density $0.02 kg m^{-1}$ that vibrates at a fundamental frequency of $100 Hz$.",
-      "option1": "100 N",
-      "option2": "200 N",
-      "option3": "50 N",
-      "option4": "400 N",
-      "ans": 2
-    },
-    {
-      "question": "Which of the following is a scalar quantity?",
-      "option1": "Electric field strength",
-      "option2": "Magnetic flux density",
-      "option3": "Gravitational potential",
-      "option4": "Acceleration",
-      "ans": 3
-    },
-    {
-      "question": "A ball is thrown horizontally from a height of $20 m$ with a speed of $15 ms^{-1}$. How long does it take to hit the ground? ($g = 10 ms^{-2}$)",
-      "option1": "1 s",
-      "option2": "2 s",
-      "option3": "3 s",
-      "option4": "4 s",
-      "ans": 2
-    },
-    {
-      "question": "The capacitance of a parallel plate capacitor is NOT affected by:",
-      "option1": "The area of the plates",
-      "option2": "The distance between the plates",
-      "option3": "The material of the plates",
-      "option4": "The dielectric constant",
-      "ans": 3
-    },
-    {
-      "question": "The refractive index of glass is 1.5. Calculate the critical angle for a glass-air interface.",
-      "option1": "41.8°",
-      "option2": "48.6°",
-      "option3": "30.0°",
-      "option4": "60.0°",
-      "ans": 1
-    },
-    {
-      "question": "In a Young's double-slit experiment, if red light is replaced with blue light:",
-      "option1": "Fringes become wider",
-      "option2": "Fringes become narrower",
-      "option3": "Fringes disappear",
-      "option4": "Brightness increases",
-      "ans": 2
-    },
-    {
-      "question": "Newton's Second Law of Motion states that force is proportional to the rate of change of:",
-      "option1": "Velocity",
-      "option2": "Mass",
-      "option3": "Momentum",
-      "option4": "Kinetic Energy",
-      "ans": 3
-    },
-    {
-      "question": "A transformer has 100 turns on the primary and 500 turns on the secondary. If the primary voltage is $12 V$, the secondary voltage is:",
-      "option1": "2.4 V",
-      "option2": "60 V",
-      "option3": "120 V",
-      "option4": "50 V",
-      "ans": 2
-    },
-    {
-      "question": "The resonance in an LCR circuit occurs when:",
-      "option1": "$X_L > X_C$",
-      "option2": "$X_L < X_C$",
-      "option3": "$X_L = X_C$",
-      "option4": "$R = 0$",
-      "ans": 3
-    },
-    {
-      "question": "What is the work done in moving a $2 C$ charge through a potential difference of $6 V$?",
-      "option1": "3 J",
-      "option2": "8 J",
-      "option3": "12 J",
-      "option4": "1.2 J",
-      "ans": 3
-    },
-    {
-      "question": "The phenomenon of beats is a result of:",
-      "option1": "Refraction",
-      "option2": "Diffraction",
-      "option3": "Interference",
-      "option4": "Polarization",
-      "ans": 3
-    },
-    {
-      "question": "A $2 kg$ mass is attached to a string and whirled in a horizontal circle of radius $0.5 m$ at $2 rev/s$. The centripetal force is:",
-      "option1": "$16\\pi^2 N$",
-      "option2": "$8\\pi^2 N$",
-      "option3": "$4\\pi N$",
-      "option4": "$32\\pi^2 N$",
-      "ans": 1
-    },
-    {
-      "question": "The root mean square (rms) value of an AC current is related to the peak value $I_0$ by:",
-      "option1": "$I_{rms} = I_0 / 2$",
-      "option2": "$I_{rms} = I_0 / \\sqrt{2}$",
-      "option3": "$I_{rms} = I_0 \\cdot \\sqrt{2}$",
-      "option4": "$I_{rms} = 2I_0$",
-      "ans": 2
-    },
-    {
-      "question": "Calculate the de Broglie wavelength of an electron moving at $1 \times 10^6 ms^{-1}$. ($h = 6.6 \times 10^{-34} Js, m = 9.1 \times 10^{-31} kg$)",
-      "option1": "$7.25 \times 10^{-10} m$",
-      "option2": "$6.6 \times 10^{-10} m$",
-      "option3": "$1.2 \times 10^{-9} m$",
-      "option4": "$3.3 \times 10^{-11} m$",
-      "ans": 1
-    },
-    {
-      "question": "The intensity of a wave is proportional to the square of its:",
-      "option1": "Frequency",
-      "option2": "Wavelength",
-      "option3": "Amplitude",
-      "option4": "Period",
-      "ans": 3
-    },
-    {
-      "question": "Two point charges $+q$ and $-q$ are separated by a distance $d$. The net electric potential at the midpoint is:",
-      "option1": "Zero",
-      "option2": "$2kq/d$",
-      "option3": "$kq/d^2$",
-      "option4": "$4kq/d$",
-      "ans": 1
-    },
-    {
-      "question": "A simple pendulum has a period $T$. If the length is quadrupled, the new period is:",
-      "option1": "$T/2$",
-      "option2": "$2T$",
-      "option3": "$4T$",
-      "option4": "$\\sqrt{T}$",
-      "ans": 2
-    },
-    {
-      "question": "According to Lenz's Law, the induced e.m.f. always:",
-      "option1": "Supports the change producing it",
-      "option2": "Opposes the change producing it",
-      "option3": "Produces a high current",
-      "option4": "Increases the magnetic flux",
-      "ans": 2
-    },
-    {
-      "question": "Which row in the table correctly identifies the fundamental force and its exchange particle? <br> <table><tr><th>Force</th><th>Exchange Particle</th></tr><tr><td>A. Strong</td><td>Photon</td></tr><tr><td>B. Electromagnetic</td><td>Gluon</td></tr><tr><td>C. Weak</td><td>W and Z Bosons</td></tr><tr><td>D. Gravitational</td><td>Electron</td></tr></table>",
-      "option1": "A",
-      "option2": "B",
-      "option3": "C",
-      "option4": "D",
-      "ans": 3
-    },
-    {
-      "question": "Find the energy of a photon of light with a frequency of $6 \times 10^{14} Hz$. ($h = 6.6 \times 10^{-34} Js$)",
-      "option1": "$3.96 \times 10^{-19} J$",
-      "option2": "$1.1 \times 10^{-48} J$",
-      "option3": "$6.6 \times 10^{-19} J$",
-      "option4": "$4.2 \times 10^{-20} J$",
-      "ans": 1
-    },
-    {
-      "question": "A $5 kg$ object falls freely from rest. What is its velocity after $3 s$? ($g = 10 ms^{-2}$)",
-      "option1": "$15 ms^{-1}$",
-      "option2": "$30 ms^{-1}$",
-      "option3": "$45 ms^{-1}$",
-      "option4": "$50 ms^{-1}$",
-      "ans": 2
-    }
-  ],
-  "ICT": [
-    {
-      "question": "Which logic gate is represented by the following truth table? <br> <table><tr><th>A</th><th>B</th><th>Output</th></tr><tr><td>0</td><td>0</td><td>0</td></tr><tr><td>0</td><td>1</td><td>1</td></tr><tr><td>1</td><td>0</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr></table>",
-      "option1": "AND",
-      "option2": "NAND",
-      "option3": "OR",
-      "option4": "NOR",
-      "ans": 3
-    },
-    {
-      "question": "Convert the hexadecimal number $A5$ to its decimal equivalent.",
-      "option1": "165",
-      "option2": "160",
-      "option3": "155",
-      "option4": "170",
-      "ans": 1
-    },
-    {
-      "question": "In C programming, what will be the output of the following code snippet? <br> `int x=5, y=2; printf(\"%d\", x/y);`",
-      "option1": "2.5",
-      "option2": "2",
-      "option3": "3",
-      "option4": "Error",
-      "ans": 2
-    },
-    {
-      "question": "Which of the following is a characteristic of a Data Warehouse?",
-      "option1": "Volatile",
-      "option2": "Subject-oriented",
-      "option3": "Used for daily transactions",
-      "option4": "Low storage capacity",
-      "ans": 2
-    },
-    {
-      "question": "A network topology where every node is connected to a central hub is called a:",
-      "option1": "Mesh topology",
-      "option2": "Bus topology",
-      "option3": "Star topology",
-      "option4": "Ring topology",
-      "ans": 3
-    },
-    {
-      "question": "In a database, a 'Foreign Key' is used to:",
-      "option1": "Uniquely identify a record in its own table",
-      "option2": "Encrypt sensitive data",
-      "option3": "Establish a link between two tables",
-      "option4": "Sort data alphabetically",
-      "ans": 3
-    },
-    {
-      "question": "Which data transmission mode allows communication in both directions, but only one at a time?",
-      "option1": "Simplex",
-      "option2": "Full-Duplex",
-      "option3": "Half-Duplex",
-      "option4": "Multiplex",
-      "ans": 3
-    },
-    {
-      "question": "What is the result of the binary addition $1101 + 1011$?",
-      "option1": "11000",
-      "option2": "10110",
-      "option3": "11100",
-      "option4": "10001",
-      "ans": 1
-    },
-    {
-      "question": "The process of verifying the identity of a user is known as:",
-      "option1": "Authorization",
-      "option2": "Authentication",
-      "option3": "Encryption",
-      "option4": "Auditing",
-      "ans": 2
-    },
-    {
-      "question": "In the OSI model, which layer handles error detection and flow control at the physical link?",
-      "option1": "Network Layer",
-      "option2": "Data Link Layer",
-      "option3": "Transport Layer",
-      "option4": "Session Layer",
-      "ans": 2
-    },
-    {
-      "question": "A logic gate produces an output of 1 only when both inputs are different. This gate is:",
-      "option1": "XOR",
-      "option2": "XNOR",
-      "option3": "OR",
-      "option4": "AND",
-      "ans": 1
-    },
-    {
-      "question": "Which algorithm design technique breaks a problem into smaller sub-problems and solves them recursively?",
-      "option1": "Greedy Algorithm",
-      "option2": "Divide and Conquer",
-      "option3": "Brute Force",
-      "option4": "Backtracking",
-      "ans": 2
-    },
-    {
-      "question": "The time taken for a disk drive to locate a specific sector on a track is called:",
-      "option1": "Seek time",
-      "option2": "Rotational latency",
-      "option3": "Transfer rate",
-      "option4": "Access time",
-      "ans": 2
-    },
-    {
-      "question": "In SQL, which command is used to remove all records from a table without deleting the table structure?",
-      "option1": "DELETE",
-      "option2": "DROP",
-      "option3": "TRUNCATE",
-      "option4": "REMOVE",
-      "ans": 3
-    },
-    {
-      "question": "Which of the following is a guided transmission medium?",
-      "option1": "Microwave",
-      "option2": "Fiber Optic Cable",
-      "option3": "Infrared",
-      "option4": "Satellite",
-      "ans": 2
-    },
-    {
-      "question": "A protocol used to securely transfer files over the internet is:",
-      "option1": "HTTP",
-      "option2": "SMTP",
-      "option3": "SFTP",
-      "option4": "POP3",
-      "ans": 3
-    },
-    {
-      "question": "The binary representation of the decimal number 25 is:",
-      "option1": "11001",
-      "option2": "11101",
-      "option3": "10101",
-      "option4": "11011",
-      "ans": 1
-    },
-    {
-      "question": "Which C library function is used to read a string from the user?",
-      "option1": "printf()",
-      "option2": "scanf()",
-      "option3": "gets()",
-      "option4": "strlen()",
-      "ans": 3
-    },
-    {
-      "question": "In an Entity-Relationship (ER) diagram, an ellipse represents:",
-      "option1": "An Entity",
-      "option2": "A Relationship",
-      "option3": "An Attribute",
-      "option4": "A Primary Key",
-      "ans": 3
-    },
-    {
-      "question": "Which phase of the SDLC (Systems Development Life Cycle) involves creating the flowchart and pseudocode?",
-      "option1": "Analysis",
-      "option2": "Design",
-      "option3": "Implementation",
-      "option4": "Maintenance",
-      "ans": 2
-    },
-    {
-      "question": "The process of converting plain text into an unreadable format is called:",
-      "option1": "Decryption",
-      "option2": "Hashing",
-      "option3": "Encryption",
-      "option4": "Compression",
-      "ans": 3
-    },
-    {
-      "question": "What is the 2's complement of the binary number 1010?",
-      "option1": "0101",
-      "option2": "0110",
-      "option3": "1100",
-      "option4": "0011",
-      "ans": 2
-    },
-    {
-      "question": "In C programming, which keyword is used to define a constant value?",
-      "option1": "static",
-      "option2": "final",
-      "option3": "const",
-      "option4": "fixed",
-      "ans": 3
-    },
-    {
-      "question": "Which network device operates at the Network Layer of the OSI model?",
-      "option1": "Switch",
-      "option2": "Hub",
-      "option3": "Router",
-      "option4": "Bridge",
-      "ans": 3
-    },
-    {
-      "question": "What does the 'A' in ACID properties of a database stand for?",
-      "option1": "Availability",
-      "option2": "Atomicity",
-      "option3": "Accuracy",
-      "option4": "Authority",
-      "ans": 2
-    },
-    {
-      "question": "A technique used to allow multiple signals to share a single data link is:",
-      "option1": "Switching",
-      "option2": "Multiplexing",
-      "option3": "Routing",
-      "option4": "Modulation",
-      "ans": 2
-    },
-    {
-      "question": "In a flowchart, which symbol is used for a decision or condition?",
-      "option1": "Rectangle",
-      "option2": "Parallelogram",
-      "option3": "Diamond",
-      "option4": "Oval",
-      "ans": 3
-    },
-    {
-      "question": "Which generation of programming languages is represented by Assembly language?",
-      "option1": "1st Generation",
-      "option2": "2nd Generation",
-      "option3": "3rd Generation",
-      "option4": "4th Generation",
-      "ans": 2
-    },
-    {
-      "question": "What is the function of the ARP protocol in networking?",
-      "option1": "Translate domain names to IP addresses",
-      "option2": "Map IP addresses to MAC addresses",
-      "option3": "Manage email transfers",
-      "option4": "Assign dynamic IP addresses",
-      "ans": 2
-    },
-    {
-      "question": "Identify the logic gate from the truth table below. <br> <table><tr><th>A</th><th>B</th><th>Output</th></tr><tr><td>0</td><td>0</td><td>1</td></tr><tr><td>0</td><td>1</td><td>0</td></tr><tr><td>1</td><td>0</td><td>0</td></tr><tr><td>1</td><td>1</td><td>0</td></tr></table>",
-      "option1": "NOR",
-      "option2": "NAND",
-      "option3": "AND",
-      "option4": "XOR",
-      "ans": 1
-    }
-  ],
-  "Biology": [
-    {
-      "question": "Which of the following describes the net production of ATP during Glycolysis per molecule of glucose?",
-      "option1": "4 ATP",
-      "option2": "2 ATP",
-      "option3": "36 ATP",
-      "option4": "38 ATP",
-      "ans": 2
-    },
-    {
-      "question": "In a dihybrid cross ($AaBb \\times AaBb$), what is the expected phenotypic ratio if the genes are not linked?",
-      "option1": "3:1",
-      "option2": "1:2:1",
-      "option3": "9:3:3:1",
-      "option4": "1:1:1:1",
-      "ans": 3
-    },
-    {
-      "question": "The site of the Light-Dependent reactions in photosynthesis is the:",
-      "option1": "Stroma",
-      "option2": "Thylakoid membrane",
-      "option3": "Mitochondrial matrix",
-      "option4": "Cytoplasm",
-      "ans": 2
-    },
-    {
-      "question": "In human reproduction, which hormone triggers ovulation?",
-      "option1": "Estrogen",
-      "option2": "Progesterone",
-      "option3": "Luteinizing Hormone (LH)",
-      "option4": "Follicle Stimulating Hormone (FSH)",
-      "ans": 3
-    },
-    {
-      "question": "Which type of mutation involves the replacement of a single purine base by a pyrimidine base?",
-      "option1": "Transition",
-      "option2": "Transversion",
-      "option3": "Frameshift",
-      "option4": "Inversion",
-      "ans": 2
-    },
-    {
-      "question": "What is the primary function of the Loop of Henle in the mammalian kidney?",
-      "option1": "Filtration of blood",
-      "option2": "Reabsorption of glucose",
-      "option3": "Creation of a salt concentration gradient",
-      "option4": "Secretion of urea",
-      "ans": 3
-    },
-    {
-      "question": "In the Krebs cycle, which 4-carbon compound combines with Acetyl-CoA to form Citrate?",
-      "option1": "Oxaloacetate",
-      "option2": "Malate",
-      "option3": "Pyruvate",
-      "option4": "Succinate",
-      "ans": 1
-    },
-    {
-      "question": "Which of the following is an example of continuous variation?",
-      "option1": "Blood group",
-      "option2": "Gender",
-      "option3": "Human height",
-      "option4": "Tongue rolling",
-      "ans": 3
-    },
-    {
-      "question": "During which stage of Meiosis does 'crossing over' occur?",
-      "option1": "Prophase I",
-      "option2": "Metaphase I",
-      "option3": "Prophase II",
-      "option4": "Anaphase I",
-      "ans": 1
-    },
-    {
-      "question": "Which enzyme is responsible for unwinding the DNA double helix during replication?",
-      "option1": "DNA Polymerase",
-      "option2": "Ligase",
-      "option3": "Helicase",
-      "option4": "RNA Primase",
-      "ans": 3
-    },
-    {
-      "question": "The Bohr effect describes the shift in the hemoglobin oxygen-dissociation curve caused by:",
-      "option1": "Decrease in Temperature",
-      "option2": "Increase in Carbon Dioxide concentration",
-      "option3": "Increase in pH",
-      "option4": "Decrease in Altitude",
-      "ans": 2
-    },
-    {
-      "question": "Which structure in a plant cell provides turgor pressure?",
-      "option1": "Nucleus",
-      "option2": "Chloroplast",
-      "option3": "Large Central Vacuole",
-      "option4": "Mitochondrion",
-      "ans": 3
-    },
-    {
-      "question": "A person with blood type O can safely receive blood from which donor type?",
-      "option1": "Type A",
-      "option2": "Type B",
-      "option3": "Type O",
-      "option4": "Type AB",
-      "ans": 3
-    },
-    {
-      "question": "Which of the following is a primary producer in an ecosystem?",
-      "option1": "Fungi",
-      "option2": "Cyanobacteria",
-      "option3": "Zooplankton",
-      "option4": "Earthworm",
-      "ans": 2
-    },
-    {
-      "question": "The 'Fluid Mosaic Model' describes the structure of:",
-      "option1": "The Cell Wall",
-      "option2": "The Plasma Membrane",
-      "option3": "The Cytoskeleton",
-      "option4": "The Nuclear Envelope",
-      "ans": 2
-    },
-    {
-      "question": "Which nitrogenous base is found in RNA but not in DNA?",
-      "option1": "Adenine",
-      "option2": "Thymine",
-      "option3": "Uracil",
-      "option4": "Guanine",
-      "ans": 3
-    },
-    {
-      "question": "The symbiotic relationship where one organism benefits and the other is neither helped nor harmed is:",
-      "option1": "Mutualism",
-      "option2": "Parasitism",
-      "option3": "Commensalism",
-      "option4": "Competition",
-      "ans": 3
-    },
-    {
-      "question": "What is the end product of anaerobic respiration in yeast?",
-      "option1": "Lactic Acid",
-      "option2": "Ethanol and $CO_2$",
-      "option3": "Pyruvate",
-      "option4": "Water and $CO_2$",
-      "ans": 2
-    },
-    {
-      "question": "Which part of the brain is responsible for thermoregulation?",
-      "option1": "Cerebrum",
-      "option2": "Cerebellum",
-      "option3": "Hypothalamus",
-      "option4": "Medulla Oblongata",
-      "ans": 3
-    },
-    {
-      "question": "In the Hardy-Weinberg equation $p^2 + 2pq + q^2 = 1$, what does $2pq$ represent?",
-      "option1": "Frequency of homozygous dominant genotype",
-      "option2": "Frequency of homozygous recessive genotype",
-      "option3": "Frequency of heterozygous genotype",
-      "option4": "Frequency of the dominant allele",
-      "ans": 3
-    },
-    {
-      "question": "Double fertilization is a characteristic feature of:",
-      "option1": "Bryophytes",
-      "option2": "Pteridophytes",
-      "option3": "Angiosperms",
-      "option4": "Gymnosperms",
-      "ans": 3
-    },
-    {
-      "question": "Which organelle is known as the 'suicide bag' of the cell?",
-      "option1": "Ribosome",
-      "option2": "Lysosome",
-      "option3": "Golgi Apparatus",
-      "option4": "Endoplasmic Reticulum",
-      "ans": 2
-    },
-    {
-      "question": "The hormone Insulin is secreted by which specific cells?",
-      "option1": "Alpha cells of the pancreas",
-      "option2": "Beta cells of the pancreas",
-      "option3": "Adrenal cortex",
-      "option4": "Thyroid gland",
-      "ans": 2
-    },
-    {
-      "question": "What is the function of the myelin sheath in a neuron?",
-      "option1": "To generate nerve impulses",
-      "option2": "To increase the speed of impulse conduction",
-      "option3": "To receive signals from other neurons",
-      "option4": "To store neurotransmitters",
-      "ans": 2
-    },
-    {
-      "question": "Which of the following is a vestigial organ in humans?",
-      "option1": "Heart",
-      "option2": "Appendix",
-      "option3": "Liver",
-      "option4": "Pancreas",
-      "ans": 2
-    },
-    {
-      "question": "The process of programmed cell death is known as:",
-      "option1": "Necrosis",
-      "option2": "Apoptosis",
-      "option3": "Mitosis",
-      "option4": "Lysis",
-      "ans": 2
-    },
-    {
-      "question": "In a food chain, which level has the least available energy?",
-      "option1": "Producers",
-      "option2": "Primary Consumers",
-      "option3": "Secondary Consumers",
-      "option4": "Tertiary Consumers",
-      "ans": 4
-    },
-    {
-      "question": "Which type of immunity is acquired by a baby through breast milk?",
-      "option1": "Active Artificial",
-      "option2": "Passive Natural",
-      "option3": "Active Natural",
-      "option4": "Passive Artificial",
-      "ans": 2
-    },
-    {
-      "question": "What is the respiratory quotient (RQ) for the oxidation of glucose?",
-      "option1": "0.7",
-      "option2": "1.0",
-      "option3": "0.8",
-      "option4": "1.2",
-      "ans": 2
-    },
-    {
-      "question": "The primary role of ADH (Antidiuretic Hormone) is to:",
-      "option1": "Increase blood sugar",
-      "option2": "Increase water reabsorption in the kidney",
-      "option3": "Stimulate muscle contraction",
-      "option4": "Lower blood pressure",
-      "ans": 2
-    }
-  ],
-  "Further Maths": [
-    {
-      "question": "Find the general solution of the second order differential equation $\\frac{d^2y}{dx^2} - 5\\frac{dy}{dx} + 6y = 0$.",
-      "option1": "$y = Ae^{2x} + Be^{3x}$",
-      "option2": "$y = Ae^{-2x} + Be^{-3x}$",
-      "option3": "$y = (A+Bx)e^{2x}$",
-      "option4": "$y = Ae^{x} + Be^{6x}$",
-      "ans": 1
-    },
-    {
-      "question": "The vector product of $\\mathbf{a} = 2\\mathbf{i} - \\mathbf{j} + 3\\mathbf{k}$ and $\\mathbf{b} = \\mathbf{i} + 2\\mathbf{j} - \\mathbf{k}$ is:",
-      "option1": "$-5\\mathbf{i} + 5\\mathbf{j} + 5\\mathbf{k}$",
-      "option2": "$5\\mathbf{i} - 5\\mathbf{j} - 5\\mathbf{k}$",
-      "option3": "$-5\\mathbf{i} + 4\\mathbf{j} + 5\\mathbf{k}$",
-      "option4": "$3\\mathbf{i} + \\mathbf{j} + 2\\mathbf{k}$",
-      "ans": 1
-    },
-    {
-      "question": "Determine the value of $k$ such that the matrix $\\begin{pmatrix} 1 & 2 & 1 \\\\ 2 & k & 2 \\\\ 1 & 1 & 1 \\end{pmatrix}$ is singular.",
-      "option1": "k = 2",
-      "option2": "k = 4",
-      "option3": "k = 0",
-      "option4": "k = 1",
-      "ans": 2
-    },
-    {
-      "question": "Find the polar equation of the circle $x^2 + y^2 = 4y$.",
-      "option1": "$r = 4\\cos\\theta$",
-      "option2": "$r = 4\\sin\\theta$",
-      "option3": "$r^2 = 4\\sin\\theta$",
-      "option4": "$r = 2\\sin\\theta$",
-      "ans": 2
-    },
-    {
-      "question": "Calculate the area of the cardioid $r = a(1 + \\cos\\theta)$.",
-      "option1": "$\\frac{3}{2}\\pi a^2$",
-      "option2": "$\\pi a^2$",
-      "option3": "$\\frac{1}{2}\\pi a^2$",
-      "option4": "$2\\pi a^2$",
-      "ans": 1
-    },
-    {
-      "question": "The shortest distance from the point $(1, 2, 3)$ to the plane $2x - y + 2z = 5$ is:",
-      "option1": "1/3",
-      "option2": "1",
-      "option3": "2/3",
-      "option4": "2",
-      "ans": 1
-    },
-    {
-      "question": "Find the characteristic equation of the matrix $M = \\begin{pmatrix} 2 & 1 \\\\ 1 & 2 \\end{pmatrix}$.",
-      "option1": "$\\lambda^2 - 4\\lambda + 3 = 0$",
-      "option2": "$\\lambda^2 + 4\\lambda + 3 = 0$",
-      "option3": "$\\lambda^2 - 4\\lambda - 3 = 0$",
-      "option4": "$\\lambda^2 - 2\\lambda + 1 = 0$",
-      "ans": 1
-    },
-    {
-      "question": "Solve the complex equation $z^2 = -5 + 12i$.",
-      "option1": "$\\pm(2 + 3i)$",
-      "option2": "$\\pm(3 + 2i)$",
-      "option3": "$\\pm(4 + 3i)$",
-      "option4": "$\\pm(3 - 2i)$",
-      "ans": 1
-    },
-    {
-      "question": "Identify the locus of $z$ such that $|z - 3i| = |z + 3|$.",
-      "option1": "A circle through the origin",
-      "option2": "The line $y = -x$",
-      "option3": "The line $y = x$",
-      "option4": "The x-axis",
-      "ans": 2
-    },
-    {
-      "question": "Find the eccentricity of the hyperbola $\\frac{x^2}{9} - \\frac{y^2}{16} = 1$.",
-      "option1": "5/3",
-      "option2": "5/4",
-      "option3": "4/3",
-      "option4": "7/3",
-      "ans": 1
-    },
-    {
-      "question": "Using the series $e^x = 1 + x + \\frac{x^2}{2!} + \\dots$, find the limit $\\lim_{x \\to 0} \\frac{e^{2x} - 1 - 2x}{x^2}$.",
-      "option1": "1",
-      "option2": "2",
-      "option3": "4",
-      "option4": "0",
-      "ans": 2
-    },
-    {
-      "question": "The Particular Integral for $\\frac{d^2y}{dx^2} + y = \\sin x$ is of the form:",
-      "option1": "$y = A\\sin x + B\\cos x$",
-      "option2": "$y = x(A\\sin x + B\\cos x)$",
-      "option3": "$y = Ae^x$",
-      "option4": "$y = Ax\\sin x$",
-      "ans": 2
-    },
-    {
-      "question": "The angle between the planes $x + y + z = 1$ and $x - y + z = 1$ is:",
-      "option1": "$\\arccos(1/3)$",
-      "option2": "$\\arccos(2/3)$",
-      "option3": "$\\pi/2$",
-      "option4": "$\\arccos(-1/3)$",
-      "ans": 1
-    },
-    {
-      "question": "Find the sum of the series $\\sum_{r=1}^{n} r(r+1)$.",
-      "option1": "$\\frac{n(n+1)(n+2)}{3}$",
-      "option2": "$\\frac{n(n+1)(2n+1)}{6}$",
-      "option3": "$\\frac{n^2(n+1)^2}{4}$",
-      "option4": "$n(n+1)$",
-      "ans": 1
-    },
-    {
-      "question": "The transformation matrix for a reflection in the line $y = x$ is:",
-      "option1": "$\\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$",
-      "option2": "$\\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$",
-      "option3": "$\\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix}$",
-      "option4": "$\\begin{pmatrix} 0 & -1 \\\\ -1 & 0 \\end{pmatrix}$",
-      "ans": 1
-    },
-    {
-      "question": "Determine the interval of convergence for the series $\\sum_{n=1}^{\\infty} \\frac{x^n}{n}$.",
-      "option1": "$[-1, 1)$",
-      "option2": "$(-1, 1]$",
-      "option3": "$(-1, 1)$",
-      "option4": "$[-1, 1]$",
-      "ans": 1
-    },
-    {
-      "question": "Find the work done by a force $\\mathbf{F} = 2\\mathbf{i} + \\mathbf{j} - \\mathbf{k}$ in moving an object from $(0,0,0)$ to $(1,2,3)$.",
-      "option1": "1 unit",
-      "option2": "4 units",
-      "option3": "7 units",
-      "option4": "0 units",
-      "ans": 1
-    },
-    {
-      "question": "What is the period of the function $f(x) = \\tanh(x)$?",
-      "option1": "$\\pi i$",
-      "option2": "$2\\pi i$",
-      "option3": "$\\pi$",
-      "option4": "Not periodic in real domain",
-      "ans": 1
-    },
-    {
-      "question": "The eigenvalues of an upper triangular matrix are:",
-      "option1": "Its diagonal elements",
-      "option2": "Always zero",
-      "option3": "Found by row reduction",
-      "option4": "All equal to 1",
-      "ans": 1
-    },
-    {
-      "question": "Evaluate $\\int_{0}^{\\infty} e^{-x^2} dx$.",
-      "option1": "$\\sqrt{\\pi}/2$",
-      "option2": "$\\sqrt{\\pi}$",
-      "option3": "$\\pi/2$",
-      "option4": "1",
-      "ans": 1
-    },
-    {
-      "question": "Find the radius of curvature of the curve $y = \\cosh x$ at $x = 0$.",
-      "option1": "1",
-      "option2": "2",
-      "option3": "1/2",
-      "option4": "0",
-      "ans": 1
-    },
-    {
-      "question": "The vectors $\\mathbf{a}, \\mathbf{b}, \\mathbf{c}$ are coplanar if their scalar triple product $[\\mathbf{a}, \\mathbf{b}, \\mathbf{c}]$ is:",
-      "option1": "1",
-      "option2": "0",
-      "option3": "-1",
-      "option4": "Infinite",
-      "ans": 2
-    },
-    {
-      "question": "Find the Cartesian form of the polar curve $r = 2\\sec\\theta$.",
-      "option1": "$x = 2$",
-      "option2": "$y = 2$",
-      "option3": "$x^2 + y^2 = 4$",
-      "option4": "$y = 2x$",
-      "ans": 1
-    },
-    {
-      "question": "If $y = \\sinh^{-1} x$, then $\\frac{dy}{dx} = $:",
-      "option1": "$\\frac{1}{\\sqrt{x^2+1}}$",
-      "option2": "$\\frac{1}{\\sqrt{x^2-1}}$",
-      "option3": "$\\frac{1}{1+x^2}$",
-      "option4": "$\\cosh x$",
-      "ans": 1
-    },
-    {
-      "question": "The numeric value of $i^i$ is:",
-      "option1": "$e^{-\\pi/2}$",
-      "option2": "$e^{\\pi/2}$",
-      "option3": "-1",
-      "option4": "i",
-      "ans": 1
-    },
-    {
-      "question": "Find the inverse of the matrix $\\begin{pmatrix} 1 & 0 \\\\ 2 & 1 \\end{pmatrix}$.",
-      "option1": "$\\begin{pmatrix} 1 & 0 \\\\ -2 & 1 \\end{pmatrix}$",
-      "option2": "$\\begin{pmatrix} -1 & 0 \\\\ 2 & -1 \\end{pmatrix}$",
-      "option3": "$\\begin{pmatrix} 1 & 2 \\\\ 0 & 1 \\end{pmatrix}$",
-      "option4": "$\\begin{pmatrix} 0 & 1 \\\\ 1 & 2 \\end{pmatrix}$",
-      "ans": 1
-    },
-    {
-      "question": "The Maclaurin series for $\\cos x$ is:",
-      "option1": "$1 - \\frac{x^2}{2!} + \\frac{x^4}{4!} - \\dots$",
-      "option2": "$x - \\frac{x^3}{3!} + \\frac{x^5}{5!} - \\dots$",
-      "option3": "$1 + x + \\frac{x^2}{2!} + \\dots$",
-      "option4": "$1 + \\frac{x^2}{2!} + \\frac{x^4}{4!} + \\dots$",
-      "ans": 1
-    },
-    {
-      "question": "Solve $\\frac{dy}{dx} + y\\tan x = \\sec x$.",
-      "option1": "$y\\sec x = x + C$",
-      "option2": "$y = x\\sin x + C$",
-      "option3": "$y\\cos x = x + C$",
-      "option4": "$y\\tan x = x + C$",
-      "ans": 1
-    },
-    {
-      "question": "What is the shape of the curve $r^2 = a^2\\cos(2\\theta)$?",
-      "option1": "Lemniscate",
-      "option2": "Cardioid",
-      "option3": "Circle",
-      "option4": "Spiral",
-      "ans": 1
-    },
-    {
-      "question": "The sum of the eigenvalues of a matrix is equal to its:",
-      "option1": "Trace",
-      "option2": "Determinant",
-      "option3": "Rank",
-      "option4": "Transpose",
-      "ans": 1
-    }
+
   ]
 }
