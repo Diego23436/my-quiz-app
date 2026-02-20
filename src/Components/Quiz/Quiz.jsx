@@ -24,7 +24,7 @@ const mathJaxConfig = {
     }
   },
   chtml: {
-    scale: 1,                      
+    scale: 1,                       
     minScale: 0.5,                  
     matchFontHeight: true           
   }
@@ -182,15 +182,16 @@ const Quiz = () => {
       setScore((prev) => prev + 1);
     } else {
       e.currentTarget.classList.add("wrong");
-      option_array[question.ans - 1]?.current?.classList.add("correct");
     }
+    // Highlight the correct answer and expand it
+    option_array[question.ans - 1]?.current?.classList.add("correct", "expanded");
     setLock(true);
   };
 
   const next = () => {
     if (!lock) return;
     setMathReady(false); 
-    option_array.forEach((opt) => opt.current?.classList.remove("wrong", "correct"));
+    option_array.forEach((opt) => opt.current?.classList.remove("wrong", "correct", "expanded"));
     if (index === questions.length - 1) {
       setResult(true);
     } else {
@@ -262,14 +263,24 @@ const Quiz = () => {
               key={`opt-${index}-${num}`} 
               ref={option_array[num-1]} 
               onClick={(e) => checkAns(e, num)}
+              className="option-box"
             >
-              <span dangerouslySetInnerHTML={{ __html: question[`option${num}`] }} />
+              <div className="option-text">
+                <span dangerouslySetInnerHTML={{ __html: question[`option${num}`] }} />
+              </div>
+              
+              {/* Solution box appears only if this is the correct answer AND the user has locked their choice */}
+              {lock && question.ans === num && question.explanation && (
+                <div className="solution-payload">
+                   <strong>Solution:</strong> <span dangerouslySetInnerHTML={{ __html: question.explanation }} />
+                </div>
+              )}
             </li>
           ))}
         </ul>
       </MathJax>
     </div>
-  ), [index, mathReady, question]);
+  ), [index, mathReady, question, lock]);
 
   return (
     <MathJaxContext config={mathJaxConfig}>

@@ -15,7 +15,6 @@
 }
 
 /* --- MATH LOADING STATES --- */
-/* We use visibility:hidden instead of display:none to prevent layout jumps */
 .tex2jax_process.hidden {
   visibility: hidden;
   height: 0;
@@ -27,7 +26,7 @@
   visibility: visible;
   height: auto;
   opacity: 1;
-  transition: opacity 0.1s ease-in; /* Faster transition */
+  transition: opacity 0.1s ease-in;
 }
 
 .welcome-page { width: 100%; display: flex; justify-content: center; align-items: center; }
@@ -61,7 +60,8 @@
 .container ul { padding: 0; list-style: none; }
 .container ul li {
   display: flex;
-  align-items: center;
+  flex-direction: column; /* Changed to column to allow solution box below text */
+  align-items: flex-start;
   min-height: 48px; 
   padding: 0.8rem;
   border: 1px solid #686868;
@@ -70,13 +70,37 @@
   font-size: 1rem;
   cursor: pointer;
   user-select: none;
+  transition: all 0.3s ease; /* For enlarging effect */
 }
+
+.option-text { width: 100%; }
 
 .container ul li:hover { background: #f5f5f5; }
 
 /* Feedback colors */
 .container .correct { background: #dffff2 !important; border-color: #2ecc71 !important; color: #155724 !important; }
 .container .wrong { background: #FFEBEB !important; border-color: #FF4A4A !important; color: #721c24 !important; }
+
+/* SOLUTION BOX & ENLARGING */
+.container ul li.expanded {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.solution-payload {
+  width: 100%;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  font-size: 0.9rem;
+  color: #1b5e20;
+  animation: slideDown 0.4s ease-out;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
 /* SUBJECT SELECTION */
 .subject-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; width: 100%; margin-top: 10px; }

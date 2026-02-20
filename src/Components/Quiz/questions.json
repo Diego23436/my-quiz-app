@@ -1,445 +1,148 @@
 {
-  "Mathematics": [
-
-  {
-    "question": "Evaluate $\\int_0^1 (6x^2 - 4x + 1)dx$",
-    "option1": "1",
-    "option2": "2",
-    "option3": "3",
-    "option4": "0",
-    "ans": 1
-  },
-
-  {
-    "question": "If $y = x e^{x}$, find $\\frac{dy}{dx}$",
-    "option1": "$xe^x$",
-    "option2": "$(x+1)e^x$",
-    "option3": "$e^x$",
-    "option4": "$x^2 e^x$",
-    "ans": 2
-  },
-
-  {
-    "question": "Solve $\\frac{dy}{dx} = y$, given $y(0)=3$",
-    "option1": "$3e^{-x}$",
-    "option2": "$e^{3x}$",
-    "option3": "$3e^x$",
-    "option4": "$3x e^x$",
-    "ans": 3
-  },
-
-  {
-    "question": "Find determinant $\\begin{vmatrix}1&2&3\\\\0&1&4\\\\5&6&0\\end{vmatrix}$",
-    "option1": "1",
-    "option2": "-1",
-    "option3": "0",
-    "option4": "5",
-    "ans": 1
-  },
-
-  {
-    "question": "If $\\vec{a}=(2,3,6)$, find $|\\vec{a}|$",
-    "option1": "7",
-    "option2": "$\\sqrt{49}$",
-    "option3": "$\\sqrt{45}$",
-    "option4": "$\\sqrt{49}$",
-    "ans": 2
-  },
-
-  {
-    "question": "Use Newton-Raphson once for $f(x)=x^2-5$ starting at $x=2$",
-    "option1": "2.25",
-    "option2": "2.5",
-    "option3": "2.75",
-    "option4": "2.1",
-    "ans": 1
-  },
-
-  {
-    "question": "Evaluate $\\lim_{x\\to0}\\frac{e^x-1}{x}$",
-    "option1": "0",
-    "option2": "e",
-    "option3": "1",
-    "option4": "$\\infty$",
-    "ans": 3
-  },
-
-  {
-    "question": "Solve $\\log_2(x)=5$",
-    "option1": "10",
-    "option2": "25",
-    "option3": "32",
-    "option4": "64",
-    "ans": 3
-  },
-
-  {
-    "question": "Find $\\int x^2 e^x dx$ (leading term form)",
-    "option1": "$e^x(x^2-2x+2)$",
-    "option2": "$e^x(x^2+2x+2)$",
-    "option3": "$x^2 e^x$",
-    "option4": "$e^x(x^2-2)$",
-    "ans": 1
-  },
-
-  {
-    "question": "Solve $|3x-2|=7$",
-    "option1": "$x=3$ or $-5/3$",
-    "option2": "$x=5$ or $-3$",
-    "option3": "$x=7$ or $-2$",
-    "option4": "$x=1$ or $3$",
-    "ans": 1
-  },
-
-  {
-    "question": "Expand $(1+x)^5$ coefficient of $x^3$",
-    "option1": "10",
-    "option2": "20",
-    "option3": "5",
-    "option4": "15",
-    "ans": 1
-  },
-
-  {
-    "question": "Find sum to infinity of GP: $3+1+1/3+...$",
-    "option1": "4",
-    "option2": "4.5",
-    "option3": "3.5",
-    "option4": "5",
-    "ans": 2
-  },
-
-  {
-    "question": "Differentiate implicitly: $x^2+y^2=25$ at (3,4). Find dy/dx",
-    "option1": "-3/4",
-    "option2": "4/3",
-    "option3": "-4/3",
-    "option4": "3/4",
-    "ans": 1
-  },
-
-  {
-    "question": "If $A={1,2,3,4}$, number of permutations taking 2 elements",
-    "option1": "12",
-    "option2": "6",
-    "option3": "24",
-    "option4": "8",
-    "ans": 1
-  },
-
-  {
-    "question": "Find area using trapezium rule, step=1, values 1,2,3,4",
-    "option1": "6",
-    "option2": "7.5",
-    "option3": "8",
-    "option4": "9",
-    "ans": 2
-  },
-
-  {
-    "question": "If $f(x)=x^3-3x$, find stationary points count",
-    "option1": "1",
-    "option2": "2",
-    "option3": "3",
-    "option4": "0",
-    "ans": 2
-  },
-
-  {
-    "question": "Find angle between vectors (1,0,0) and (0,1,0)",
-    "option1": "45°",
-    "option2": "60°",
-    "option3": "90°",
-    "option4": "120°",
-    "ans": 3
-  },
-
-  {
-    "question": "Solve inequality $x^2-5x+6<0$",
-    "option1": "$x<2$",
-    "option2": "$x>3$",
-    "option3": "$2<x<3$",
-    "option4": "$x>2$",
-    "ans": 3
-  },
-
-  {
-    "question": "If sinθ=3/5, find cosθ (acute)",
-    "option1": "4/5",
-    "option2": "5/4",
-    "option3": "3/4",
-    "option4": "2/5",
-    "ans": 1
-  },
-
-  {
-    "question": "Find radius of circle $x^2+y^2+4x-6y+9=0$",
-    "option1": "2",
-    "option2": "3",
-    "option3": "$\\sqrt{13}$",
-    "option4": "4",
-    "ans": 2
-  },
-
-  {
-    "question": "Solve $e^{2x}=7$",
-    "option1": "$\\ln7$",
-    "option2": "$\\frac12\\ln7$",
-    "option3": "$2\\ln7$",
-    "option4": "$\\ln14$",
-    "ans": 2
-  },
-
-  {
-    "question": "Find derivative of $\\ln(x^2+1)$",
-    "option1": "$2x/(x^2+1)$",
-    "option2": "$1/(x^2+1)$",
-    "option3": "$x/(x^2+1)$",
-    "option4": "$2/(x^2+1)$",
-    "ans": 1
-  },
-
-  {
-    "question": "Solve DE $dy/dx = 2y$",
-    "option1": "$Ce^{2x}$",
-    "option2": "$Ce^x$",
-    "option3": "$2Ce^x$",
-    "option4": "$Ce^{-2x}$",
-    "ans": 1
-  },
-
-  {
-    "question": "Evaluate $\\int_0^{\\pi} \\sin x dx$",
-    "option1": "1",
-    "option2": "2",
-    "option3": "0",
-    "option4": "π",
-    "ans": 2
-  },
-
-  {
-    "question": "Find binomial term independent of x in $(x+1/x)^6$",
-    "option1": "20",
-    "option2": "15",
-    "option3": "10",
-    "option4": "6",
-    "ans": 1
-  },
-
-  {
-    "question": "Solve $\\tan x=1$ in $0<x<2π$",
-    "option1": "π/4 only",
-    "option2": "π/4,5π/4",
-    "option3": "3π/4 only",
-    "option4": "π/2",
-    "ans": 2
-  },
-
-  {
-    "question": "Find sum first 20 terms AP: 3,7,11,...",
-    "option1": "820",
-    "option2": "840",
-    "option3": "860",
-    "option4": "880",
-    "ans": 2
-  },
-
-  {
-    "question": "Evaluate $\\int x\\ln x dx$",
-    "option1": "$x^2/2 \\ln x - x^2/4$",
-    "option2": "$x^2 \\ln x$",
-    "option3": "$x\\ln x$",
-    "option4": "$x^2/2$",
-    "ans": 1
-  },
-
-  {
-    "question": "Find eigenvalues of diag(2,3,5)",
-    "option1": "2,3,5",
-    "option2": "1,1,1",
-    "option3": "0,0,0",
-    "option4": "5,5,5",
-    "ans": 1
-  },
-
-  {
-    "question": "If $z=3+4i$, find |z|",
-    "option1": "7",
-    "option2": "5",
-    "option3": "25",
-    "option4": "1",
-    "ans": 2
-  },
-
-  {
-    "question": "Evaluate $\\int_1^e 1/x dx$",
-    "option1": "1",
-    "option2": "e",
-    "option3": "ln e",
-    "option4": "0",
-    "ans": 1
-  },
-
-  {
-    "question": "Find turning points of $x^3-6x^2+9x$",
-    "option1": "x=1,3",
-    "option2": "x=2 only",
-    "option3": "x=0 only",
-    "option4": "none",
-    "ans": 1
-  },
-
-  {
-    "question": "If vectors are parallel condition",
-    "option1": "Dot product zero",
-    "option2": "Scalar multiple",
-    "option3": "Magnitude equal",
-    "option4": "Angle 90°",
-    "ans": 2
-  },
-
-  {
-    "question": "Find rank of identity 3x3 matrix",
-    "option1": "1",
-    "option2": "2",
-    "option3": "3",
-    "option4": "0",
-    "ans": 3
-  },
-
-  {
-    "question": "Solve $x^2+4x+5=0$ nature roots",
-    "option1": "Real equal",
-    "option2": "Complex",
-    "option3": "Real distinct",
-    "option4": "Rational",
-    "ans": 2
-  },
-
-  {
-    "question": "Evaluate $\\int e^x\\sin x dx$ structure",
-    "option1": "$e^x(A\\sin x+B\\cos x)$",
-    "option2": "$e^x\\sin x$",
-    "option3": "$\\sin x$",
-    "option4": "$e^x$",
-    "ans": 1
-  },
-
-  {
-    "question": "Find slope normal to y=x^2 at x=1",
-    "option1": "-1/2",
-    "option2": "1/2",
-    "option3": "-2",
-    "option4": "2",
-    "ans": 1
-  },
-
-  {
-    "question": "Find volume by integration y=x, x=0→2 rotated x-axis",
-    "option1": "4π/3",
-    "option2": "8π/3",
-    "option3": "16π/3",
-    "option4": "2π",
-    "ans": 2
-  },
-
-  {
-    "question": "Solve $\\cos x=0$ in 0→2π",
-    "option1": "π/2,3π/2",
-    "option2": "0,π",
-    "option3": "π/4 only",
-    "option4": "none",
-    "ans": 1
-  },
-
-  {
-    "question": "Find domain of ln(x-2)",
-    "option1": "x>0",
-    "option2": "x>2",
-    "option3": "x<2",
-    "option4": "all real",
-    "ans": 2
-  },
-
-  {
-    "question": "Find Maclaurin first term e^x",
-    "option1": "x",
-    "option2": "1",
-    "option3": "x^2",
-    "option4": "2",
-    "ans": 2
-  },
-
-  {
-    "question": "Find curl zero condition meaning",
-    "option1": "Conservative field",
-    "option2": "Divergence zero",
-    "option3": "Constant field",
-    "option4": "Scalar field",
-    "ans": 1
-  },
-
-  {
-    "question": "Solve $2\\sin^2x=1$",
-    "option1": "π/4,3π/4,5π/4,7π/4",
-    "option2": "π/2 only",
-    "option3": "π only",
-    "option4": "none",
-    "ans": 1
-  },
-
-  {
-    "question": "Find projection formula type",
-    "option1": "Dot ratio",
-    "option2": "Cross product",
-    "option3": "Determinant",
-    "option4": "Matrix inverse",
-    "ans": 1
-  },
-
-  {
-    "question": "If matrix determinant zero means",
-    "option1": "Singular",
-    "option2": "Identity",
-    "option3": "Diagonal",
-    "option4": "Orthogonal",
-    "ans": 1
-  },
-
-  {
-    "question": "Evaluate $\\int_0^2 x dx$",
-    "option1": "2",
-    "option2": "4",
-    "option3": "1",
-    "option4": "3",
-    "ans": 1
-  },
-  {
-    "question": "If f'(x)>0 meaning",
-    "option1": "Increasing",
-    "option2": "Decreasing",
-    "option3": "Constant",
-    "option4": "Undefined",
-    "ans": 1
-  },
-
-  {
-    "question": "Find midpoint of (2,4),(6,8)",
-    "option1": "(4,6)",
-    "option2": "(8,12)",
-    "option3": "(2,2)",
-    "option4": "(6,4)",
-    "ans": 1
-  },
-
-  {
-    "question": "Solve $x^3=8$ real root",
-    "option1": "2",
-    "option2": "-2",
-    "option3": "4",
-    "option4": "1",
-    "ans": 1
-  }
-
+  "Physics": [
+    {
+      "question": "The $kg m^2 s^{-3}$ is the base unit of:",
+      "option1": "Electric current",
+      "option2": "Power",
+      "option3": "Planck constant",
+      "option4": "Energy",
+      "ans": 2,
+      "explanation": "$Power = \\frac{Work}{time} = \\frac{kg m^2 s^{-2}}{s} = kg m^2 s^{-3}$."
+    },
+    {
+      "question": "An aircraft moving through air at velocity v experiences a resistive force $F = Kv^2$. The power required is:",
+      "option1": "$Kv^2$",
+      "option2": "$Kv$",
+      "option3": "$Kv^4$",
+      "option4": "$Kv^3$",
+      "ans": 4,
+      "explanation": "$Power = Force \\times velocity$. Given $F = Kv^2$, then $P = (Kv^2) \\times v = Kv^3$."
+    },
+    {
+      "question": "Metals have positive temperature coefficients of resistance. This means:",
+      "option1": "Resistance decreases with decrease in temperature",
+      "option2": "Resistance increases with increase in temperature",
+      "option3": "Resistivity increases with decrease in temperature",
+      "option4": "Resistance decreases with increase in temperature",
+      "ans": 2,
+      "explanation": "A positive coefficient $\\alpha$ means that as temperature $T$ increases, the resistance $R$ also increases according to $R = R_0(1 + \\alpha\\Delta T)$."
+    },
+    {
+      "question": "The Kelvin temperature scale differs because it:",
+      "option1": "Does not depend on any substance",
+      "option2": "Depends on pressure changes",
+      "option3": "Depends on expansion of gases",
+      "option4": "Is easy to establish",
+      "ans": 1,
+      "explanation": "The Kelvin scale is an absolute thermodynamic scale, meaning its definition is independent of the properties of any particular thermometric substance."
+    },
+    {
+      "question": "Which set of physical quantities are all vectors?",
+      "option1": "Mass, velocity, displacement",
+      "option2": "Magnetic flux, displacement, momentum",
+      "option3": "Magnetic flux, electric field strength, velocity",
+      "option4": "Magnetic flux density, force, momentum",
+      "ans": 4,
+      "explanation": "Magnetic flux is a scalar. Magnetic flux density ($B$), force ($F$), and momentum ($p$) are all vectors because they have both magnitude and direction."
+    },
+    {
+      "question": "Which explains weightlessness of an astronaut in space?",
+      "option1": "No acceleration relative to spacecraft",
+      "option2": "No gravitational force",
+      "option3": "Acceleration is very small",
+      "option4": "No centripetal acceleration",
+      "ans": 1,
+      "explanation": "Weightlessness is felt because both the astronaut and the craft are in free-fall towards Earth. Since they have the same acceleration, there is no contact force between them."
+    },
+    {
+      "question": "When a road is banked, centripetal force is provided by:",
+      "option1": "Friction only",
+      "option2": "Normal reaction and friction",
+      "option3": "Normal reaction only",
+      "option4": "Weight component",
+      "ans": 3,
+      "explanation": "On a banked road, the horizontal component of the normal force ($N \\sin \\theta$) provides the necessary centripetal force $\\frac{mv^2}{r}$."
+    },
+    {
+      "question": "An atom is excited to a higher energy level. What is correct?",
+      "option1": "R loses energy to S",
+      "option2": "S must lose energy to excite R",
+      "option3": "Emission spectrum is produced",
+      "option4": "S absorbs energy from R",
+      "ans": 2,
+      "explanation": "Excitation requires an input of energy. If system S excites system R, S must transfer (lose) energy to R so that R can move to a higher state."
+    },
+    {
+      "question": "Two wires of same material: Q has twice diameter and twice tension. Extension of Q is:",
+      "option1": "2e",
+      "option2": "e/4",
+      "option3": "e",
+      "option4": "e/2",
+      "ans": 4,
+      "explanation": "Extension $e = \\frac{FL}{AE}$. Since $Area \\propto d^2$, doubling diameter makes area $4A$. With $2F$ and $4A$, the new extension is $\\frac{2F}{4A} = \\frac{1}{2}e$."
+    },
+    {
+      "question": "Back EMF in a coil is due to:",
+      "option1": "Nearby current",
+      "option2": "Steady current",
+      "option3": "Changing current",
+      "option4": "Heating",
+      "ans": 3,
+      "explanation": "According to Lenz's Law and Faraday's Law, an EMF is induced to oppose a change in magnetic flux, which is caused by a changing current $\\frac{di}{dt}$."
+    },
+    {
+      "question": "In photoelectric effect graph, gradient represents:",
+      "option1": "Work function",
+      "option2": "Stopping potential",
+      "option3": "Planck constant",
+      "option4": "Frequency",
+      "ans": 3,
+      "explanation": "In the equation $K_{max} = hf - \\Phi$, which follows $y = mx + c$, the gradient $m$ corresponds to the Planck constant $h$."
+    },
+    {
+      "question": "Intrinsic semiconductor property:",
+      "option1": "Equal electrons and holes",
+      "option2": "Holes majority",
+      "option3": "Electrons majority",
+      "option4": "Bands overlap",
+      "ans": 1,
+      "explanation": "In an intrinsic (pure) semiconductor, every electron that jumps to the conduction band leaves a hole in the valence band, so $n = p$."
+    },
+    {
+      "question": "Torque in DC motor decreases when:",
+      "option1": "Current increases",
+      "option2": "Force perpendicular increases",
+      "option3": "Conductor length increases",
+      "option4": "Force parallel increases",
+      "ans": 4,
+      "explanation": "Torque is $\\tau = rF \\sin \\theta$. If the force is parallel to the area vector (or radius), $\\theta = 0$, so torque becomes zero."
+    },
+    {
+      "question": "Hammer striking nail converts energy into:",
+      "option1": "Sound only",
+      "option2": "Sound and heat",
+      "option3": "Sound, heat and KE",
+      "option4": "Sound, heat and potential energy",
+      "ans": 4,
+      "explanation": "Energy is dissipated as sound and heat, while the work done to move the nail into the wood is stored as potential energy against resistive forces."
+    },
+    {
+      "question": "Area under force-separation curve represents:",
+      "option1": "Latent heat",
+      "option2": "Equilibrium spacing",
+      "option3": "Young modulus",
+      "option4": "Breaking force",
+      "ans": 2,
+      "explanation": "The area under the force-distance graph represents work or potential energy. The point where force is zero identifies the equilibrium spacing $r_0$."
+    },
+    {
+      "question": "Which is correct about classical photoelectric theory?",
+      "option1": "Threshold frequency exists",
+      "option2": "KE depends on frequency",
+      "option3": "Current increases with intensity",
+      "option4": "Emission is instantaneous",
+      "ans": 3,
+      "explanation": "Classical wave theory predicted that more intense light (more energy) would release more electrons, thus increasing the current."
+    }
   ]
 }
