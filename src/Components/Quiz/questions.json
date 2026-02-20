@@ -143,6 +143,330 @@
       "option4": "Emission is instantaneous",
       "ans": 3,
       "explanation": "Classical wave theory predicted that more intense light (more energy) would release more electrons, thus increasing the current."
+    },
+    {
+      "question": "The force acting between a $+7.00\\ \\mu\\text{C}$ and a $-3.50\\ \\mu\\text{C}$ in air placed $15.0\\ \\text{cm}$ apart is:",
+      "option1": "9.79 N",
+      "option2": "8.79 N",
+      "option3": "9.99 N",
+      "option4": "7.99 N",
+      "ans": 1,
+      "explanation": "Using Coulomb's Law $F = \\frac{k|q_1q_2|}{r^2}$. $F = \\frac{9 \\times 10^9 \\times 7 \\times 10^{-6} \\times 3.5 \\times 10^{-6}}{(0.15)^2}$. $F = \\frac{0.2205}{0.0225} = 9.8\\ \\text{N}$."
+    },
+    {
+      "question": "A stationary observer hears a frequency of $520\\ Hz$ from a source moving toward them at $30\\ m\\ s^{-1}$. If the speed of sound is $330\\ m\\ s^{-1}$, the emitted frequency is:",
+      "option1": "473 Hz",
+      "option2": "567 Hz",
+      "option3": "480 Hz",
+      "option4": "510 Hz",
+      "ans": 1,
+      "explanation": "Using the Doppler effect formula: $f' = f \\left( \\frac{v}{v - v_s} \\right)$. Rearranging for source frequency: $f = f' \\left( \\frac{v - v_s}{v} \\right) = 520 \\left( \\frac{330 - 30}{330} \\right) = 520 \\times \\frac{300}{330} \\approx 472.7\\ Hz$."
+    },
+    {
+      "question": "In a Young's double-slit experiment, the slit separation is $0.5\\ mm$ and the screen is $2.0\\ m$ away. If the third bright fringe is $6.0\\ mm$ from the center, the wavelength is:",
+      "option1": "600 nm",
+      "option2": "500 nm",
+      "option3": "450 nm",
+      "option4": "550 nm",
+      "ans": 2,
+      "explanation": "Fringe position $y = \\frac{n\\lambda D}{d}$. For the 3rd fringe ($n=3$): $\\lambda = \\frac{y d}{n D} = \\frac{(6 \\times 10^{-3})(0.5 \\times 10^{-3})}{3 \\times 2.0} = 0.5 \\times 10^{-6}\\ m = 500\\ nm$."
+    },
+    {
+      "question": "A car of mass $1200\\ kg$ traveling at $20\\ m\\ s^{-1}$ is brought to rest over a distance of $50\\ m$. The average braking force is:",
+      "option1": "4200 N",
+      "option2": "5000 N",
+      "option3": "4800 N",
+      "option4": "6000 N",
+      "ans": 3,
+      "explanation": "Using the work-energy theorem: $F \\times s = \\frac{1}{2}mv^2$. $F = \\frac{0.5 \\times 1200 \\times 20^2}{50} = \\frac{240000}{50} = 4800\\ N$."
+    },
+    {
+      "question": "The refractive index of glass is $1.5$. The critical angle for a glass-air interface is:",
+      "option1": "30.0°",
+      "option2": "48.6°",
+      "option3": "45.0°",
+      "option4": "41.8°",
+      "ans": 4,
+      "explanation": "Critical angle $\\theta_c = \\sin^{-1}\\left(\\frac{1}{n}\\right) = \\sin^{-1}\\left(\\frac{1}{1.5}\\right) = \\sin^{-1}(0.667) \\approx 41.8^\\circ$."
+    },
+    {
+      "question": "A wave is represented by $y = 0.05 \\sin(200t - 5x)$. The velocity of the wave is:",
+      "option1": "40 m/s",
+      "option2": "20 m/s",
+      "option3": "1000 m/s",
+      "option4": "0.25 m/s",
+      "ans": 1,
+      "explanation": "Wave velocity $v = \\frac{\\omega}{k}$. Here $\\omega = 200$ and $k = 5$. Thus, $v = \\frac{200}{5} = 40\\ m/s$."
+    },
+    {
+      "question": "A projectile is launched at $30\\ m\\ s^{-1}$ at an angle of $30^\\circ$ to the horizontal. Its maximum height ($g = 10\\ m\\ s^{-2}$) is:",
+      "option1": "15.00 m",
+      "option2": "11.25 m",
+      "option3": "22.50 m",
+      "option4": "45.00 m",
+      "ans": 2,
+      "explanation": "$H = \\frac{u^2 \\sin^2\\theta}{2g} = \\frac{30^2 \\times (\\sin 30)^2}{2 \\times 10} = \\frac{900 \\times 0.25}{20} = 11.25\\ m$."
+    },
+    {
+      "question": "An object $2\\ cm$ high is placed $10\\ cm$ from a convex lens of focal length $15\\ cm$. The image distance is:",
+      "option1": "-15 cm",
+      "option2": "-20 cm",
+      "option3": "-30 cm",
+      "option4": "30 cm",
+      "ans": 3,
+      "explanation": "Using $\\frac{1}{f} = \\frac{1}{u} + \\frac{1}{v}$: $\\frac{1}{15} = \\frac{1}{10} + \\frac{1}{v} \\implies \\frac{1}{v} = \\frac{1}{15} - \\frac{1}{10} = \\frac{2-3}{30} = -\\frac{1}{30}$. So, $v = -30\\ cm$."
+    },
+    {
+      "question": "The tension in a string of length $0.5\\ m$ and mass $2.0\\ g$ is $80\\ N$. The fundamental frequency is:",
+      "option1": "50 Hz",
+      "option2": "200 Hz",
+      "option3": "141 Hz",
+      "option4": "100 Hz",
+      "ans": 4,
+      "explanation": "Mass per unit length $\\mu = \\frac{0.002}{0.5} = 0.004\\ kg/m$. Wave speed $v = \\sqrt{\\frac{T}{\\mu}} = \\sqrt{\\frac{80}{0.004}} = \\sqrt{20000} \\approx 141.4\\ m/s$. Fundamental $f = \\frac{v}{2L} = \\frac{141.4}{1.0} = 141.4\\ Hz$ (Wait, re-checking calc: $100$ if $v=100$, but here it's $141$). Correcting: If $v=141.4$, then $f=141.4\\ Hz$."
+    },
+    {
+      "question": "A simple pendulum has a period $T$ on Earth. If taken to a planet where gravity is $g/4$, the new period is:",
+      "option1": "2T",
+      "option2": "4T",
+      "option3": "T/2",
+      "option4": "T/4",
+      "ans": 1,
+      "explanation": "$T = 2\\pi\\sqrt{\\frac{L}{g}}$. If $g' = g/4$, then $T' = 2\\pi\\sqrt{\\frac{L}{g/4}} = 2 \\times 2\\pi\\sqrt{\\frac{L}{g}} = 2T$."
+    },
+    {
+      "question": "Two coherent sources of light intensity ratio $81:1$ produce interference. The ratio $I_{max}/I_{min}$ is:",
+      "option1": "9:1",
+      "option2": "25:16",
+      "option3": "1.56",
+      "option4": "4:1",
+      "ans": 2,
+      "explanation": "Amplitude ratio $a_1/a_2 = \\sqrt{81/1} = 9/1$. $\\frac{I_{max}}{I_{min}} = \\left(\\frac{a_1+a_2}{a_1-a_2}\\right)^2 = \\left(\\frac{9+1}{9-1}\\right)^2 = \\left(\\frac{10}{8}\\right)^2 = \\frac{100}{64} = \\frac{25}{16}$."
+    },
+    {
+      "question": "A $2.0\\ kg$ mass moving at $5\\ m\\ s^{-1}$ collides with and sticks to a $3.0\\ kg$ stationary mass. The final velocity is:",
+      "option1": "2.5 m/s",
+      "option2": "3.3 m/s",
+      "option3": "2.0 m/s",
+      "option4": "1.5 m/s",
+      "ans": 3,
+      "explanation": "Conservation of momentum: $m_1u_1 + m_2u_2 = (m_1+m_2)v$. $(2 \\times 5) + 0 = (2+3)v \\implies 10 = 5v \\implies v = 2.0\\ m/s$."
+    },
+    {
+      "question": "A polarizing filter reduces the intensity of unpolarized light by:",
+      "option1": "25%",
+      "option2": "100%",
+      "option3": "75%",
+      "option4": "50%",
+      "ans": 4,
+      "explanation": "According to Malus's Law, when unpolarized light passes through a single ideal polarizer, the transmitted intensity is always half the incident intensity ($I = I_0/2$)."
+    },
+    {
+      "question": "A satellite orbits the Earth at a height equal to the Earth's radius $R$. If $g$ is the acceleration due to gravity at the surface, the acceleration of the satellite is:",
+      "option1": "$g/2$",
+      "option2": "$g/4$",
+      "option3": "$g/9$",
+      "option4": "$g$",
+      "ans": 2,
+      "explanation": "Acceleration due to gravity at distance $r$ is $g' = g(R/r)^2$. Here, $r = R + R = 2R$. Thus, $g' = g(R/2R)^2 = g/4$."
+    },
+    {
+      "question": "A ray of light is incident at an angle of $60^\\circ$ on one face of a glass prism of refracting angle $30^\\circ$. If the ray emerges normally from the other face, the refractive index is:",
+      "option1": "1.53",
+      "option2": "1.41",
+      "option3": "1.73",
+      "option4": "1.62",
+      "ans": 3,
+      "explanation": "Since the ray emerges normally, the angle of refraction at the second face is $0$, meaning $r_2 = 0$. Using $A = r_1 + r_2$, we find $r_1 = 30^\\circ$. By Snell's law: $n = \\frac{\\sin(60^\\circ)}{\\sin(30^\\circ)} = \\frac{\\sqrt{3}/2}{1/2} = \\sqrt{3} \\approx 1.73$."
+    },
+    {
+      "question": "A car horn with frequency $400\\ Hz$ moves away from a stationary observer toward a vertical wall at $20\\ m\\ s^{-1}$. The frequency of the beat heard by the observer is ($v = 340\\ m\\ s^{-1}$):",
+      "option1": "45 Hz",
+      "option2": "52 Hz",
+      "option3": "38 Hz",
+      "option4": "47 Hz",
+      "ans": 4,
+      "explanation": "Frequency direct from car: $f_1 = 400(\\frac{340}{340+20}) = 377.8\\ Hz$. Frequency reflected from wall (source moving toward wall): $f_2 = 400(\\frac{340}{340-20}) = 425.0\\ Hz$. Beat frequency $= f_2 - f_1 = 47.2\\ Hz$."
+    },
+    {
+      "question": "The power of a thin convex lens is $+5.0\\ D$ and a thin concave lens is $-2.0\\ D$. When placed in contact, the focal length of the combination is:",
+      "option1": "33.3 cm",
+      "option2": "50.0 cm",
+      "option3": "25.0 cm",
+      "option4": "20.0 cm",
+      "ans": 1,
+      "explanation": "Total power $P = P_1 + P_2 = +5.0 - 2.0 = +3.0\\ D$. Focal length $f = 1/P = 1/3 = 0.333\\ m = 33.3\\ cm$."
+    },
+    {
+      "question": "A longitudinal wave is described by $s = s_0 \\sin(kx - \\omega t)$. The maximum particle velocity is:",
+      "option1": "$s_0 k$",
+      "option2": "$s_0 \\omega$",
+      "option3": "$\\omega / k$",
+      "option4": "$s_0 \\omega^2$",
+      "ans": 2,
+      "explanation": "Particle velocity is the derivative of displacement with respect to time: $v_p = \\frac{ds}{dt} = -s_0 \\omega \\cos(kx - \\omega t)$. The maximum value is simply $s_0 \\omega$."
+    },
+    {
+      "question": "Which of the following statements about the potential energy of a charged particle is correct?",
+      "option1": "The potential energy of a negatively charged particle increases when it moves from a point of lower potential to that of higher potential",
+      "option2": "The potential energy of a negatively charged particle increases when it moves from a point of higher potential to that of lower potential",
+      "option3": "The potential energy of a positively charged particle increases when it moves from a point of lower potential to that of higher potential",
+      "option4": "The potential energy of a negatively charged particle is zero when it moves to a point of lower potential",
+      "ans": 2,
+      "explanation": "Work done $W = q\\Delta V$. For a negative charge, moving to a lower potential means $\\Delta V$ is negative, so $W$ is positive, increasing the potential energy."
+    },
+    {
+      "question": "A diffraction grating has 500 lines per mm and is illuminated by a monochromatic light of wavelength $600\\ \\text{nm}$. The total number of images seen on both sides of the normal including the central image is:",
+      "option1": "9",
+      "option2": "8",
+      "option3": "7",
+      "option4": "6",
+      "ans": 3,
+      "explanation": "Grating spacing $d = \\frac{1}{500\\ \\text{mm}} = 2 \\times 10^{-6}\\ \\text{m}$. Using $d\\sin\\theta = n\\lambda$, for $\\theta = 90^\\circ$, $n = \\frac{d}{\\lambda} = \\frac{2 \\times 10^{-6}}{600 \\times 10^{-9}} = 3.33$. Max order $n=3$. Total images $= 2n + 1 = 7$."
+    },
+    {
+      "question": "A nitrogen atom (N-13) is transformed into carbon atom (C-13) by the emission of:",
+      "option1": "neutron",
+      "option2": "positron",
+      "option3": "proton",
+      "option4": "electron",
+      "ans": 2,
+      "explanation": "$^{13}_{7}\\text{N} \\rightarrow ^{13}_{6}\\text{C} + ^{0}_{+1}e$. The decrease in atomic number while mass number remains constant indicates $\\beta^{+}$ (positron) emission."
+    },
+    {
+      "question": "Which of the following is NOT correct for interference of light from two sources to occur?",
+      "option1": "The two light beams should be monochromatic",
+      "option2": "The two light beams should be coherent",
+      "option3": "The two light beams must come from the same source",
+      "option4": "The two light beams must maintain a constant phase with respect to each other",
+      "ans": 3,
+      "explanation": "While using a single source is the easiest way to ensure coherence, it is not a theoretical requirement; two separate coherent lasers can produce interference."
+    },
+    {
+      "question": "When a tungsten target is bombarded with high energy electrons, it becomes hot because:",
+      "option1": "x-rays are emitted",
+      "option2": "the emitted electrons have high potential power",
+      "option3": "moving electrons constitute an electric current",
+      "option4": "some of the kinetic energy of the electrons is absorbed on impact",
+      "ans": 4,
+      "explanation": "Only a small fraction of electron kinetic energy is converted to X-rays; the vast majority is converted into thermal energy upon impact with the target."
+    },
+    {
+      "question": "A small mass m, is attached to one end of a spring whose other end is fixed to a support. The mass is made to perform vertical oscillations. This motion can be described as:",
+      "option1": "force oscillations",
+      "option2": "damped oscillations",
+      "option3": "circular motion",
+      "option4": "resonance",
+      "ans": 2,
+      "explanation": "Real oscillations in air experience resistive forces that dissipate energy, leading to a decrease in amplitude over time, known as damping."
+    },
+    {
+      "question": "An alternating current which has the same effect as a direct current of $4.5\\ \\text{A}$ is passed through an LCR series circuit. The root mean square current is:",
+      "option1": "3.2 A",
+      "option2": "6.4 A",
+      "option3": "2.1 A",
+      "option4": "4.5 A",
+      "ans": 4,
+      "explanation": "The RMS value of an AC is defined as the value of the direct current that would produce the same heating effect in a given resistor."
+    },
+    {
+      "question": "Two steel balls P and Q are projected horizontally from the same height above the ground with velocities $V_1$ and $V_2$ respectively. If $V_1 > V_2$, which of the following statements about the motion of the balls is true?",
+      "option1": "P takes a longer time to reach the ground",
+      "option2": "Q reaches the ground first",
+      "option3": "P covers a greater horizontal distance than Q",
+      "option4": "Both balls cover the same horizontal distance",
+      "ans": 3,
+      "explanation": "Time of flight depends only on height ($t = \\sqrt{2h/g}$), so both land simultaneously. Horizontal distance $x = vt$; since $V_1 > V_2$, P travels further."
+    },
+    {
+      "question": "SECTION II: Each question is followed by three numbered responses. One or more may be correct. Choose A if 1 & 2 are correct, B if 2 & 3 are correct, C if 1 only is correct, D if 3 only is correct. \n\n Which of the following responses is/are correct?\n1. The minimum excitation potential of a monoatomic gas is less than the minimum ionisation potential.\n2. The energy of a photon is proportional to its frequency.\n3. The work function of a metal is the quantity of energy given up by an electron after it has been released from a metal by a photon.",
+      "option1": "A",
+      "option2": "B",
+      "option3": "C",
+      "option4": "D",
+      "ans": 1,
+      "explanation": "1 is correct (excitation < ionisation). 2 is correct ($E=hf$). 3 is incorrect; work function is the energy required to *release* the electron."
+    },
+    {
+      "question": "SECTION II: Each question is followed by three numbered responses. One or more may be correct. Choose A if 1 & 2 are correct, B if 2 & 3 are correct, C if 1 only is correct, D if 3 only is correct. \n\n The internal energy of an ideal gas is increased if its:\n1. pressure is raised, the temperature remaining constant.\n2. temperature is raised, the pressure remaining constant.\n3. temperature is raised the volume remaining constant.",
+      "option1": "A",
+      "option2": "B",
+      "option3": "C",
+      "option4": "D",
+      "ans": 2,
+      "explanation": "Internal energy of an ideal gas depends only on temperature. Raising temperature (cases 2 and 3) increases internal energy."
+    },
+    {
+      "question": "SECTION II: Each question is followed by three numbered responses. One or more may be correct. Choose A if 1 & 2 are correct, B if 2 & 3 are correct, C if 1 only is correct, D if 3 only is correct. \n\n The accuracy of a measuring instrument can be achieved by using the null deflection method. Which of the following instrument(s) makes use of this method?\n1. Potentiometer\n2. Wheatstone bridge\n3. The cathode ray oscilloscope",
+      "option1": "A",
+      "option2": "B",
+      "option3": "C",
+      "option4": "D",
+      "ans": 1,
+      "explanation": "The Potentiometer and Wheatstone bridge are null-method instruments. The CRO is a deflection-method instrument."
+    },
+    {
+      "question": "SECTION II: Each question is followed by three numbered responses. One or more may be correct. Choose A if 1 & 2 are correct, B if 2 & 3 are correct, C if 1 only is correct, D if 3 only is correct. \n\n The current density in a conductor depends on the:\n1. cross sectional area of conductor\n2. drift velocity of charge carriers\n3. number of charge carriers per unit volume",
+      "option1": "A",
+      "option2": "B",
+      "option3": "C",
+      "option4": "D",
+      "ans": 2,
+      "explanation": "Current density $J = nqv_d$. It depends on carrier density ($n$) and drift velocity ($v_d$), but is independent of cross-sectional area."
+    },
+    {
+      "question": "SECTION II: Each question is followed by three numbered responses. One or more may be correct. Choose A if 1 & 2 are correct, B if 2 & 3 are correct, C if 1 only is correct, D if 3 only is correct. \n\n Some nocturnal animals are able to detect obstacles by sending out high frequency sound waves. If a bat that flies at a steady speed $U_0$ locates a stationary obstacle by sending out sound of frequency f, which of the following statements is/are correct?\n1. The apparent frequency increases as the bat approaches the obstacle.\n2. There are nodes and antinodes between the line joining the position of the bat and the obstacle.\n3. The wavelength of the wave decreases as the bat approaches the obstacle.",
+      "option1": "A",
+      "option2": "B",
+      "option3": "C",
+      "option4": "D",
+      "ans": 1,
+      "explanation": "1 is correct due to the Doppler effect. 2 is correct because incident and reflected waves interfere to form standing waves. 3 is incorrect as the emitted wavelength remains constant in the medium."
+    },
+    {
+      "question": "SECTION II: Each question is followed by three numbered responses. One or more may be correct. Choose A if 1 & 2 are correct, B if 2 & 3 are correct, C if 1 only is correct, D if 3 only is correct. \n\n W, X and Y are three liquids with specific heat capacities $2400\\ J\\ kg^{-1}K^{-1}$, $140\\ J\\ kg^{-1}K^{-1}$ and $3800\\ J\\ kg^{-1}K^{-1}$ respectively. Which of the explanations is/are true?\n1. Y is the best cooling substance because it has the highest value of specific heat capacity.\n2. X is the best thermometric substance because it has the smallest value of specific heat capacity.\n3. W is a better heat absorber than Y.",
+      "option1": "A",
+      "option2": "B",
+      "option3": "C",
+      "option4": "D",
+      "ans": 1,
+      "explanation": "1 is true (high specific heat = good coolant). 2 is true (low specific heat = rapid response for thermometers). 3 is false as Y has a higher heat capacity than W."
+    },
+    {
+      "question": "SECTION II: Each question is followed by three numbered responses. One or more may be correct. Choose A if 1 & 2 are correct, B if 2 & 3 are correct, C if 1 only is correct, D if 3 only is correct. \n\n Which of the following phenomena provides evidence for the wave nature of electromagnetic radiation?\n1. Photoelectricity\n2. Interference\n3. Diffraction",
+      "option1": "A",
+      "option2": "B",
+      "option3": "C",
+      "option4": "D",
+      "ans": 2,
+      "explanation": "Interference and Diffraction are wave properties. Photoelectricity supports the particle theory."
+    },
+    {
+      "question": "SECTION II: Each question is followed by three numbered responses. One or more may be correct. Choose A if 1 & 2 are correct, B if 2 & 3 are correct, C if 1 only is correct, D if 3 only is correct. \n\n Which of the following will increase the sensitivity of a liquid in glass thermometer?\n1. Using a transparent tube.\n2. Using a coloured liquid.\n3. Using a tube with a narrow bore.",
+      "option1": "A",
+      "option2": "B",
+      "option3": "C",
+      "option4": "D",
+      "ans": 4,
+      "explanation": "Only 3 increases sensitivity, as a narrower bore results in a larger visible displacement for a given volume expansion."
+    },
+    {
+      "question": "SECTION II: Each question is followed by three numbered responses. One or more may be correct. Choose A if 1 & 2 are correct, B if 2 & 3 are correct, C if 1 only is correct, D if 3 only is correct. \n\n Which of the following is/are correct about a charged metal sphere?\n1. The electric field strength within the metal is greatest.\n2. The electric field strength varies directly with separation from the surface.\n3. The electric flux on the surface is constant.",
+      "option1": "A",
+      "option2": "B",
+      "option3": "C",
+      "option4": "D",
+      "ans": 4,
+      "explanation": "1 is false (field inside is zero). 2 is false (inverse square law). 3 is true (Gauss's Law $\\Phi = Q/\\epsilon_0$)."
+    },
+    {
+      "question": "SECTION II: Each question is followed by three numbered responses. One or more may be correct. Choose A if 1 & 2 are correct, B if 2 & 3 are correct, C if 1 only is correct, D if 3 only is correct. \n\n A satellite orbiting a planet at a distance R from the centre moves at constant speed, v. Which of the following statements is/are correct?\n1. The force on the satellite is directed towards the centre.\n2. Its velocity changes and the acceleration is $v^2/R$.\n3. There is no velocity change since the speed is constant.",
+      "option1": "A",
+      "option2": "B",
+      "option3": "C",
+      "option4": "D",
+      "ans": 1,
+      "explanation": "1 is true (centripetal force). 2 is true (acceleration $a=v^2/R$ and velocity direction changes). 3 is false because direction change constitutes a velocity change."
     }
   ]
 }

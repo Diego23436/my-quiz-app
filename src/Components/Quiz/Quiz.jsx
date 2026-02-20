@@ -34,7 +34,7 @@ const QUIZ_TIME = 45 * 60;
 
 // EXAM SCHEDULE (Year, Month (0-indexed), Day, Hour, Minute)
 const EXAM_SCHEDULE = {
-  "Mathematics": new Date(2026, 1, 20, 20, 0, 0), // Feb 13, 2026, 20:30:00
+  "Mathematics": new Date(2026, 1, 20, 20, 30, 0), // Feb 13, 2026, 20:30:00
   "Further Maths": new Date(2026, 1, 14, 0, 0, 0), 
   "Physics": new Date(2026, 1, 14, 0, 0, 0),
   "Chemistry": new Date(2026, 1, 14, 0, 0, 0),
@@ -85,6 +85,7 @@ const Quiz = () => {
     const sessionRef = doc(db, "active_sessions", sessionID);
 
     try {
+      /* // SESSION LOCKING LOGIC - COMMENTED OUT TO ALLOW RE-ENTRY
       const sessionSnap = await getDoc(sessionRef);
       if (sessionSnap.exists()) {
         alert(`Access Denied: You have already attempted or started ${subjectName}. You cannot restart.`);
@@ -98,6 +99,7 @@ const Quiz = () => {
         startTime: new Date().toLocaleString(),
         status: "in-progress"
       });
+      */
 
       const data = localData[subjectName];
       if (data && data.length > 0) {
@@ -297,15 +299,15 @@ const Quiz = () => {
               <div className="welcome-text">
                 <h2>Welcome to LEADEX National Quiz</h2>
                 <p>Dear Candidate,<br /><br />
-          You are welcome to the <strong>LEADEX National Quiz Application</strong>,
-          a carefully structured academic platform designed to strengthen your
-          examination readiness.
-          <br /><br />
-          This quiz environment simulates real examination conditions, helping
-          you improve accuracy, time management, and confidence.
-          <br /><br />
-          Read each question carefully and manage your time wisely.
-          This is a vital step toward achieving academic excellence.</p>
+              You are welcome to the <strong>LEADEX National Quiz Application</strong>,
+              a carefully structured academic platform designed to strengthen your
+              examination readiness.
+              <br /><br />
+              This quiz environment simulates real examination conditions, helping
+              you improve accuracy, time management, and confidence.
+              <br /><br />
+              Read each question carefully and manage your time wisely.
+              This is a vital step toward achieving academic excellence.</p>
                 <button onClick={() => setPage("login")}>Get Started</button>
               </div>
             </div>
