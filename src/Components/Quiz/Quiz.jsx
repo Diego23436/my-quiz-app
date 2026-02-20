@@ -34,7 +34,7 @@ const QUIZ_TIME = 45 * 60;
 
 // EXAM SCHEDULE (Year, Month (0-indexed), Day, Hour, Minute)
 const EXAM_SCHEDULE = {
-  "Mathematics": new Date(2026, 1, 13, 20, 30, 0), // Feb 13, 2026, 20:30:00
+  "Mathematics": new Date(2026, 1, 20, 20, 30, 0), // Feb 13, 2026, 20:30:00
   "Further Maths": new Date(2026, 1, 14, 0, 0, 0), 
   "Physics": new Date(2026, 1, 14, 0, 0, 0),
   "Chemistry": new Date(2026, 1, 14, 0, 0, 0),
