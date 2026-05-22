@@ -13,6 +13,9 @@ import ads23 from "../../assets/ads23.jpg";
 import ads31 from "../../assets/ads31.jpg";
 import ads32 from "../../assets/ads32.jpg";
 import ads33 from "../../assets/ads33.jpg";
+import t1 from "../../assets/t1.jpg";
+import t2 from "../../assets/t2.jpg";
+import t3 from "../../assets/t3.jpg";
 import { MathJax, MathJaxContext } from "better-react-mathjax";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
@@ -64,6 +67,9 @@ const Quiz = () => {
   const [showAds, setShowAds] = useState(false);
   const [currentAdIndex, setCurrentAdIndex] = useState(0);
   const [nextQuestionPending, setNextQuestionPending] = useState(false);
+  const [adsCanClose, setAdsCanClose] = useState(false);
+  const adIntervalRef = useRef(null);
+  const adCloseTimerRef = useRef(null);
 
   // Function to get the correct ads array based on current question
   const getAdsArray = () => {
@@ -78,6 +84,12 @@ const Quiz = () => {
   };
 
   const adsArray = getAdsArray();
+  const testimonialImages = [t1, t2, t3];
+  const [showTestimonialCarousel, setShowTestimonialCarousel] = useState(false);
+  const [testimonialIndex, setTestimonialIndex] = useState(0);
+  const [testimonialCloseVisible, setTestimonialCloseVisible] = useState(false);
+  const [isMobileCarousel, setIsMobileCarousel] = useState(false);
+  const testimonialIntervalRef = useRef(null);
 
   const question = questions[index] || {};
   const option1 = useRef(null);
@@ -170,7 +182,7 @@ const Quiz = () => {
       setTimeLeft((prev) => {
         if (prev <= 1) {
           clearInterval(timer);
-          setResult(true);
+          setShowTestimonialCarousel(true);
           return 0;
         }
         return prev - 1;
@@ -240,32 +252,37 @@ const Quiz = () => {
   };
 
   const proceedToNextQuestion = () => {
-    setMathReady(false); 
+    setMathReady(false);
     option_array.forEach((opt) => opt.current?.classList.remove("wrong", "correct", "expanded"));
-    // Check if current question is the last one
-    if (index === questions.length - 1) {
-      setResult(true);
-    } else {
-      setIndex((prev) => prev + 1);
-      setLock(false);
-    }
     setShowAds(false);
     setNextQuestionPending(false);
+    setAdsCanClose(false);
+
+    if (index === questions.length - 1) {
+      setShowTestimonialCarousel(true);
+      return;
+    }
+    setIndex((prev) => prev + 1);
+    setLock(false);
+  };
+
+  const handleCloseAds = () => {
+    if (!adsCanClose) return;
+    proceedToNextQuestion();
   };
 
   const next = () => {
     if (!lock) return;
     
-    // Check if we're at the last question before doing anything
     if (index === questions.length - 1) {
-      setResult(true);
+      setShowTestimonialCarousel(true);
       return;
     }
     
-    // Check if we need to show ads (every 15 questions)
     if ((index + 1) % 15 === 0) {
       setShowAds(true);
       setCurrentAdIndex(0);
+      setAdsCanClose(false);
       setNextQuestionPending(true);
     } else {
       proceedToNextQuestion();
@@ -276,24 +293,79 @@ const Quiz = () => {
   useEffect(() => {
     if (!showAds) return;
     
-    // Reveal each ad one by one (0.5s per ad = 2s total for 4 ads)
-    const adInterval = setInterval(() => {
+    setAdsCanClose(false);
+    if (adIntervalRef.current) {
+      clearInterval(adIntervalRef.current);
+    }
+    if (adCloseTimerRef.current) {
+      clearTimeout(adCloseTimerRef.current);
+    }
+
+    adIntervalRef.current = setInterval(() => {
       setCurrentAdIndex((prev) => {
         if (prev < adsArray.length - 1) {
           return prev + 1;
-        } else {
-          clearInterval(adInterval);
-          // After all ads revealed, wait 10 seconds then proceed
-          setTimeout(() => {
-            proceedToNextQuestion();
-          }, 10000);
-          return prev;
         }
+        return prev;
       });
     }, 500);
 
-    return () => clearInterval(adInterval);
+    adCloseTimerRef.current = setTimeout(() => {
+      setAdsCanClose(true);
+    }, 10000);
+
+    return () => {
+      clearInterval(adIntervalRef.current);
+      clearTimeout(adCloseTimerRef.current);
+    };
   }, [showAds, adsArray.length]);
+
+  useEffect(() => {
+    const updateMobile = () => {
+      setIsMobileCarousel(typeof window !== "undefined" && window.innerWidth <= 768);
+    };
+
+    updateMobile();
+    window.addEventListener("resize", updateMobile);
+    return () => window.removeEventListener("resize", updateMobile);
+  }, []);
+
+  useEffect(() => {
+    if (!showTestimonialCarousel) return;
+
+    setTestimonialIndex(0);
+    setTestimonialCloseVisible(false);
+    if (testimonialIntervalRef.current) {
+      clearInterval(testimonialIntervalRef.current);
+    }
+
+    testimonialIntervalRef.current = setInterval(() => {
+      setTestimonialIndex((prev) => {
+        if (prev < testimonialImages.length - 1) {
+          return prev + 1;
+        }
+        return prev;
+      });
+    }, 7000);
+
+    return () => {
+      clearInterval(testimonialIntervalRef.current);
+    };
+  }, [showTestimonialCarousel]);
+
+  useEffect(() => {
+    if (showTestimonialCarousel && testimonialIndex === testimonialImages.length - 1) {
+      setTestimonialCloseVisible(true);
+    }
+  }, [showTestimonialCarousel, testimonialIndex]);
+
+  const handleCloseCarousel = () => {
+    if (!testimonialCloseVisible) return;
+    setShowTestimonialCarousel(false);
+    setResult(true);
+    setTestimonialIndex(0);
+    setTestimonialCloseVisible(false);
+  };
 
   useEffect(() => {
     if (result && !saved && user.role === "user") {
@@ -511,7 +583,7 @@ const Quiz = () => {
 
                 {!mathReady && <div className="spinner"></div>}
 
-                <button onClick={next} disabled={!lock || !mathReady || showAds}>
+                <button onClick={next} disabled={!lock || !mathReady || showAds || showTestimonialCarousel}>
                   {index === questions.length - 1 ? "Finish Quiz" : "Next"}
                 </button>
 
@@ -527,6 +599,40 @@ const Quiz = () => {
                           className={`ads-image ads-${idx} ${idx <= currentAdIndex ? "ads-show" : "ads-hide"}`}
                         />
                       ))}
+                      <button
+                        className={`ads-close-button ${adsCanClose ? "visible" : "hidden"}`}
+                        onClick={handleCloseAds}
+                        disabled={!adsCanClose}
+                        aria-label="Close ads"
+                      >
+                        ×
+                      </button>
+                    </div>
+                  </div>
+                )}
+
+                {showTestimonialCarousel && (
+                  <div className="carousel-overlay">
+                    <div className="carousel-modal">
+                      <div className="carousel-track" style={{
+                        transform: isMobileCarousel
+                          ? `translateY(-${testimonialIndex * 100}%)`
+                          : `translateX(-${testimonialIndex * 100}%)`
+                      }}>
+                        {testimonialImages.map((img, idx) => (
+                          <div key={idx} className="carousel-slide">
+                            <img src={img} alt={`Testimonial ${idx + 1}`} />
+                          </div>
+                        ))}
+                      </div>
+                      <button
+                        className={`carousel-close-button ${testimonialCloseVisible ? "visible" : "hidden"}`}
+                        onClick={handleCloseCarousel}
+                        disabled={!testimonialCloseVisible}
+                        aria-label="Close testimonial carousel"
+                      >
+                        ×
+                      </button>
                     </div>
                   </div>
                 )}

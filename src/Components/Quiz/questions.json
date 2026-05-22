@@ -283,7 +283,6 @@
     }
   ],
   
-
   "Chemistry": [
     {
       "question": "Give the name of the instrument used to determine the structure of crystals.",
@@ -296,7 +295,7 @@
     },
     {
       "question": "Below are some properties of chlorine, bromine and their compounds. Which property has a smaller value for chlorine than bromine?",
-      "option1": "Bond strength of hydrogen–halogen bond",
+      "option1": "Bond strength of hydrogen-halogen bond",
       "option2": "Strength of van der Waals forces between molecules of the element",
       "option3": "First ionisation energy",
       "option4": "Solubility of the silver halide in aqueous ammonia",
@@ -304,16 +303,16 @@
       "explanation": ""
     },
     {
-      "question": "Given the following half equations: \\`\\(Cr^{3+}(aq) + e^{-} \\\\Leftrightarrow Cr^{2+}(aq)\\)`, \\`\\(E^{\\theta} = -0.41\\,\\mathrm{V}\\)` and \\`\\(Cu^{2+}(aq) + 2e^{-} \\\\Leftrightarrow Cu(s)\\)`, \\`\\(E^{\\theta} = +0.34\\,\\mathrm{V}\\)`. Calculate the e.m.f. of the cell formed when the two half cells are coupled.",
-      "option1": "+0.75 V",
-      "option2": "-0.07 V",
-      "option3": "+0.07 V",
-      "option4": "-0.75 V",
-      "ans": 2,
+      "question": "Given the following half equations:<br><br>$Cr^{3+}(aq) + e^- \\rightleftharpoons Cr^{2+}(aq) \\quad E^\\circ = -0.41\\,V$<br><br>$Cu^{2+}(aq) + 2e^- \\rightleftharpoons Cu(s) \\quad E^\\circ = +0.34\\,V$<br><br>Calculate the e.m.f of the cell formed when the two half cells are coupled.",
+      "option1": "$+0.75\\,V$",
+      "option2": "$-0.07\\,V$",
+      "option3": "$+0.07\\,V$",
+      "option4": "$-0.75\\,V$",
+      "ans": 1,
       "explanation": ""
     },
     {
-      "question": "The radioactive decay of \\`\\(^{63}_{28}\\mathrm{Ni}\\)` has a half-life of 120 days. How long will it take for 1.2 g of nickel to reduce to 0.30 g?",
+      "question": "The radioactive decay of $^{63}_{28}Ni$ has a half-life of 120 days. How long will it take for 1.2 g of nickel to reduce to 0.30 g?",
       "option1": "60 days",
       "option2": "120 days",
       "option3": "240 days",
@@ -323,11 +322,11 @@
     },
     {
       "question": "Which reagent is used to distinguish between propan-1-ol and propan-2-ol?",
-      "option1": "PCl5",
-      "option2": "Thionyl chloride (SOCl2)",
+      "option1": "$PCl_5$",
+      "option2": "Thionyl chloride",
       "option3": "Ammoniacal silver nitrate",
-      "option4": "ZnCl2 / conc HCl (Lucas reagent)",
-      "ans": 3,
+      "option4": "$ZnCl_2$/conc HCl",
+      "ans": 4,
       "explanation": ""
     },
     {
@@ -336,15 +335,15 @@
       "option2": "Catenation",
       "option3": "Hybridization",
       "option4": "Ionization",
-      "ans": 1,
+      "ans": 3,
       "explanation": ""
     },
     {
-      "question": "Identify the products formed when sodium nitrate, \\`\\(\\mathrm{NaNO_3}\\)`, is strongly heated.",
-      "option1": "\\`\\(\\mathrm{NaNO_2}\\)` and \\`\\(\\mathrm{O_2}\\)`",
-      "option2": "\\`\\(\\mathrm{Na_2O},\\;\\mathrm{NO_2}\\)` and \\`\\(\\mathrm{O_2}\\)`",
-      "option3": "\\`\\(\\mathrm{Na_2O}\\)` and \\`\\(\\mathrm{NO_2}\\)`",
-      "option4": "\\`\\(\\mathrm{NaNO_2},\\;\\mathrm{NO_2}\\)` and \\`\\(\\mathrm{O_2}\\)`",
+      "question": "Identify the products formed when sodium nitrate, $NaNO_3$, is strongly heated.",
+      "option1": "$NaNO_2$ and $O_2$",
+      "option2": "$Na_2O$, $NO_2$ and $O_2$",
+      "option3": "$Na_2O$ and $NO_2$",
+      "option4": "$NaNO_2$, $NO_2$ and $O_2$",
       "ans": 1,
       "explanation": ""
     },
@@ -358,16 +357,16 @@
       "explanation": ""
     },
     {
-      "question": "The reaction between two species C and D was investigated and the following data collected.\n\n<table><tr><th>Experiment</th><th>[C] / mol dm<sup>-3</sup></th><th>[D] / mol dm<sup>-3</sup></th><th>Initial rate / mol dm<sup>-3</sup> s<sup>-1</sup></th></tr><tr><td>1</td><td>0.15</td><td>0.15</td><td>1</td></tr><tr><td>2</td><td>0.30</td><td>0.15</td><td>4</td></tr><tr><td>3</td><td>0.15</td><td>0.30</td><td>2</td></tr></table>\n\nThe rate expression is given as:",
-      "option1": "Rate = k[C][D]",
-      "option2": "Rate = k[C][D]^2",
-      "option3": "Rate = k[C]^2[D]",
-      "option4": "Rate = k[C]^2[D]^2",
+      "question": "The reaction between two species C and D was investigated and the following data collected.<br><br><table border='1'><tr><th>Experiment</th><th>[C] moldm<sup>-3</sup></th><th>[D] moldm<sup>-3</sup></th><th>Initial rate/moldm<sup>-3</sup>s<sup>-1</sup></th></tr><tr><td>1</td><td>0.15</td><td>0.15</td><td>1</td></tr><tr><td>2</td><td>0.30</td><td>0.15</td><td>4</td></tr><tr><td>3</td><td>0.15</td><td>0.30</td><td>2</td></tr></table><br>The rate expression is given as:",
+      "option1": "$Rate = k[C][D]$",
+      "option2": "$Rate = k[C][D]^2$",
+      "option3": "$Rate = k[C]^2[D]$",
+      "option4": "$Rate = k[C]^2[D]^2$",
       "ans": 3,
       "explanation": ""
     },
     {
-      "question": "In the complex ion \\`\\([Cr(en)_2Cl_2]^+\\)`, state the coordination number and oxidation state of chromium.",
+      "question": "In the complex ion $[Cr(en)_2Cl_2]^+$, state the coordination number and oxidation state of chromium.",
       "option1": "4 and +1",
       "option2": "6 and +3",
       "option3": "6 and +1",
@@ -385,15 +384,15 @@
       "explanation": ""
     },
     {
-      "question": "An element X has the following successive ionization energies in kJ mol<sup>-1</sup>: 786, 1580, 3230, 4360, 16000, 20000, 23600. To which group in the Periodic Table does X belong?",
-      "option1": "group IV",
-      "option2": "group III",
-      "option3": "group II",
-      "option4": "group V",
+      "question": "An element X has the following successive ionization energies in kJ mol$^{-1}$:<br><br>786, 1580, 3230, 4360, 16000, 20000, 23600<br><br>To which group in the Periodic Table does X belong?",
+      "option1": "Group IV",
+      "option2": "Group III",
+      "option3": "Group II",
+      "option4": "Group V",
       "ans": 1,
       "explanation": ""
     },
-    {
+      {
       "question": "A sample of an organic compound was heated with sodium pellets and dissolved in water. A sample of the solution turned violet with prepared sodium nitroprusside. This indicates the element present in the sample is:",
       "option1": "Nitrogen",
       "option2": "Sulphur",
@@ -405,37 +404,37 @@
     {
       "question": "Which of the following compounds is most readily hydrolysed?",
       "option1": "CH<sub>3</sub>COOH",
-      "option2": "CH<sub>3</sub>CO<sub>2</sub>C<sub>2</sub>H<sub>5</sub> (ethyl acetate)",
-      "option3": "CH<sub>3</sub>CONH<sub>2</sub> (acetamide)",
-      "option4": "CH<sub>3</sub>COCl (acetyl chloride)",
+      "option2": "CH<sub>3</sub>CO<sub>2</sub>C<sub>2</sub>H<sub>5</sub>",
+      "option3": "CH<sub>3</sub>CONH<sub>2</sub>",
+      "option4": "CH<sub>3</sub>COCl",
       "ans": 4,
       "explanation": ""
     },
     {
-      "question": "Calculate the concentration of chloride ions in a solution containing 100 cm<sup>3</sup> of a 0.1 M magnesium chloride, \\`\\(\\mathrm{MgCl_2}\\)`.",
-      "option1": "0.02 M",
-      "option2": "0.01 M",
-      "option3": "0.2 M",
-      "option4": "0.1 M",
+      "question": "Calculate the concentration of chloride ions in a solution containing 100 cm<sup>3</sup> of a 0.1 M magnesium chloride, MgCl<sub>2</sub>.",
+      "option1": "0.02",
+      "option2": "0.01",
+      "option3": "0.2",
+      "option4": "0.1",
       "ans": 3,
       "explanation": ""
     },
     {
-      "question": "In the periodic table the elements down a group are arranged in order of",
+      "question": "In the periodic table the elements down a group are arranged in order of:",
       "option1": "Increasing atomic number",
       "option2": "Increasing electronegativity",
       "option3": "Increasing relative atomic mass",
       "option4": "Increasing density",
-      "ans": 3,
+      "ans": 1,
       "explanation": ""
     },
     {
-      "question": "For the reaction \\`\\(H_2(g) + F_2(g) \\rightarrow 2HF(g)\\)`, calculate the enthalpy of formation of HF in kJ mol<sup>-1</sup> given the bond energies: \\`\\(E(H\\! - \\! H)=+436\\,\\mathrm{kJ\\ mol^{-1}}\\)`, \\`\\(E(F\\! - \\! F)=+158\\,\\mathrm{kJ\\ mol^{-1}}\\)`, \\`\\(E(H\\! - \\! F)=+565\\,\\mathrm{kJ\\ mol^{-1}}\\)`.",
+      "question": "For the reaction H<sub>2</sub>(g) + F<sub>2</sub>(g) → 2HF(g), calculate the enthalpy of formation of HF in kJ mol<sup>-1</sup> given the following bond energies:<br>E(H-H) = +436 kJ mol<sup>-1</sup><br>E(F-F) = +158 kJ mol<sup>-1</sup><br>E(H-F) = +565 kJ mol<sup>-1</sup>",
       "option1": "+268",
       "option2": "-536",
       "option3": "+536",
       "option4": "-268",
-      "ans": 2,
+      "ans": 4,
       "explanation": ""
     },
     {
@@ -486,14 +485,113 @@
     {
       "question": "Which of the following pair of oxides is acidic?",
       "option1": "CO and CO<sub>2</sub>",
-      "option2": "HNO<sub>3</sub>",
-      "option3": "HNO<sub>2</sub>",
-      "option4": "NO",
+      "option2": "GeO<sub>2</sub> and PbO<sub>2</sub>",
+      "option3": "SiO<sub>2</sub> and PbO<sub>2</sub>",
+      "option4": "CO<sub>2</sub> and SiO<sub>2</sub>",
+      "ans": 4,
+      "explanation": ""
+    },
+    {
+      "question": "Give the name of the compound CH<sub>3</sub>CO-NHCH<sub>3</sub>",
+      "option1": "Acetyl ethanamide",
+      "option2": "N-methylethanamide",
+      "option3": "N-methylethanoate",
+      "option4": "Acetyl methyl amine",
+      "ans": 2,
+      "explanation": ""
+    },
+    {
+"question": "What will be the coefficients of Cr<sub>2</sub>O<sub>7</sub><sup>2-</sup> and Fe<sup>2+</sup> respectively when the following redox equation is balanced?<br>Cr<sub>2</sub>O<sub>7</sub><sup>2-</sup> + Fe<sup>2+</sup> + H<sup>+</sup> → Cr<sup>3+</sup> + Fe<sup>3+</sup> + H<sub>2</sub>O",
+      "option1": "1 and 6",
+      "option2": "1 and 2",
+      "option3": "3 and 6",
+      "option4": "3 and 2",
       "ans": 1,
       "explanation": ""
     },
     {
-      "question": "What is the name of the complex ion \\`\\([Fe(OH)_2(H_2O)_4]^+\\)`?",
+      "question": "When ethanal is warmed with Fehling’s solution:",
+      "option1": "A silver mirror is formed",
+      "option2": "A red precipitate is formed",
+      "option3": "A white precipitate is formed",
+      "option4": "A yellow precipitate is formed",
+      "ans": 2,
+      "explanation": ""
+    },
+    {
+      "question": "The isolation of an optically active isomer from a racemic mixture is referred to as:",
+      "option1": "Configuration",
+      "option2": "Distillation",
+      "option3": "Enantiomers",
+      "option4": "Resolution",
+      "ans": 4,
+      "explanation": ""
+    },
+      {
+      "question": "0.35 g of vanadium was reacted with 0.28 g of oxygen to form an oxide $(V = 51; O = 16)$. The empirical formula of the oxide is:",
+      "option1": "$V_2O_5$",
+      "option2": "$V_2O_3$",
+      "option3": "$VO_3$",
+      "option4": "$VO_2$",
+      "ans": 1,
+      "explanation": ""
+    },
+    {
+      "question": "$PCl_5(g) \\rightleftharpoons PCl_3(g) + Cl_2(g) \\quad \\Delta H = +124\\,kJ$<br><br>The numerical value of the equilibrium constant will increase if:",
+      "option1": "The total pressure is increased",
+      "option2": "Temperature is reduced",
+      "option3": "Temperature is increased",
+      "option4": "The total pressure is reduced",
+      "ans": 3,
+      "explanation": ""
+    },
+    {
+      "question": "Calculate the mass of sodium carbonate, $Na_2CO_3$, required to prepare $0.25\\,dm^3$ of $0.1\\,M$ solution.<br><br>$(RAM: Na = 23; C = 12; O = 16)$",
+      "option1": "0.265 g",
+      "option2": "2.075 g",
+      "option3": "0.2075 g",
+      "option4": "2.650 g",
+      "ans": 4,
+      "explanation": ""
+    },
+    {
+      "question": "Which of the following compounds exhibits geometric isomerism?",
+      "option1": "$CH_2=CHCOOH$",
+      "option2": "$CH_2=CHCH_3$",
+      "option3": "$CH_2=C(CH_3)COOH$",
+      "option4": "$HOOCCH=CHCOOH$",
+      "ans": 4,
+      "explanation": ""
+    },
+    {
+      "question": "Calculate the pH of a buffer solution made up of equal volumes of $0.1\\,moldm^{-3}$ sodium propanoate and $0.04\\,moldm^{-3}$ propanoic acid.<br><br>$(K_a = 1.3 \\times 10^{-5})$",
+      "option1": "1.3",
+      "option2": "4.89",
+      "option3": "5.28",
+      "option4": "3.11",
+      "ans": 2,
+      "explanation": ""
+    },
+    {
+      "question": "A compound with molecular formula $C_6H_{12}$ on ozonolysis gives propanone, $CH_3COCH_3$, as the only product. Deduce the structural formula of the compound.",
+      "option1": "$CH_3CH=C(CH_3)_2$",
+      "option2": "$(CH_3)_2C=C(CH_3)_2$",
+      "option3": "$CH_3C(C_2H_5)=CHCH_3$",
+      "option4": "$CH_3CH=CHCH(CH_3)_2$",
+      "ans": 2,
+      "explanation": ""
+    },
+    {
+      "question": "Which of the following compounds contains nitrogen in the oxidation state of +2?",
+      "option1": "$N_2H_4$",
+      "option2": "$HNO_3$",
+      "option3": "$HNO_2$",
+      "option4": "$NO$",
+      "ans": 4,
+      "explanation": ""
+    },
+    {
+      "question": "What is the name of the complex ion $[Fe(OH)_2(H_2O)_4]^+$?",
       "option1": "Tetraaquadihydroxoiron(II)",
       "option2": "Tetraaquadihydroxoferrate(II)",
       "option3": "Tetraaquadihydroxoferrate(III)",
@@ -502,7 +600,7 @@
       "explanation": ""
     },
     {
-      "question": "When a mixture of sodium benzoate, \\`\\(C_6H_5COO^-\\;Na^+\\)`, and soda lime is heated the type of reaction that occurs is",
+      "question": "When a mixture of sodium benzoate, $C_6H_5COO^-Na^+$, and soda lime is heated the type of reaction that occurs is:",
       "option1": "Decarboxylation",
       "option2": "Neutralization",
       "option3": "Substitution",
@@ -511,7 +609,7 @@
       "explanation": ""
     },
     {
-      "question": "How can the rate of the reaction \\`\\(S_2O_3^{2-}(aq) + 2H^{+}(aq) \\rightarrow H_2O(l) + S(s) + SO_2(aq)\\)` be followed?\n\n1. Change of mass\n2. Colourimetric analysis\n3. Electrical conductivity",
+      "question": "How can the rate of the reaction:<br><br>$S_2O_3^{2-}(aq) + 2H^+(aq) \\rightarrow H_2O(l) + S(s) + SO_2(aq)$<br><br>be followed?<br><br>1. Change of mass<br>2. Colourimetric analysis<br>3. Electrical conductivity",
       "option1": "1, 2 and 3 are all correct",
       "option2": "1 and 2 only are correct",
       "option3": "2 and 3 only are correct",
@@ -520,70 +618,7 @@
       "explanation": ""
     },
     {
-      "question": "For the reaction \\`\\(C(s) + \\frac{1}{2}O_2(g) \\rightarrow CO(g)\\)`. The enthalpy change is:\n\n1. Atomization\n2. Combustion\n3. Formation",
-      "option1": "1, 2 and 3 are all correct",
-      "option2": "1 and 2 only are correct",
-      "option3": "2 and 3 only are correct",
-      "option4": "3 only is correct",
-      "ans": 4,
-      "explanation": ""
-    },
-    {
-      "question": "Which of the following reactions will yield a carboxylic acid derivative?\n\n1. Action of warm concentrated ammonia on carboxylic acid\n2. Heating two carboxylic acids at a high temperature in the presence of \\`\\(P_4O_{10}\\)`\n3. Action of thionyl chloride (\\`\\(SOCl_2\\)`) on a carboxylic acid",
-      "option1": "1, 2 and 3 are all correct",
-      "option2": "1 and 2 only are correct",
-      "option3": "2 and 3 only are correct",
-      "option4": "3 only is correct",
-      "ans": 2,
-      "explanation": ""
-    },
-    {
-      "question": "For a complex ion to be formed:\n\n1. The ligand must have at least an electron donor atom\n2. The central metal ion must have low-lying empty orbitals\n3. The central metal ion must have a charge greater than +2",
-      "option1": "1, 2 and 3 are all correct",
-      "option2": "1 and 2 only are correct",
-      "option3": "2 and 3 only are correct",
-      "option4": "3 only is correct",
-      "ans": 2,
-      "explanation": ""
-    },
-    {
-      "question": "Which of the following pairs of liquids will form a solution that deviates negatively from Raoult's law?\n\n1. Ethanol and water\n2. Benzene and methanol\n3. Propanone and trichloromethane",
-      "option1": "1, 2 and 3 are all correct",
-      "option2": "1 and 2 only are correct",
-      "option3": "2 and 3 only are correct",
-      "option4": "3 only is correct",
-      "ans": 4,
-      "explanation": ""
-    },
-    {
-      "question": "Carbon differs from other elements of group IV in that:\n\n1. Carbon forms only gaseous oxides\n2. Carbon catenates extensively\n3. Carbon lacks low-lying d orbitals",
-      "option1": "1, 2 and 3 are all correct",
-      "option2": "1 and 2 only are correct",
-      "option3": "2 and 3 only are correct",
-      "option4": "3 only is correct",
-      "ans": 1,
-      "explanation": ""
-    },
-    {
-      "question": "Which of the following reagents could be used to distinguish between phenol and cyclohexanol?\n\n1. Neutral iron(III) chloride\n2. Bromine water\n3. Phosphorus pentachloride (PCl5)",
-      "option1": "1, 2 and 3 are all correct",
-      "option2": "1 and 2 only are correct",
-      "option3": "2 and 3 only are correct",
-      "option4": "3 only is correct",
-      "ans": 1,
-      "explanation": ""
-    },
-    {
-      "question": "Lithium and magnesium resemble each other in that their:\n\n1. Carbonates are decomposed by heat\n2. Nitrates decompose to oxides, nitrogen dioxide and oxygen on heating\n3. Ions give characteristic colours on a Bunsen flame",
-      "option1": "1, 2 and 3 are all correct",
-      "option2": "1 and 2 only are correct",
-      "option3": "2 and 3 only are correct",
-      "option4": "3 only is correct",
-      "ans": 2,
-      "explanation": ""
-    },
-    {
-      "question": "The bond(s) in lithium tetrahydridoaluminate(III), LiAlH<sub>4</sub>, is/are:\n\n1. Hydrogen bonding\n2. Covalent bonding\n3. Ionic bonding",
+      "question": "For the reaction:<br><br>$C(s) + \\frac{1}{2}O_2(g) \\rightarrow CO(g)$<br><br>The enthalpy change is:<br><br>1. Atomization<br>2. Combustion<br>3. Formation",
       "option1": "1, 2 and 3 are all correct",
       "option2": "1 and 2 only are correct",
       "option3": "2 and 3 only are correct",
@@ -591,53 +626,107 @@
       "ans": 3,
       "explanation": ""
     },
-    {
-      "question": "FIRST STATEMENT / SECOND STATEMENT question 1 (displayed as a simple table):\n\n<table><tr><th>Statement</th><th>Text</th></tr><tr><td>I</td><td>A mixture of ethanol and water cannot be completely separated by fractional distillation.</td></tr><tr><td>II</td><td>Ethanol and water form an azeotropic mixture.</td></tr></table>",
-      "option1": "Both statements are true and the second statement is a CORRECT explanation of the first",
-      "option2": "Both statements are true and the second statement is NOT a CORRECT explanation of the first",
-      "option3": "The first statement is true, but the second statement is false",
-      "option4": "The first statement is false, but the second statement is true",
+     {
+      "question": "Which of the following reactions will yield a carboxylic acid derivative?<br><ol><li>Action of warm concentrated ammonia on carboxylic acid.</li><li>Heating two carboxylic acids at high temperature in the presence of P<sub>4</sub>O<sub>10</sub>.</li><li>Action of thionyl chloride (SOCl<sub>2</sub>) on a carboxylic acid.</li></ol>",
+      "option1": "1, 2 and 3 are correct",
+      "option2": "1 and 2 only are correct",
+      "option3": "2 and 3 only are correct",
+      "option4": "3 only is correct",
       "ans": 1,
       "explanation": ""
     },
     {
-      "question": "FIRST STATEMENT / SECOND STATEMENT question 2 (displayed as a simple table):\n\n<table><tr><th>Statement</th><th>Text</th></tr><tr><td>I</td><td>When ethanol is heated with concentrated sulphuric acid at 170°C the product is ethene.</td></tr><tr><td>II</td><td>Concentrated sulphuric acid is an oxidizing agent.</td></tr></table>",
-      "option1": "Both statements are true and the second statement is a CORRECT explanation of the first",
-      "option2": "Both statements are true and the second statement is NOT a CORRECT explanation of the first",
-      "option3": "The first statement is true, but the second statement is false",
-      "option4": "The first statement is false, but the second statement is true",
+      "question": "For a complex ion to be formed:<br><ol><li>The ligand must have at least an electron donor atom.</li><li>The central metal ion must have low-lying empty orbitals.</li><li>The central metal ion must have a charge greater than +2.</li></ol>",
+      "option1": "1, 2 and 3 are correct",
+      "option2": "1 and 2 only are correct",
+      "option3": "2 and 3 only are correct",
+      "option4": "3 only is correct",
       "ans": 2,
       "explanation": ""
     },
     {
-      "question": "FIRST STATEMENT / SECOND STATEMENT question 3 (displayed as a simple table):\n\n<table><tr><th>Statement</th><th>Text</th></tr><tr><td>I</td><td>The hydrogen atom shows only one series of spectral lines.</td></tr><tr><td>II</td><td>The hydrogen atom contains only one electron.</td></tr></table>",
-      "option1": "Both statements are true and the second statement is a CORRECT explanation of the first",
-      "option2": "Both statements are true and the second statement is NOT a CORRECT explanation of the first",
-      "option3": "The first statement is true, but the second statement is false",
-      "option4": "The first statement is false, but the second statement is true",
+      "question": "Which of the following pairs of liquids will form a solution that will deviate negatively from Raoult’s law?<br><ol><li>Ethanol and water.</li><li>Benzene and methanol.</li><li>Propanone and trichloromethane.</li></ol>",
+      "option1": "1, 2 and 3 are correct",
+      "option2": "1 and 2 only are correct",
+      "option3": "2 and 3 only are correct",
+      "option4": "3 only is correct",
       "ans": 4,
       "explanation": ""
     },
     {
-      "question": "FIRST STATEMENT / SECOND STATEMENT question 4 (displayed as a simple table):\n\n<table><tr><th>Statement</th><th>Text</th></tr><tr><td>I</td><td>Phenylamine reacts with NaNO<sub>2</sub> / HCl at T &lt; 10°C to form phenol liberating nitrogen.</td></tr><tr><td>II</td><td>Phenylamine is an aromatic amine.</td></tr></table>",
-      "option1": "Both statements are true and the second statement is a CORRECT explanation of the first",
-      "option2": "Both statements are true and the second statement is NOT a CORRECT explanation of the first",
-      "option3": "The first statement is true, but the second statement is false",
-      "option4": "The first statement is false, but the second statement is true",
+      "question": "Carbon differs from other elements of group IV in that:<br><ol><li>Carbon forms only gaseous oxides.</li><li>Carbon catenates extensively.</li><li>Carbon lacks low-lying d orbitals.</li></ol>",
+      "option1": "1, 2 and 3 are correct",
+      "option2": "1 and 2 only are correct",
+      "option3": "2 and 3 only are correct",
+      "option4": "3 only is correct",
+      "ans": 3,
+      "explanation": ""
+    },
+    {
+      "question": "Which of the following reagents could be used to distinguish between phenol and cyclohexanol?<br><ol><li>Neutral iron(III) chloride.</li><li>Bromine water.</li><li>Phosphorus pentachloride.</li></ol>",
+      "option1": "1, 2 and 3 are correct",
+      "option2": "1 and 2 only are correct",
+      "option3": "2 and 3 only are correct",
+      "option4": "3 only is correct",
       "ans": 2,
       "explanation": ""
     },
     {
-      "question": "FIRST STATEMENT / SECOND STATEMENT question 5 (displayed as a simple table):\n\n<table><tr><th>Statement</th><th>Text</th></tr><tr><td>I</td><td>The first ionization energy of elements decreases down a group of the Periodic Table.</td></tr><tr><td>II</td><td>Down the group the shielding effect by inner electrons decreases.</td></tr></table>",
-      "option1": "Both statements are true and the second statement is a CORRECT explanation of the first",
-      "option2": "Both statements are true and the second statement is NOT a CORRECT explanation of the first",
-      "option3": "The first statement is true, but the second statement is false",
-      "option4": "The first statement is false, but the second statement is true",
+      "question": "Lithium and magnesium resemble each other in that their:<br><ol><li>Carbonates are decomposed by heat.</li><li>Nitrates decompose to oxides, nitrogen dioxide and oxygen on heating.</li><li>Ions give characteristic colours on a bunsen flame.</li></ol>",
+      "option1": "1, 2 and 3 are correct",
+      "option2": "1 and 2 only are correct",
+      "option3": "2 and 3 only are correct",
+      "option4": "3 only is correct",
+      "ans": 2,
+      "explanation": ""
+    },
+    {
+      "question": "Consider the following statements.<br><table border='1' cellpadding='5'><tr><th>First Statement</th><th>Second Statement</th></tr><tr><td>A mixture of ethanol and water cannot be completely separated by fractional distillation.</td><td>Ethanol and water form an azeotropic mixture.</td></tr></table>Choose the correct option.",
+      "option1": "Both statements are true and the second statement is a correct explanation of the first",
+      "option2": "Both statements are true but the second statement is not a correct explanation of the first",
+      "option3": "The first statement is true but the second statement is false",
+      "option4": "The first statement is false but the second statement is true",
+      "ans": 1,
+      "explanation": ""
+    },
+    {
+      "question": "Consider the following statements.<br><table border='1' cellpadding='5'><tr><th>First Statement</th><th>Second Statement</th></tr><tr><td>When ethanol is heated with concentrated sulphuric acid at 170°C the product is ethene.</td><td>Concentrated sulphuric acid is an oxidizing agent.</td></tr></table>Choose the correct option.",
+      "option1": "Both statements are true and the second statement is a correct explanation of the first",
+      "option2": "Both statements are true but the second statement is not a correct explanation of the first",
+      "option3": "The first statement is true but the second statement is false",
+      "option4": "The first statement is false but the second statement is true",
+      "ans": 2,
+      "explanation": ""
+    },
+    {
+      "question": "Consider the following statements.<br><table border='1' cellpadding='5'><tr><th>First Statement</th><th>Second Statement</th></tr><tr><td>The hydrogen atom shows only one series of spectral lines.</td><td>The hydrogen atom contains only one electron.</td></tr></table>Choose the correct option.",
+      "option1": "Both statements are true and the second statement is a correct explanation of the first",
+      "option2": "Both statements are true but the second statement is not a correct explanation of the first",
+      "option3": "The first statement is true but the second statement is false",
+      "option4": "The first statement is false but the second statement is true",
+      "ans": 4,
+      "explanation": ""
+    },
+    {
+      "question": "Consider the following statements.<br><table border='1' cellpadding='5'><tr><th>First Statement</th><th>Second Statement</th></tr><tr><td>Phenylamine reacts with NaNO<sub>2</sub>/HCl at T &lt; 10°C to form phenol liberating nitrogen.</td><td>Phenylamine is an aromatic amine.</td></tr></table>Choose the correct option.",
+      "option1": "Both statements are true and the second statement is a correct explanation of the first",
+      "option2": "Both statements are true but the second statement is not a correct explanation of the first",
+      "option3": "The first statement is true but the second statement is false",
+      "option4": "The first statement is false but the second statement is true",
+      "ans": 2,
+      "explanation": ""
+    },
+    {
+      "question": "Consider the following statements.<br><table border='1' cellpadding='5'><tr><th>First Statement</th><th>Second Statement</th></tr><tr><td>The first ionization energy of elements decreases down a group in the Periodic Table.</td><td>Down the group the shielding effect by inner electrons decreases.</td></tr></table>Choose the correct option.",
+      "option1": "Both statements are true and the second statement is a correct explanation of the first",
+      "option2": "Both statements are true but the second statement is not a correct explanation of the first",
+      "option3": "The first statement is true but the second statement is false",
+      "option4": "The first statement is false but the second statement is true",
       "ans": 3,
       "explanation": ""
     }
   ],
-
+    
       "Biology": [
     {
       "question": "For a dihybrid cross of AaBb x AaBb, what is the phenotypic ratio assuming complete dominance?",
@@ -909,7 +998,7 @@
       "option1": "$20$",
       "option2": "$30$",
       "option3": "$1,000,000$",
-      "option4": "$\\ log_2(1,000,000) \\approx 20$",
+      "option4": "$\\log_2(1,000,000) \\approx 20$",
       "ans": 4,
       "explanation": "Binary search time complexity is $O(\\log n)$. For n = 1,000,000: $\\log_2(1,000,000) \\approx 19.93 \\approx 20$ comparisons maximum."
     }
