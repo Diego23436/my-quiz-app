@@ -119,8 +119,18 @@ table { width: 100%; border-collapse: collapse; margin: 10px 0; }
 table th, table td { padding: 12px; border: 1px solid #eee; text-align: center; }
 table th { background-color: #553f9a; color: white; }
 
-.quiz-header { display: flex; justify-content: space-between; font-weight: 600; color: #553f9a; padding: 5px 0; }
-.container .logo { display: block; margin: 0.5rem auto; max-width: 120px; }
+.quiz-header { display: flex; justify-content: space-between; font-weight: 600; color: #553f9a; padding: 5px 0; margin-bottom: 15px; }
+
+.progress-container { width: 100%; margin-bottom: 20px; }
+
+.progress-info { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: 0.95rem; color: #555; }
+
+.progress-bar-wrapper { width: 100%; height: 8px; background: #e0e0e0; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+
+.progress-bar-fill { height: 100%; background: linear-gradient(90deg, #553f9a, #7c5fc9); border-radius: 10px; transition: width 0.3s ease; }
+.logo-container { display: flex; justify-content: center; gap: 20px; align-items: center; margin: 1rem auto; flex-wrap: wrap; }
+
+.logo-image { max-width: 180px; width: 100%; height: auto; border-radius: 16px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); object-fit: cover; }
 
 .spinner { border: 5px solid #f3f3f3; border-top: 5px solid #553f9a; border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite; margin: 10px auto; }
 @keyframes spin { to { transform: rotate(360deg); } }
@@ -130,4 +140,90 @@ table th { background-color: #553f9a; color: white; }
   .welcome-image { min-height: 220px; flex: none; }
   .subject-grid { grid-template-columns: 1fr; }
   .container button { max-width: 100%; }
+}
+
+/* --- ADS MODAL STYLES --- */
+.ads-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeInOverlay 0.3s ease-in-out;
+}
+
+@keyframes fadeInOverlay {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.ads-modal {
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  background: white;
+  border-radius: 12px;
+  overflow: visible;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  padding: 0;
+}
+
+.ads-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  opacity: 0;
+}
+
+.ads-image.ads-hide {
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+/* Different animations for each ad */
+.ads-image.ads-0.ads-show {
+  animation: slideUpAd 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.ads-image.ads-1.ads-show {
+  animation: slideDownAd 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation-delay: 0.1s;
+}
+
+.ads-image.ads-2.ads-show {
+  animation: slideUpAd 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation-delay: 0.2s;
+}
+
+.ads-image.ads-3.ads-show {
+  animation: slideDownAd 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes slideUpAd {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDownAd {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

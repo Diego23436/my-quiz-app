@@ -1,15 +1,40 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { db } from "../../firebaseConfig";
 import { collection, getDocs, doc, setDoc, deleteDoc, writeBatch } from "firebase/firestore";
 
 const AdminDashboard = () => {
   const [studentMap, setStudentMap] = useState({});
   const [lockedSessions, setLockedSessions] = useState([]);
+  const [selectedSessions, setSelectedSessions] = useState(new Set());
   const [newEmail, setNewEmail] = useState("");
   const [loading, setLoading] = useState(true);
+  const [expandedStudent, setExpandedStudent] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filterSubject, setFilterSubject] = useState("");
+  const [filterDateFrom, setFilterDateFrom] = useState("");
+  const [filterDateTo, setFilterDateTo] = useState("");
 
   const subjectsList = ["Mathematics", "Further Maths", "Physics", "Chemistry", "Biology", "ICT"];
   const PASS_MARK = 15;
+
+  // Helper function to parse date string in DD/MM/YYYY format to comparable number
+  const dateStringToTimestamp = (dateStr, timeStr) => {
+    try {
+      const [day, month, year] = dateStr.split('/').map(Number);
+      const [hour, minute, second] = timeStr.split(':').map(Number);
+      return new Date(year, month - 1, day, hour, minute, second).getTime();
+    } catch (e) {
+      return 0;
+    }
+  };
+
+  // Helper to format seconds to HH:MM:SS
+  const formatDuration = (seconds) => {
+    const hours = Math.floor(seconds / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    const secs = seconds % 60;
+    return `${hours}h ${minutes}m ${secs}s`;
+  };
 
   const fetchData = async () => {
     setLoading(true);
@@ -21,12 +46,13 @@ const AdminDashboard = () => {
       const allSessions = sessionsSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
       const map = {};
+
       allResults.forEach((res) => {
         const email = res.student_email?.toLowerCase().trim();
-        // Split "Date, Time" string (Expected format: "DD/MM/YYYY, HH:MM:SS")
-        const parts = res.submitted_at ? res.submitted_at.split(', ') : ["Unknown Date", "00:00:00"];
+        const parts = res.submitted_at ? res.submitted_at.split(', ') : ["01/01/2000", "00:00:00"];
         const dateKey = parts[0];
         const timeValue = parts[1] || "00:00:00";
+        const duration = res.time_spent || 0;
 
         if (!map[email]) {
           map[email] = {
@@ -34,26 +60,43 @@ const AdminDashboard = () => {
             school: res.school,
             series: res.series,
             email: email,
-            date: dateKey,
-            time: timeValue, 
             scores: {},
-            total: 0,
-            dbIds: [] 
+            dbIds: [],
+            latestSubmission: { date: "", time: "", timestamp: 0 },
+            totalDuration: 0
           };
         }
-        map[email].scores[res.subject] = res.score;
-        map[email].total += Number(res.score);
+
+        // Store subject-level details
+        map[email].scores[res.subject] = {
+          score: res.score,
+          date: dateKey,
+          time: timeValue,
+          duration: duration
+        };
+
+        // Update latest submission
+        const currentTimestamp = dateStringToTimestamp(dateKey, timeValue);
+        if (currentTimestamp > map[email].latestSubmission.timestamp) {
+          map[email].latestSubmission = {
+            date: dateKey,
+            time: timeValue,
+            timestamp: currentTimestamp
+          };
+        }
+
+        map[email].totalDuration += duration;
         map[email].dbIds.push(res.id);
       });
+
       setStudentMap(map);
 
-      const incomplete = allSessions.filter(session => {
-        const hasFinished = allResults.find(r => 
-          r.student_email?.toLowerCase().trim() === session.student_email?.toLowerCase().trim() && 
-          r.subject === session.subject
-        );
-        return !hasFinished;
-      });
+      const resultSet = new Set(
+        allResults.map(r => `${r.student_email?.toLowerCase().trim()}_${r.subject}`)
+      );
+      const incomplete = allSessions.filter(session =>
+        !resultSet.has(`${session.student_email?.toLowerCase().trim()}_${session.subject}`)
+      );
       setLockedSessions(incomplete);
 
     } catch (err) {
@@ -63,55 +106,6 @@ const AdminDashboard = () => {
   };
 
   useEffect(() => { fetchData(); }, []);
-
-  const deleteDayResults = async (day, students) => {
-    const confirmFirst = window.confirm(`Are you sure you want to delete ALL records for ${day}?`);
-    if (confirmFirst) {
-      const confirmSecond = window.confirm("This action is permanent and cannot be undone. Proceed?");
-      if (confirmSecond) {
-        try {
-          const batch = writeBatch(db);
-          students.forEach(student => {
-            student.dbIds.forEach(docId => {
-              batch.delete(doc(db, "results", docId));
-            });
-          });
-          await batch.commit();
-          alert(`All records for ${day} have been deleted.`);
-          fetchData();
-        } catch (err) {
-          alert("Error deleting records: " + err.message);
-        }
-      }
-    }
-  };
-
-  const exportDayToCSV = (day, dayStudents) => {
-    const headers = ["Name", "School", "Email", "Submission Time", ...subjectsList, "Grand Total"];
-    const rows = dayStudents.map(s => [
-      s.name, s.school, s.email, s.time,
-      ...subjectsList.map(sub => s.scores[sub] || 0),
-      s.total
-    ]);
-    const csvContent = [headers, ...rows].map(e => e.join(",")).join("\n");
-    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.setAttribute("download", `Results_${day.replace(/\//g, '-')}.csv`);
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
-  const getGroupedData = () => {
-    const students = Object.values(studentMap);
-    return students.reduce((acc, student) => {
-      const day = student.date;
-      if (!acc[day]) acc[day] = [];
-      acc[day].push(student);
-      return acc;
-    }, {});
-  };
 
   const authorizeStudent = async () => {
     if (!newEmail) return alert("Enter an email");
@@ -129,15 +123,157 @@ const AdminDashboard = () => {
     }
   };
 
-  const groupedData = getGroupedData();
+  // Handle selecting/deselecting a session
+  const toggleSessionSelect = (sessionId) => {
+    const newSelected = new Set(selectedSessions);
+    if (newSelected.has(sessionId)) {
+      newSelected.delete(sessionId);
+    } else {
+      newSelected.add(sessionId);
+    }
+    setSelectedSessions(newSelected);
+  };
+
+  // Handle select all
+  const toggleSelectAll = () => {
+    if (selectedSessions.size === lockedSessions.length) {
+      setSelectedSessions(new Set());
+    } else {
+      setSelectedSessions(new Set(lockedSessions.map(s => s.id)));
+    }
+  };
+
+  // Handle unlock selected
+  const unlockSelected = async () => {
+    if (selectedSessions.size === 0) return;
+    const confirmUnlock = window.confirm(`Unlock ${selectedSessions.size} selected session(s)?`);
+    if (confirmUnlock) {
+      try {
+        const batch = writeBatch(db);
+        selectedSessions.forEach(sessionId => {
+          batch.delete(doc(db, "active_sessions", sessionId));
+        });
+        await batch.commit();
+        alert(`✓ ${selectedSessions.size} session(s) unlocked successfully!`);
+        setSelectedSessions(new Set());
+        fetchData();
+      } catch (err) {
+        alert("Error unlocking sessions: " + err.message);
+      }
+    }
+  };
+
+  // Get sorted students list
+  const sortedStudents = useMemo(() => {
+    let students = Object.values(studentMap);
+
+    // Sort by latest submission (newest first)
+    students.sort((a, b) => b.latestSubmission.timestamp - a.latestSubmission.timestamp);
+
+    // Apply filters
+    students = students.filter(student => {
+      // Search by name
+      if (searchTerm && !student.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+        return false;
+      }
+
+      // Filter by subject completion
+      if (filterSubject) {
+        const hasSubject = student.scores[filterSubject];
+        const isCompleted = hasSubject;
+        // For simplicity, we show all. To filter "not completed", user would need checkbox
+        if (!isCompleted) return false;
+      }
+
+      // Filter by date range
+      if (filterDateFrom || filterDateTo) {
+        const [d, m, y] = student.latestSubmission.date.split('/').map(Number);
+        const studentDate = new Date(y, m - 1, d);
+
+        if (filterDateFrom) {
+          const [fD, fM, fY] = filterDateFrom.split('-');
+          const fromDate = new Date(fY, fM - 1, fD);
+          if (studentDate < fromDate) return false;
+        }
+
+        if (filterDateTo) {
+          const [tD, tM, tY] = filterDateTo.split('-');
+          const toDate = new Date(tY, tM - 1, tD);
+          if (studentDate > toDate) return false;
+        }
+      }
+
+      return true;
+    });
+
+    return students;
+  }, [studentMap, searchTerm, filterSubject, filterDateFrom, filterDateTo]);
+
+  // Export to Excel
+  const exportToExcel = async () => {
+    try {
+      const XLSX = await import('xlsx');
+      const data = sortedStudents.map(student => {
+        const row = {
+          'Name': student.name,
+          'School': student.school,
+          'Email': student.email,
+          'Series': student.series,
+          'Latest Date': student.latestSubmission.date,
+          'Latest Time': student.latestSubmission.time,
+          'Total Duration': formatDuration(student.totalDuration)
+        };
+
+        // Add subject scores
+        subjectsList.forEach(subject => {
+          const subjectData = student.scores[subject];
+          row[subject] = subjectData ? subjectData.score : '-';
+        });
+
+        return row;
+      });
+
+      const worksheet = XLSX.utils.json_to_sheet(data);
+
+      // Auto-width columns
+      const colWidths = {};
+      Object.keys(data[0] || {}).forEach(key => {
+        colWidths[key] = 12;
+      });
+      worksheet['!cols'] = Object.values(colWidths).map(w => ({ wch: w }));
+
+      const workbook = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(workbook, worksheet, "Results");
+
+      XLSX.writeFile(workbook, `ExamResults_${new Date().toISOString().slice(0, 10)}.xlsx`);
+    } catch (error) {
+      console.error("Error exporting to Excel:", error);
+      alert("Error downloading Excel file. Please try again.");
+    }
+  };
+
+  // Calculate total and completion status for display
+  const getStudentTotal = (scores) => {
+    return Object.values(scores).reduce((sum, item) => {
+      if (typeof item === 'object' && item.score) {
+        return sum + Number(item.score);
+      }
+      return sum;
+    }, 0);
+  };
+
+  const getSubjectScore = (scores, subject) => {
+    const subjectData = scores[subject];
+    return subjectData ? subjectData.score : '-';
+  };
 
   return (
-    <div className="container" style={{maxWidth: '1200px', width: '95%'}}>
-      <h1>Admin Management Portal</h1>
+    <div className="container" style={{maxWidth: '1400px', width: '95%'}}>
+      <h1>Admin Management Portal - Exam Results</h1>
       <hr />
-      
+
       {/* AUTHORIZATION SECTION */}
-      <div className="start-page" style={{background: '#f9f9f9', padding: '20px', borderRadius: '8px'}}>
+      <div className="start-page" style={{background: '#f9f9f9', padding: '20px', borderRadius: '8px', marginBottom: '20px'}}>
         <h3>Authorize New Student</h3>
         <div style={{display: 'flex', gap: '10px'}}>
           <input value={newEmail} onChange={(e) => setNewEmail(e.target.value)} placeholder="email@example.com" />
@@ -145,79 +281,259 @@ const AdminDashboard = () => {
         </div>
       </div>
 
-      {/* RENDER TABLES BY DAY - SORTED ASCENDING (Further to Closest) */}
-      <h2 style={{marginTop: '40px'}}>Examination History</h2>
-      
-      {loading ? <p>Loading data...</p> : Object.keys(groupedData)
-        .sort((a, b) => {
-          // Manual Date parsing for DD/MM/YYYY format
-          const [dA, mA, yA] = a.split('/').map(Number);
-          const [dB, mB, yB] = b.split('/').map(Number);
-          return new Date(yA, mA - 1, dA) - new Date(yB, mB - 1, dB);
-        })
-        .map(day => (
-        <div key={day} style={{marginBottom: '60px', border: '1px solid #eee', padding: '20px', borderRadius: '12px', background: '#fff'}}>
-          <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px'}}>
-            <h3 style={{color: '#1976d2', margin: 0}}>📅 Records for {day}</h3>
-            <div style={{display: 'flex', gap: '10px'}}>
-              <button onClick={() => exportDayToCSV(day, groupedData[day])} style={{background: '#2e7d32', width: 'auto', padding: '8px 15px'}}>Export CSV</button>
-              <button onClick={() => deleteDayResults(day, groupedData[day])} style={{background: '#d32f2f', width: 'auto', padding: '8px 15px'}}>Delete Day</button>
-            </div>
-          </div>
+      {/* EXPORT BUTTON */}
+      <div style={{marginBottom: '20px', display: 'flex', gap: '10px'}}>
+        <button
+          onClick={exportToExcel}
+          style={{background: '#1976d2', color: 'white', padding: '10px 20px', borderRadius: '4px', border: 'none', cursor: 'pointer', fontWeight: 'bold'}}
+        >
+          📥 Download Excel
+        </button>
+        <button
+          onClick={() => { setSearchTerm(""); setFilterSubject(""); setFilterDateFrom(""); setFilterDateTo(""); }}
+          style={{background: '#666', color: 'white', padding: '10px 20px', borderRadius: '4px', border: 'none', cursor: 'pointer'}}
+        >
+          Clear Filters
+        </button>
+      </div>
 
-          <div className="admin-container" style={{overflowX: 'auto', marginTop: '15px'}}>
-            <table style={{fontSize: '0.9rem'}}>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>School</th>
-                  <th>Time</th>
-                  {subjectsList.map(sub => <th key={sub}>{sub}</th>)}
-                  <th style={{background: '#e3f2fd'}}>TOTAL</th>
-                </tr>
-              </thead>
-              <tbody>
-                {groupedData[day].map((student, idx) => (
-                  <tr key={idx}>
-                    <td><strong>{student.name}</strong></td>
-                    <td>{student.school}</td>
-                    <td style={{color: '#666'}}>{student.time}</td>
-                    {subjectsList.map(sub => {
-                      const mark = student.scores[sub];
-                      const isFail = mark !== undefined && mark < PASS_MARK;
-                      return (
-                        <td key={sub} style={{ color: isFail ? 'red' : 'inherit', fontWeight: isFail ? 'bold' : 'normal' }}>
-                          {mark !== undefined ? mark : "-"}
-                        </td>
-                      );
-                    })}
-                    <td style={{fontWeight: 'bold', background: '#f0f4f8'}}>{student.total}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+      {/* SEARCH & FILTER SECTION */}
+      <div style={{background: '#f5f5f5', padding: '15px', borderRadius: '8px', marginBottom: '20px', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: '10px'}}>
+        <div>
+          <label style={{display: 'block', marginBottom: '5px', fontWeight: 'bold'}}>Search Name:</label>
+          <input
+            type="text"
+            placeholder="e.g., John"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            style={{width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ddd'}}
+          />
         </div>
-      ))}
+
+        <div>
+          <label style={{display: 'block', marginBottom: '5px', fontWeight: 'bold'}}>Subject Completed:</label>
+          <select
+            value={filterSubject}
+            onChange={(e) => setFilterSubject(e.target.value)}
+            style={{width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ddd'}}
+          >
+            <option value="">-- All Subjects --</option>
+            {subjectsList.map(subject => (
+              <option key={subject} value={subject}>{subject}</option>
+            ))}
+          </select>
+        </div>
+
+        <div>
+          <label style={{display: 'block', marginBottom: '5px', fontWeight: 'bold'}}>From Date:</label>
+          <input
+            type="date"
+            value={filterDateFrom}
+            onChange={(e) => setFilterDateFrom(e.target.value)}
+            style={{width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ddd'}}
+          />
+        </div>
+
+        <div>
+          <label style={{display: 'block', marginBottom: '5px', fontWeight: 'bold'}}>To Date:</label>
+          <input
+            type="date"
+            value={filterDateTo}
+            onChange={(e) => setFilterDateTo(e.target.value)}
+            style={{width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ddd'}}
+          />
+        </div>
+      </div>
+
+      {/* UNIFIED RESULTS TABLE */}
+      <h2>All Exam Results ({sortedStudents.length} students)</h2>
+      {loading ? (
+        <p>Loading data...</p>
+      ) : sortedStudents.length === 0 ? (
+        <p style={{color: '#999', textAlign: 'center', padding: '20px'}}>No results found</p>
+      ) : (
+        <div style={{overflowX: 'auto', marginBottom: '40px'}}>
+          <table style={{width: '100%', borderCollapse: 'collapse',fontSize: '0.9rem', background: '#fff', border: '1px solid #ddd'}}>
+            <thead>
+              <tr style={{background: '#f5f5f5', borderBottom: '2px solid #1976d2'}}>
+                <th style={{padding: '12px', textAlign: 'left', borderRight: '1px solid #ddd', fontWeight: 'bold'}}>Name</th>
+                <th style={{padding: '12px', textAlign: 'left', borderRight: '1px solid #ddd', fontWeight: 'bold'}}>School</th>
+                {subjectsList.map(sub => (
+                  <th key={sub} style={{padding: '12px', textAlign: 'center', borderRight: '1px solid #ddd', fontWeight: 'bold', minWidth: '60px'}}>
+                    {sub.split(' ')[0]}
+                  </th>
+                ))}
+                <th style={{padding: '12px', textAlign: 'center', borderRight: '1px solid #ddd', fontWeight: 'bold', background: '#e3f2fd'}}>Total</th>
+                <th style={{padding: '12px', textAlign: 'center', borderRight: '1px solid #ddd', fontWeight: 'bold'}}>Duration</th>
+                <th style={{padding: '12px', textAlign: 'center', borderRight: '1px solid #ddd', fontWeight: 'bold'}}>Latest Date/Time</th>
+                <th style={{padding: '12px', textAlign: 'center', fontWeight: 'bold'}}>Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              {sortedStudents.map((student) => {
+                const studentTotal = getStudentTotal(student.scores);
+                const isExpanded = expandedStudent === student.email;
+
+                return (
+                  <React.Fragment key={student.email}>
+                    {/* Main Row */}
+                    <tr style={{borderBottom: '1px solid #eee', background: isExpanded ? '#f9f9f9' : '#fff'}}>
+                      <td style={{padding: '12px', borderRight: '1px solid #ddd', fontWeight: '500'}}>{student.name}</td>
+                      <td style={{padding: '12px', borderRight: '1px solid #ddd', fontSize: '0.85rem', color: '#666'}}>{student.school}</td>
+
+                      {/* Subject Columns */}
+                      {subjectsList.map(subject => {
+                        const score = getSubjectScore(student.scores, subject);
+                        const isFail = score !== '-' && Number(score) < PASS_MARK;
+                        return (
+                          <td key={subject} style={{padding: '12px', textAlign: 'center', borderRight: '1px solid #ddd', color: isFail ? '#d32f2f' : '#333', fontWeight: isFail ? 'bold' : 'normal'}}>
+                            {score}
+                          </td>
+                        );
+                      })}
+
+                      {/* Total */}
+                      <td style={{padding: '12px', textAlign: 'center', borderRight: '1px solid #ddd', fontWeight: 'bold', background: '#f0f4f8'}}>
+                        {studentTotal}
+                      </td>
+
+                      {/* Duration */}
+                      <td style={{padding: '12px', textAlign: 'center', borderRight: '1px solid #ddd', fontSize: '0.85rem', color: '#666'}}>
+                        {formatDuration(student.totalDuration)}
+                      </td>
+
+                      {/* Latest */}
+                      <td style={{padding: '12px', textAlign: 'center', borderRight: '1px solid #ddd', fontSize: '0.85rem'}}>
+                        {student.latestSubmission.date} <br/> {student.latestSubmission.time}
+                      </td>
+
+                      {/* Details Button */}
+                      <td style={{padding: '12px', textAlign: 'center'}}>
+                        <button
+                          onClick={() => setExpandedStudent(isExpanded ? null : student.email)}
+                          style={{background: isExpanded ? '#ff9800' : '#1976d2', color: 'white', padding: '6px 12px', borderRadius: '4px', border: 'none', cursor: 'pointer', fontSize: '0.85rem'}}
+                        >
+                          {isExpanded ? '−' : '+'}
+                        </button>
+                      </td>
+                    </tr>
+
+                    {/* Expanded Details Row */}
+                    {isExpanded && (
+                      <tr style={{background: '#f9f9f9', borderBottom: '2px solid #1976d2'}}>
+                        <td colSpan="100%" style={{padding: '20px', borderRight: '1px solid #ddd'}}>
+                          <div style={{background: '#fff', padding: '15px', borderRadius: '4px', border: '1px solid #e0e0e0'}}>
+                            <h4 style={{margin: '0 0 15px 0', color: '#1976d2'}}>📋 Subject Details for {student.name}</h4>
+                            <table style={{width: '100%', borderCollapse: 'collapse', fontSize: '0.85rem'}}>
+                              <thead>
+                                <tr style={{background: '#f5f5f5', borderBottom: '1px solid #ddd'}}>
+                                  <th style={{padding: '10px', textAlign: 'left', borderRight: '1px solid #ddd'}}>Subject</th>
+                                  <th style={{padding: '10px', textAlign: 'center', borderRight: '1px solid #ddd'}}>Score</th>
+                                  <th style={{padding: '10px', textAlign: 'center', borderRight: '1px solid #ddd'}}>Date</th>
+                                  <th style={{padding: '10px', textAlign: 'center', borderRight: '1px solid #ddd'}}>Time</th>
+                                  <th style={{padding: '10px', textAlign: 'center'}}>Duration</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {subjectsList.map(subject => {
+                                  const subjectData = student.scores[subject];
+                                  if (!subjectData) {
+                                    return (
+                                      <tr key={subject} style={{borderBottom: '1px solid #eee', background: '#fafafa'}}>
+                                        <td style={{padding: '10px', borderRight: '1px solid #ddd'}}>{subject}</td>
+                                        <td colSpan="4" style={{padding: '10px', color: '#999', textAlign: 'center'}}>Not attempted</td>
+                                      </tr>
+                                    );
+                                  }
+                                  const isFail = subjectData.score < PASS_MARK;
+                                  return (
+                                    <tr key={subject} style={{borderBottom: '1px solid #eee'}}>
+                                      <td style={{padding: '10px', borderRight: '1px solid #ddd', fontWeight: '500'}}>{subject}</td>
+                                      <td style={{padding: '10px', textAlign: 'center', borderRight: '1px solid #ddd', color: isFail ? '#d32f2f' : '#333', fontWeight: isFail ? 'bold' : 'normal'}}>
+                                        {subjectData.score}
+                                      </td>
+                                      <td style={{padding: '10px', textAlign: 'center', borderRight: '1px solid #ddd', color: '#666'}}>{subjectData.date}</td>
+                                      <td style={{padding: '10px', textAlign: 'center', borderRight: '1px solid #ddd', color: '#666'}}>{subjectData.time}</td>
+                                      <td style={{padding: '10px', textAlign: 'center', color: '#666'}}>{formatDuration(subjectData.duration)}</td>
+                                    </tr>
+                                  );
+                                })}
+                              </tbody>
+                            </table>
+                          </div>
+                        </td>
+                      </tr>
+                    )}
+                  </React.Fragment>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      )}
 
       {/* INCOMPLETE SESSIONS */}
-      <h3 style={{marginTop: '40px', color: '#d32f2f'}}>Active/Locked Sessions</h3>
-      <div className="admin-container">
-        <table>
-          <thead><tr><th>Email</th><th>Subject</th><th>Action</th></tr></thead>
+      <h3 style={{marginTop: '40px', color: '#d32f2f'}}>Active/Locked Sessions ({lockedSessions.length})</h3>
+
+      {lockedSessions.length > 0 && selectedSessions.size > 0 && (
+        <div style={{marginBottom: '15px', display: 'flex', gap: '10px', alignItems: 'center'}}>
+          <span style={{color: '#333', fontWeight: 'bold'}}>{selectedSessions.size} session(s) selected</span>
+          <button
+            onClick={unlockSelected}
+            style={{background: '#f44336', color: 'white', padding: '8px 16px', borderRadius: '4px', border: 'none', cursor: 'pointer', fontWeight: 'bold'}}
+          >
+            🔓 Unlock Selected
+          </button>
+          <button
+            onClick={() => setSelectedSessions(new Set())}
+            style={{background: '#999', color: 'white', padding: '8px 16px', borderRadius: '4px', border: 'none', cursor: 'pointer'}}
+          >
+            Cancel
+          </button>
+        </div>
+      )}
+
+      <div style={{overflowX: 'auto'}}>
+        <table style={{width: '100%', borderCollapse: 'collapse'}}>
+          <thead><tr style={{background: '#f5f5f5', borderBottom: '2px solid #d32f2f'}}>
+            <th style={{padding: '12px', textAlign: 'center', borderRight: '1px solid #ddd', width: '40px'}}>
+              {lockedSessions.length > 0 && (
+                <input
+                  type="checkbox"
+                  checked={selectedSessions.size === lockedSessions.length && lockedSessions.length > 0}
+                  onChange={toggleSelectAll}
+                  style={{cursor: 'pointer', width: '18px', height: '18px'}}
+                  title="Select all"
+                />
+              )}
+            </th>
+            <th style={{padding: '12px', textAlign: 'left', borderRight: '1px solid #ddd'}}>Email</th>
+            <th style={{padding: '12px', textAlign: 'left', borderRight: '1px solid #ddd'}}>Subject</th>
+            <th style={{padding: '12px', textAlign: 'center'}}>Action</th>
+          </tr></thead>
           <tbody>
             {lockedSessions.length > 0 ? lockedSessions.map((session) => (
-              <tr key={session.id}>
-                <td>{session.student_email}</td>
-                <td>{session.subject}</td>
-                <td><button onClick={() => unlockStudent(session.id)} style={{background: '#f44336', padding: '5px'}}>Unlock</button></td>
+              <tr key={session.id} style={{borderBottom: '1px solid #eee', background: selectedSessions.has(session.id) ? '#fff3cd' : '#fff'}}>
+                <td style={{padding: '12px', textAlign: 'center', borderRight: '1px solid #ddd'}}>
+                  <input
+                    type="checkbox"
+                    checked={selectedSessions.has(session.id)}
+                    onChange={() => toggleSessionSelect(session.id)}
+                    style={{cursor: 'pointer', width: '18px', height: '18px'}}
+                  />
+                </td>
+                <td style={{padding: '12px', borderRight: '1px solid #ddd'}}>{session.student_email}</td>
+                <td style={{padding: '12px', borderRight: '1px solid #ddd'}}>{session.subject}</td>
+                <td style={{padding: '12px', textAlign: 'center'}}>
+                  <button onClick={() => unlockStudent(session.id)} style={{background: '#f44336', color: 'white', padding: '6px 12px', borderRadius: '4px', border: 'none', cursor: 'pointer'}}>Unlock</button>
+                </td>
               </tr>
-            )) : <tr><td colSpan="3">No locked sessions.</td></tr>}
+            )) : <tr><td colSpan="4" style={{padding: '12px', textAlign: 'center', color: '#999'}}>No locked sessions</td></tr>}
           </tbody>
         </table>
       </div>
 
-      <button onClick={() => window.location.href="/"} style={{background: '#707070', marginTop: '40px'}}>Logout</button>
+      <button onClick={() => window.location.href="/"} style={{background: '#707070', color: 'white', marginTop: '40px', padding: '10px 20px', borderRadius: '4px', border: 'none', cursor: 'pointer', fontWeight: 'bold'}}>Logout</button>
     </div>
   );
 };

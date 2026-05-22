@@ -2,9 +2,22 @@ import React, { useRef, useState, useEffect, useMemo } from "react";
 import "./Quiz.css";
 import logo from "../../assets/logoldx.jpeg";
 import img2 from "../../assets/img2.jpg";
+import img3 from "../../assets/img3.jpg";
+import ads11 from "../../assets/ads11.jpg";
+import ads12 from "../../assets/ads12.jpg";
+import ads13 from "../../assets/ads13.jpg";
+import ads14 from "../../assets/ads14.jpg";
+import ads21 from "../../assets/ads21.jpg";
+import ads22 from "../../assets/ads22.jpg";
+import ads23 from "../../assets/ads23.jpg";
+import ads31 from "../../assets/ads31.jpg";
+import ads32 from "../../assets/ads32.jpg";
+import ads33 from "../../assets/ads33.jpg";
 import { MathJax, MathJaxContext } from "better-react-mathjax";
-import { db, auth } from "../../firebaseConfig"; 
-import { collection, addDoc, doc, getDoc, setDoc } from "firebase/firestore"; // Added setDoc
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
+import { db, auth } from "../../firebaseConfig";
+import { collection, addDoc, doc, getDoc, setDoc, getDocs } from "firebase/firestore"; // Added getDocs
 import { signInWithEmailAndPassword } from "firebase/auth";
 import localData from "./questions.json"; 
 
@@ -30,17 +43,7 @@ const mathJaxConfig = {
   }
 };
 
-const QUIZ_TIME = 45 * 60; 
-
-// EXAM SCHEDULE (Year, Month (0-indexed), Day, Hour, Minute)
-const EXAM_SCHEDULE = {
-  "Mathematics": new Date(2026, 1, 20, 20, 30, 0), // Feb 13, 2026, 20:30:00
-  "Further Maths": new Date(2026, 1, 14, 0, 0, 0), 
-  "Physics": new Date(2026, 1, 14, 0, 0, 0),
-  "Chemistry": new Date(2026, 1, 14, 0, 0, 0),
-  "Biology": new Date(2026, 1, 14, 0, 0, 0),
-  "ICT": new Date(2026, 1, 14, 0, 0, 0),
-};
+const QUIZ_TIME = 45 * 60;
 
 const Quiz = () => {
   const [page, setPage] = useState("welcome");
@@ -49,7 +52,7 @@ const Quiz = () => {
   });
 
   const [questions, setQuestions] = useState([]);
-  const [selectedSubject, setSelectedSubject] = useState(""); 
+  const [selectedSubject, setSelectedSubject] = useState("");
   const [index, setIndex] = useState(0);
   const [lock, setLock] = useState(false);
   const [score, setScore] = useState(0);
@@ -57,6 +60,24 @@ const Quiz = () => {
   const [timeLeft, setTimeLeft] = useState(QUIZ_TIME);
   const [saved, setSaved] = useState(false);
   const [mathReady, setMathReady] = useState(false);
+  const [examSchedules, setExamSchedules] = useState({});
+  const [showAds, setShowAds] = useState(false);
+  const [currentAdIndex, setCurrentAdIndex] = useState(0);
+  const [nextQuestionPending, setNextQuestionPending] = useState(false);
+
+  // Function to get the correct ads array based on current question
+  const getAdsArray = () => {
+    const questionNum = index + 1;
+    if (questionNum <= 15) {
+      return [ads11, ads12, ads13, ads14];
+    } else if (questionNum <= 30) {
+      return [ads21, ads22, ads23];
+    } else {
+      return [ads31, ads32, ads33];
+    }
+  };
+
+  const adsArray = getAdsArray();
 
   const question = questions[index] || {};
   const option1 = useRef(null);
@@ -65,10 +86,33 @@ const Quiz = () => {
   const option4 = useRef(null);
   const option_array = [option1, option2, option3, option4];
 
+  // Fetch exam schedules from Firebase
+  useEffect(() => {
+    const fetchExamSchedules = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "exam_schedules"));
+        const schedules = {};
+        querySnapshot.forEach((doc) => {
+          schedules[doc.id] = doc.data();
+        });
+        setExamSchedules(schedules);
+      } catch (err) {
+        console.error("Error fetching exam schedules:", err);
+      }
+    };
+    fetchExamSchedules();
+  }, []);
+
   // Helper to check time availability
   const isSubjectAvailable = (subName) => {
     const now = new Date();
-    const scheduledTime = EXAM_SCHEDULE[subName];
+    const schedule = examSchedules[subName];
+    if (!schedule || !schedule.date || !schedule.time) return false;
+
+    const [year, month, day] = schedule.date.split('-').map(Number);
+    const [hours, minutes] = schedule.time.split(':').map(Number);
+    const scheduledTime = new Date(year, month - 1, day, hours, minutes, 0);
+
     return now >= scheduledTime;
   };
 
@@ -76,8 +120,13 @@ const Quiz = () => {
   const startSubjectQuiz = async (subjectName) => {
     // Check Timing Constraint first
     if (!isSubjectAvailable(subjectName)) {
-        alert(`${subjectName} is scheduled for ${EXAM_SCHEDULE[subjectName].toLocaleString()}. Please wait until the scheduled time.`);
-        return;
+      const schedule = examSchedules[subjectName];
+      if (schedule && schedule.date && schedule.time) {
+        alert(`${subjectName} is scheduled for ${schedule.date} at ${schedule.time}. Please wait until the scheduled time.`);
+      } else {
+        alert(`${subjectName} exam schedule has not been set yet.`);
+      }
+      return;
     }
 
     // Generate unique ID for this student and this subject to prevent restart
@@ -86,7 +135,7 @@ const Quiz = () => {
 
     try {
       /* // SESSION LOCKING LOGIC - COMMENTED OUT TO ALLOW RE-ENTRY
-      const sessionSnap = await getDoc(sessionRef);
+          npm run dev  const sessionSnap = await getDoc(sessionRef);
       if (sessionSnap.exists()) {
         alert(`Access Denied: You have already attempted or started ${subjectName}. You cannot restart.`);
         return;
@@ -154,7 +203,7 @@ const Quiz = () => {
       try {
         const docRef = doc(db, "acredited_students", user.email.toLowerCase().trim());
         const docSnap = await getDoc(docRef);
-        if ( true || docSnap.exists()) {
+        if (docSnap.exists()) {
           setPage("subject-select"); 
         } else {
           alert("Access Denied: Your email is not on the accredited list.");
@@ -190,17 +239,61 @@ const Quiz = () => {
     setLock(true);
   };
 
-  const next = () => {
-    if (!lock) return;
+  const proceedToNextQuestion = () => {
     setMathReady(false); 
     option_array.forEach((opt) => opt.current?.classList.remove("wrong", "correct", "expanded"));
+    // Check if current question is the last one
     if (index === questions.length - 1) {
       setResult(true);
     } else {
       setIndex((prev) => prev + 1);
       setLock(false);
     }
+    setShowAds(false);
+    setNextQuestionPending(false);
   };
+
+  const next = () => {
+    if (!lock) return;
+    
+    // Check if we're at the last question before doing anything
+    if (index === questions.length - 1) {
+      setResult(true);
+      return;
+    }
+    
+    // Check if we need to show ads (every 15 questions)
+    if ((index + 1) % 15 === 0) {
+      setShowAds(true);
+      setCurrentAdIndex(0);
+      setNextQuestionPending(true);
+    } else {
+      proceedToNextQuestion();
+    }
+  };
+
+  // Handle ads display sequence
+  useEffect(() => {
+    if (!showAds) return;
+    
+    // Reveal each ad one by one (0.5s per ad = 2s total for 4 ads)
+    const adInterval = setInterval(() => {
+      setCurrentAdIndex((prev) => {
+        if (prev < adsArray.length - 1) {
+          return prev + 1;
+        } else {
+          clearInterval(adInterval);
+          // After all ads revealed, wait 10 seconds then proceed
+          setTimeout(() => {
+            proceedToNextQuestion();
+          }, 10000);
+          return prev;
+        }
+      });
+    }, 500);
+
+    return () => clearInterval(adInterval);
+  }, [showAds, adsArray.length]);
 
   useEffect(() => {
     if (result && !saved && user.role === "user") {
@@ -289,7 +382,10 @@ const Quiz = () => {
       <div className="container">
         <h1>PDV LEADEX EDUCATION</h1>
         <h1>National Quiz</h1>
-        <img src={logo} alt="Logo" className="logo" />
+        <div className="logo-container">
+          <img src={logo} alt="Logo" className="logo-image" />
+          <img src={img3} alt="Additional" className="logo-image" />
+        </div>
         <hr />
 
         {page === "welcome" && (
@@ -297,7 +393,7 @@ const Quiz = () => {
             <div className="welcome-card">
               <div className="welcome-image"><img src={img2} alt="Welcome" /></div>
               <div className="welcome-text">
-                <h2>Welcome to LEADEX National Quiz</h2>
+                <h2>Welcome to PDV LEADEX EDUCATION</h2>
                 <p>Dear Candidate,<br /><br />
               You are welcome to the <strong>LEADEX National Quiz Application</strong>,
               a carefully structured academic platform designed to strengthen your
@@ -362,16 +458,20 @@ const Quiz = () => {
           <div className="start-page">
             <h2>Select Your Subject</h2>
             <p style={{textAlign: 'center', fontSize: '0.9rem', color: '#553f9a'}}>
-                Mathematics is scheduled for today at 20:30.
+                {Object.keys(examSchedules).length > 0
+                  ? "View the lock status below. Click on an available subject to begin."
+                  : "Exam schedules are being updated by your school."}
             </p>
             <div className="subject-grid">
               {["Mathematics", "Further Maths", "Physics", "Chemistry", "Biology", "ICT"].map((sub) => {
                 const available = isSubjectAvailable(sub);
+                const schedule = examSchedules[sub];
                 return (
-                  <button 
-                    key={sub} 
-                    className="subject-btn" 
+                  <button
+                    key={sub}
+                    className="subject-btn"
                     onClick={() => startSubjectQuiz(sub)}
+                    title={schedule ? `${schedule.date} at ${schedule.time}` : "Schedule not set"}
                     style={{
                         opacity: available ? 1 : 0.6,
                         filter: available ? 'none' : 'grayscale(80%)'
@@ -393,15 +493,43 @@ const Quiz = () => {
                   <span>Subject: {selectedSubject}</span>
                   <span>⏱ {Math.floor(timeLeft / 60)}:{String(timeLeft % 60).padStart(2, "0")}</span>
                 </div>
-                
+
+                <div className="progress-container">
+                  <div className="progress-info">
+                    <span>Question {index + 1} of {questions.length}</span>
+                    <span>{Math.round(((index + 1) / questions.length) * 100)}%</span>
+                  </div>
+                  <div className="progress-bar-wrapper">
+                    <div
+                      className="progress-bar-fill"
+                      style={{ width: `${((index + 1) / questions.length) * 100}%` }}
+                    ></div>
+                  </div>
+                </div>
+
                 {quizContent}
 
                 {!mathReady && <div className="spinner"></div>}
 
-                <button onClick={next} disabled={!lock || !mathReady}>
+                <button onClick={next} disabled={!lock || !mathReady || showAds}>
                   {index === questions.length - 1 ? "Finish Quiz" : "Next"}
                 </button>
-                <div className="index">{index + 1} of {questions.length} questions</div>
+
+                {/* Ads Modal */}
+                {showAds && (
+                  <div className="ads-modal-overlay">
+                    <div className="ads-modal">
+                      {adsArray.map((ad, idx) => (
+                        <img
+                          key={idx}
+                          src={ad}
+                          alt={`Ad ${idx + 1}`}
+                          className={`ads-image ads-${idx} ${idx <= currentAdIndex ? "ads-show" : "ads-hide"}`}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                )}
               </>
             ) : (
               <div className="result">
