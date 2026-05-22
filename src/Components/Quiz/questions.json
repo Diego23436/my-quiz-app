@@ -614,16 +614,7 @@
       "option2": "gas and pale yellow",
       "option3": "gas and greenish yellow",
       "option4": "gas and reddish brown",
-      "ans": 4,
-      "explanation": ""
-    },
-    {
-      "question": "Which of the following compounds is most readily hydrolysed?",
-      "option1": "CH<sub>3</sub>COOH",
-      "option2": "CH<sub>3</sub>CO<sub>2</sub>C<sub>2</sub>H<sub>5</sub>",
-      "option3": "CH<sub>3</sub>CONH<sub>2</sub>",
-      "option4": "CH<sub>3</sub>COCl",
-      "ans": 4,
+      "ans": 2,
       "explanation": ""
     },
     {

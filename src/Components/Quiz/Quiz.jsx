@@ -46,7 +46,7 @@ const mathJaxConfig = {
   }
 };
 
-const QUIZ_TIME = 45 * 60;
+const QUIZ_TIME = 30 * 60;
 
 const Quiz = () => {
   const [page, setPage] = useState("welcome");
