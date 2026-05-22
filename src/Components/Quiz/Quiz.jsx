@@ -212,17 +212,7 @@ const Quiz = () => {
         return;
       }
 
-      try {
-        const docRef = doc(db, "acredited_students", user.email.toLowerCase().trim());
-        const docSnap = await getDoc(docRef);
-        if (docSnap.exists()) {
-          setPage("subject-select"); 
-        } else {
-          alert("Access Denied: Your email is not on the accredited list.");
-        }
-      } catch (error) {
-        alert("Database connection error.");
-      } 
+      setPage("subject-select");
     } else {
       try {
         const userCredential = await signInWithEmailAndPassword(auth, user.email, user.password);
@@ -346,7 +336,7 @@ const Quiz = () => {
         }
         return prev;
       });
-    }, 7000);
+    }, 11000);
 
     return () => {
       clearInterval(testimonialIntervalRef.current);

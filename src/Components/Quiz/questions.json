@@ -335,7 +335,7 @@
       "option2": "Catenation",
       "option3": "Hybridization",
       "option4": "Ionization",
-      "ans": 3,
+      "ans": 1,
       "explanation": ""
     },
     {
@@ -425,7 +425,7 @@
       "option2": "Increasing electronegativity",
       "option3": "Increasing relative atomic mass",
       "option4": "Increasing density",
-      "ans": 1,
+      "ans": 3,
       "explanation": ""
     },
     {
@@ -609,6 +609,24 @@
       "explanation": ""
     },
     {
+      "question": "What is the state and color of fluorine?",
+      "option1": "liquid and pale yellow",
+      "option2": "gas and pale yellow",
+      "option3": "gas and greenish yellow",
+      "option4": "gas and reddish brown",
+      "ans": 4,
+      "explanation": ""
+    },
+    {
+      "question": "Which of the following compounds is most readily hydrolysed?",
+      "option1": "CH<sub>3</sub>COOH",
+      "option2": "CH<sub>3</sub>CO<sub>2</sub>C<sub>2</sub>H<sub>5</sub>",
+      "option3": "CH<sub>3</sub>CONH<sub>2</sub>",
+      "option4": "CH<sub>3</sub>COCl",
+      "ans": 4,
+      "explanation": ""
+    },
+    {
       "question": "How can the rate of the reaction:<br><br>$S_2O_3^{2-}(aq) + 2H^+(aq) \\rightarrow H_2O(l) + S(s) + SO_2(aq)$<br><br>be followed?<br><br>1. Change of mass<br>2. Colourimetric analysis<br>3. Electrical conductivity",
       "option1": "1, 2 and 3 are all correct",
       "option2": "1 and 2 only are correct",
@@ -623,7 +641,7 @@
       "option2": "1 and 2 only are correct",
       "option3": "2 and 3 only are correct",
       "option4": "3 only is correct",
-      "ans": 3,
+      "ans": 4,
       "explanation": ""
     },
      {
@@ -659,7 +677,7 @@
       "option2": "1 and 2 only are correct",
       "option3": "2 and 3 only are correct",
       "option4": "3 only is correct",
-      "ans": 3,
+      "ans": 1,
       "explanation": ""
     },
     {
@@ -668,7 +686,7 @@
       "option2": "1 and 2 only are correct",
       "option3": "2 and 3 only are correct",
       "option4": "3 only is correct",
-      "ans": 2,
+      "ans": 1,
       "explanation": ""
     },
     {

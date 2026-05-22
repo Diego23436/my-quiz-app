@@ -116,6 +116,35 @@ const AdminDashboard = () => {
     } catch (err) { alert(err.message); }
   };
 
+  const clearResults = async () => {
+    if (!window.confirm("Are you sure you want to clear all saved results? This cannot be undone.")) return;
+    try {
+      const resultsSnapshot = await getDocs(collection(db, "results"));
+      if (resultsSnapshot.empty) {
+        alert("No results to clear.");
+        return;
+      }
+      const docs = resultsSnapshot.docs;
+      const chunkSize = 400;
+      let clearedCount = 0;
+
+      for (let i = 0; i < docs.length; i += chunkSize) {
+        const batch = writeBatch(db);
+        docs.slice(i, i + chunkSize).forEach((resultDoc) => {
+          batch.delete(resultDoc.ref);
+          clearedCount += 1;
+        });
+        await batch.commit();
+      }
+
+      alert(`✓ Cleared ${clearedCount} result record(s).`);
+      fetchData();
+    } catch (err) {
+      console.error("Error clearing results:", err);
+      alert("Failed to clear results: " + err.message);
+    }
+  };
+
   const unlockStudent = async (id) => {
     if(window.confirm("Unlock this session?")) {
       await deleteDoc(doc(db, "active_sessions", id));
@@ -282,7 +311,7 @@ const AdminDashboard = () => {
       </div>
 
       {/* EXPORT BUTTON */}
-      <div style={{marginBottom: '20px', display: 'flex', gap: '10px'}}>
+      <div style={{marginBottom: '20px', display: 'flex', flexWrap: 'wrap', gap: '10px'}}>
         <button
           onClick={exportToExcel}
           style={{background: '#1976d2', color: 'white', padding: '10px 20px', borderRadius: '4px', border: 'none', cursor: 'pointer', fontWeight: 'bold'}}
@@ -294,6 +323,12 @@ const AdminDashboard = () => {
           style={{background: '#666', color: 'white', padding: '10px 20px', borderRadius: '4px', border: 'none', cursor: 'pointer'}}
         >
           Clear Filters
+        </button>
+        <button
+          onClick={clearResults}
+          style={{background: '#d32f2f', color: 'white', padding: '10px 20px', borderRadius: '4px', border: 'none', cursor: 'pointer', fontWeight: 'bold'}}
+        >
+          🧹 Clear Results Table
         </button>
       </div>
 
