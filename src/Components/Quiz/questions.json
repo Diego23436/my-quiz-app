@@ -697,7 +697,7 @@
   "option2": "0.033 M",
   "option3": "0.050 M",
   "option4": "0.100 M",
-  "ans": 2,
+  "ans": 3,
   "explanation": ""
 },
 {
@@ -706,7 +706,7 @@
   "option2": "0.40 M/s",
   "option3": "0.60 M/s",
   "option4": "1.20 M/s",
-  "ans": 4,
+  "ans": 3,
   "explanation": ""
 },
 {
@@ -724,7 +724,7 @@
   "option2": "0.200 M⁻¹·min⁻¹",
   "option3": "0.306 M⁻¹·min⁻¹",
   "option4": "0.600 M⁻¹·min⁻¹",
-  "ans": 3,
+  "ans": 1,
   "explanation": ""
 },
 {
@@ -733,7 +733,7 @@
   "option2": "It activates the ring and directs the next group to the meta position.",
   "option3": "It deactivates the ring and directs the next group to the ortho and para positions.",
   "option4": "It activates the ring and directs the next group to the ortho and para positions.",
-  "ans": 4,
+  "ans": 3,
   "explanation": ""
 }
   ],
