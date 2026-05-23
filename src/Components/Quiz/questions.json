@@ -503,15 +503,6 @@
   "explanation": ""
 },
 {
-  "question": "Sacrificial anodes are highly active metals attached to iron ship hulls or underground pipelines to prevent rusting (corrosion). Which metal would make the best sacrificial anode for iron (Fe)?<br><br>Fe²⁺ + 2e⁻ → Fe (E° = −0.44 V)",
-  "option1": "Copper (Cu)",
-  "option2": "Silver (Ag)",
-  "option3": "Magnesium (Mg)",
-  "option4": "Gold (Au)",
-  "ans": 3,
-  "explanation": ""
-},
-{
   "question": "According to the Brønsted-Lowry definition, what is the conjugate base of the hydrogen carbonate ion, HCO₃⁻?",
   "option1": "CO₃²⁻",
   "option2": "H₂CO₃",
@@ -563,24 +554,6 @@
   "option3": "It has increased by a factor of 100.",
   "option4": "It has decreased by a factor of 100.",
   "ans": 4,
-  "explanation": ""
-},
-{
-  "question": "Why do s-block elements (alkali and alkaline earth metals) never occur as free, uncombined elements in nature?",
-  "option1": "They are highly unreactive gases.",
-  "option2": "They are highly reactive metals that readily lose electrons to form compounds.",
-  "option3": "They decompose rapidly due to radioactive decay.",
-  "option4": "They evaporate instantly when exposed to air.",
-  "ans": 2,
-  "explanation": ""
-},
-{
-  "question": "What is the fundamental electronic reason why transition metal complexes are frequently brightly colored?",
-  "option1": "Electrons are completely ejected from the atom by visible light.",
-  "option2": "Electrons absorb light energy to transition between split d-orbitals (d–d transitions).",
-  "option3": "The metal atoms physically melt when dissolved in water.",
-  "option4": "The s-orbital electrons pair up with p-orbital electrons.",
-  "ans": 2,
   "explanation": ""
 },
 {
