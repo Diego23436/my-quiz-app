@@ -14,7 +14,7 @@ const AdminDashboard = () => {
   const [filterDateFrom, setFilterDateFrom] = useState("");
   const [filterDateTo, setFilterDateTo] = useState("");
 
-  const subjectsList = ["Mathematics", "Further Maths", "Physics", "Chemistry", "Biology", "ICT"];
+  const subjectsList = ["PMM", "PMS", "Further Maths", "Physics", "Chemistry", "Biology", "ICT", "Computer Science", "Food Science"];
   const PASS_MARK = 15;
 
   // Helper function to parse date string in DD/MM/YYYY format to comparable number

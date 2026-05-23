@@ -3,7 +3,7 @@ import { db } from "../../firebaseConfig";
 import { collection, getDocs, setDoc, doc } from "firebase/firestore";
 
 const TeacherDashboard = () => {
-  const subjects = ["Mathematics", "Further Maths", "Physics", "Chemistry", "Biology", "ICT"];
+  const subjects = ["PMM", "PMS", "Further Maths", "Physics", "Chemistry", "Biology", "ICT", "Computer Science", "Food Science"];
   const [schedules, setSchedules] = useState({});
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
