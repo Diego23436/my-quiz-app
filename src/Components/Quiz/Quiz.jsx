@@ -50,7 +50,7 @@ const mathJaxConfig = {
     matchFontHeight: true,
   },
 };
-const QUIZ_TIME = 30 * 60;
+const QUIZ_TIME = 60 * 60;
 // ─── The minimum question index (0-based) at which the session lock is committed.
 // index 24 = the student is ON question 25. Once they reach this point and
 // move forward (or the session is written), they are permanently locked out
