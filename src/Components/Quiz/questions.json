@@ -495,10 +495,10 @@
 },
 {
   "question": "Based on the standard reduction potentials below, which metal is the strongest reducing agent (most easily oxidized)?<br><br>Ag⁺ + e⁻ → Ag (E° = +0.80 V)<br>Ni²⁺ + 2e⁻ → Ni (E° = −0.25 V)<br>Al³⁺ + 3e⁻ → Al (E° = −1.66 V)",
-  "option1": "Ag",
-  "option2": "Ni",
-  "option3": "Al",
-  "option4": "Al³⁺",
+  "option1": "Ag (E° = −0.34V ",
+  "option2": "Ni (E° = +0.80 V)",
+  "option3": "Al (E° = -2.37 V)",
+  "option4": "Al³⁺ (E° = +1.50V)",
   "ans": 3,
   "explanation": ""
 },
