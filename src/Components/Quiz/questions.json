@@ -440,6 +440,15 @@
       "explanation": ""
     },
     {
+  "question": "Lead(IV) chloride ($PbCl_4$) is highly unstable and easily decomposes into lead(II) chloride ($PbCl_2$) and chlorine gas upon heating. This behavior occurs because:",
+  "option1": "$Pb^{4+}$ is too small to pack into a stable crystal lattice.",
+  "option2": "The +4 oxidation state of lead is highly reducing.",
+  "option3": "The +2 oxidation state is much more stable than the +4 state due to poor shielding by 4f and 5d electrons.",
+  "option4": "Chlorine gas acts as a stabilizing agent for lower oxidation states.",
+  "ans": 3,
+  "explanation": ""
+},
+    {
   "question": "Which of the following reagent combinations will successfully convert benzaldehyde into 1-phenylethan-1-ol?",
   "option1": "$CH_3MgBr$, followed by $H_3O^+$",
   "option2": "$NaBH_4$, followed by $CH_3I$",
@@ -449,11 +458,11 @@
   "explanation": ""
 },
 {
-  "question": "Lead(IV) chloride ($PbCl_4$) is highly unstable and easily decomposes into lead(II) chloride ($PbCl_2$) and chlorine gas upon heating. This behavior occurs because:",
-  "option1": "$Pb^{4+}$ is too small to pack into a stable crystal lattice.",
-  "option2": "The +4 oxidation state of lead is highly reducing.",
-  "option3": "The +2 oxidation state is much more stable than the +4 state due to poor shielding by 4f and 5d electrons.",
-  "option4": "Chlorine gas acts as a stabilizing agent for lower oxidation states.",
+  "question": "A compound with the molecular formula C₄H₁₀O does not react with chromic acid (H₂CrO₄), but it reacts immediately with the Lucas reagent (HCl/ZnCl₂) to form an insoluble layer. What is the structure of this compound?",
+  "option1": "Butan-1-ol",
+  "option2": "Butan-2-ol",
+  "option3": "2-Methylpropan-2-ol",
+  "option4": "2-Methylpropan-1-ol",
   "ans": 3,
   "explanation": ""
 },
@@ -464,15 +473,6 @@
   "option3": "An aldehyde",
   "option4": "A carboxylic acid",
   "ans": 4,
-  "explanation": ""
-},
-{
-  "question": "A compound with the molecular formula C₄H₁₀O does not react with chromic acid (H₂CrO₄), but it reacts immediately with the Lucas reagent (HCl/ZnCl₂) to form an insoluble layer. What is the structure of this compound?",
-  "option1": "Butan-1-ol",
-  "option2": "Butan-2-ol",
-  "option3": "2-Methylpropan-2-ol",
-  "option4": "2-Methylpropan-1-ol",
-  "ans": 3,
   "explanation": ""
 },
 {
@@ -495,70 +495,7 @@
 },
 {
   "question": "Based on the standard reduction potentials below, which metal is the strongest reducing agent (most easily oxidized)?<br><br>Ag⁺ + e⁻ → Ag (E° = +0.80 V)<br>Ni²⁺ + 2e⁻ → Ni (E° = −0.25 V)<br>Al³⁺ + 3e⁻ → Al (E° = −1.66 V)",
-  "option1": "Ag (E° = −0.34V ",
-  "option2": "Ni (E° = +0.80 V)",
-  "option3": "Al (E° = -2.37 V)",
-  "option4": "Al³⁺ (E° = +1.50V)",
-  "ans": 3,
-  "explanation": ""
-},
-{
-  "question": "According to the Brønsted-Lowry definition, what is the conjugate base of the hydrogen carbonate ion, HCO₃⁻?",
-  "option1": "CO₃²⁻",
-  "option2": "H₂CO₃",
-  "option3": "OH⁻",
-  "option4": "H₃O⁺",
-  "ans": 1,
-  "explanation": ""
-},
-{
-  "question": "A buffer solution is prepared with equal concentrations of a weak acid (HA) and its conjugate base (A⁻). If the acid dissociation constant (Kₐ) of the weak acid is 1.0 × 10⁻⁵, what is the pH of this buffer?",
-  "option1": "3.0",
-  "option2": "5.0",
-  "option3": "7.0",
-  "option4": "9.0",
-  "ans": 2,
-  "explanation": ""
-},
-{
-  "question": "Which of the following statements correctly describes a characteristic of a weak acid?",
-  "option1": "It dissociates completely into ions when dissolved in water.",
-  "option2": "It has a very large acid dissociation constant (Kₐ ≫ 1).",
-  "option3": "It establishes a dynamic equilibrium between its molecular form and its ions.",
-  "option4": "It cannot be neutralized by a strong base.",
-  "ans": 3,
-  "explanation": ""
-},
-{
-  "question": "What happens to the pH of an acetic acid/sodium acetate buffer solution if you add a very small amount of a strong base like NaOH?",
-  "option1": "The pH drops instantly to a highly acidic value.",
-  "option2": "The pH shoots up instantly to a highly basic value.",
-  "option3": "The pH stays completely unchanged at exactly 7.0.",
-  "option4": "The pH increases only very slightly.",
-  "ans": 4,
-  "explanation": ""
-},
-{
-  "question": "A buffer solution contains a mixture of ammonia (NH₃, a weak base) and ammonium chloride (NH₄Cl, its conjugate acid). If a small amount of hydrochloric acid (HCl) is added, which component of the buffer actively neutralizes it?",
-  "option1": "The NH₃ molecules",
-  "option2": "The NH₄⁺ ions",
-  "option3": "The Cl⁻ ions",
-  "option4": "The water molecules",
-  "ans": 1,
-  "explanation": ""
-},
-{
-  "question": "If the pH of an aqueous solution changes from 4.0 to 6.0, how has the concentration of hydronium ions ([H₃O⁺]) changed?",
-  "option1": "It has increased by a factor of 2.",
-  "option2": "It has decreased by a factor of 2.",
-  "option3": "It has increased by a factor of 100.",
-  "option4": "It has decreased by a factor of 100.",
-  "ans": 4,
-  "explanation": ""
-},
-{
-  "question": "Based on the standard reduction potentials below, which metal is the strongest reducing agent (most easily oxidized)?<br><br>Ag⁺ + e⁻ → Ag (E° = +0.80 V)<br>Ni²⁺ + 2e⁻ → Ni (E° = −0.25 V)<br>Al³⁺ + 3e⁻ → Al (E° = −1.66 V)",
-  "option1": "Ag",
+  "option1": "Ag ",
   "option2": "Ni",
   "option3": "Al",
   "option4": "Al³⁺",
@@ -567,10 +504,10 @@
 },
 {
   "question": "Sacrificial anodes are highly active metals attached to iron ship hulls or underground pipelines to prevent rusting (corrosion). Which metal would make the best sacrificial anode for iron (Fe)?<br><br>Fe²⁺ + 2e⁻ → Fe (E° = −0.44 V)",
-  "option1": "Copper (Cu)",
-  "option2": "Silver (Ag)",
-  "option3": "Magnesium (Mg)",
-  "option4": "Gold (Au)",
+  "option1": "Copper (Cu) (E° = +0.34V)",
+  "option2": "Silver (Ag)  (E° = +0.80V)",
+  "option3": "Magnesium (Mg)  (E° = -2.37V)",
+  "option4": "Gold (Au)  (E° = +1.50V)",
   "ans": 3,
   "explanation": ""
 },
@@ -696,8 +633,7 @@
   "option1": "0.017 M",
   "option2": "0.033 M",
   "option3": "0.050 M",
-  "option4": "0.100 M",
-  "ans": 3,
+  "option4": "0.100 M",  "ans": 3,
   "explanation": ""
 },
 {
@@ -733,6 +669,69 @@
   "option2": "It activates the ring and directs the next group to the meta position.",
   "option3": "It deactivates the ring and directs the next group to the ortho and para positions.",
   "option4": "It activates the ring and directs the next group to the ortho and para positions.",
+  "ans": 4,
+  "explanation": ""
+},
+{
+  "question": "What is the correct order of decreasing acidity (most acidic to least acidic) for the following compounds?<br>I. Ethanol (CH₃CH₂OH)<br>II. Acetic acid (CH₃COOH)<br>III. Trichloroacetic acid (CCl₃COOH)<br>IV. Phenol (C₆H₅OH)",
+  "option1": "III > II > IV > I",
+  "option2": "II > III > IV > I",
+  "option3": "III > IV > II > I",
+  "option4": "I > IV > II > III",
+  "ans": 1,
+  "explanation": ""
+},
+{
+  "question": "Amides are significantly less basic than amines because:",
+  "option1": "Nitrogen is more electronegative than carbon.",
+  "option2": "The lone pair on the nitrogen atom is delocalized into the carbonyl group via resonance.",
+  "option3": "The carbonyl carbon pulls electron density away through induction only.",
+  "option4": "Amides easily lose a proton to form a stable conjugate base.",
+  "ans": 2,
+  "explanation": ""
+},
+{
+  "question": "You want to synthesize 2-bromobutane from 1-bromobutane. Which of the following reaction pathways represents the most efficient synthetic route?",
+  "option1": "1. H₂O, NaOH | 2. HBr",
+  "option2": "1. NaOCH₂CH₃, ethanol, Δ | 2. HBr",
+  "option3": "1. NaOCH₂CH₃, ethanol, Δ | 2. HBr, peroxides",
+  "option4": "1. LiAlH₄ | 2. Br₂, hv",
+  "ans": 2,
+  "explanation": ""
+},
+{
+  "question": "Identify the major organic product Y formed in the following reaction sequence:<br>Toluene → (Cl₂, hν) → X → (NaCN) → Intermediate → (H₃O⁺, Δ) → Y",
+  "option1": "2-Phenylethanoic acid (Phenylacetic acid)",
+  "option2": "Benzoic acid",
+  "option3": "4-Methylbenzoic acid",
+  "option4": "Benzylamine",
+  "ans": 1,
+  "explanation": ""
+},
+{
+  "question": "Which sequence of reagents will successfully convert aniline (aminobenzene) into 3-bromophenol?",
+  "option1": "1. Br₂, FeBr₃ | 2. NaNO₂, HCl, 0°C | 3. H₂O, Δ",
+  "option2": "1. NaNO₂, HCl, 0°C | 2. CuBr | 3. NaOH, Δ",
+  "option3": "1. NaNO₂, HCl, 0°C | 2. H₃PO₂ | 3. Br₂, FeBr₃ | 4. NaOH, Δ",
+  "option4": "1. NaNO₂, HCl, 0°C | 2. H₂O, Δ | 3. Br₂, FeBr₃",
+  "ans": 1,
+  "explanation": ""
+},
+{
+  "question": "An unknown alkene undergoes ozonolysis under reducing conditions (Zn, H₂O) to yield exactly two products: propanal and butanone. What is the correct IUPAC name of the original starting alkene?",
+  "option1": "3-Methylhex-2-ene",
+  "option2": "3-Methylhex-3-ene",
+  "option3": "Hex-3-ene",
+  "option4": "2-Methylhex-3-ene",
+  "ans": 2,
+  "explanation": ""
+},
+{
+  "question": "If the measured pH of a sample of pure distilled water at 60°C is 6.5, what is the chemical nature of this water sample?",
+  "option1": "Acidic, because its pH is below 7.00.",
+  "option2": "Basic, because it contains more hydroxide ions than hydronium ions.",
+  "option3": "Neutral, because [H⁺] = [OH⁻] is still true.",
+  "option4": "Highly corrosive, due to thermal degradation.",
   "ans": 3,
   "explanation": ""
 }
