@@ -1,8 +1,11 @@
 import React, { useEffect, useState, useMemo } from "react";
-import { db } from "../../firebaseConfig";
+import { useNavigate } from "react-router-dom";
+import { db, auth } from "../../firebaseConfig";
 import { collection, getDocs, doc, setDoc, deleteDoc, writeBatch } from "firebase/firestore";
+import { signOut } from "firebase/auth";
 
 const AdminDashboard = () => {
+  const navigate = useNavigate();
   const [studentMap, setStudentMap] = useState({});
   const [lockedSessions, setLockedSessions] = useState([]);
   const [selectedSessions, setSelectedSessions] = useState(new Set());
@@ -296,9 +299,36 @@ const AdminDashboard = () => {
     return subjectData ? subjectData.score : '-';
   };
 
+  // Logout admin
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      navigate("/");
+    } catch (error) {
+      alert("Error logging out: " + error.message);
+    }
+  };
+
   return (
     <div className="container" style={{maxWidth: '1400px', width: '95%'}}>
-      <h1>Admin Management Portal - Exam Results</h1>
+      <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px'}}>
+        <h1>Admin Management Portal - Exam Results</h1>
+        <button
+          onClick={handleLogout}
+          style={{
+            background: '#f44336',
+            color: 'white',
+            padding: '10px 20px',
+            borderRadius: '4px',
+            border: 'none',
+            cursor: 'pointer',
+            fontSize: '0.9rem',
+            fontWeight: 'bold'
+          }}
+        >
+          Logout
+        </button>
+      </div>
       <hr />
 
       {/* AUTHORIZATION SECTION */}

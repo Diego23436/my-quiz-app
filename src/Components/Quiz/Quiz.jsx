@@ -1,4 +1,5 @@
-import React, { useRef, useState, useEffect, useMemo } from "react";
+import React, { useRef, useState, useEffect, useMemo, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Quiz.css";
 import logo from "../../assets/logoldx.jpeg";
 import img2 from "../../assets/img2.jpg";
@@ -30,8 +31,9 @@ import {
   query,
   where,
 } from "firebase/firestore";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import localData from "./questions.json";
+import { getSubjectsForSeries } from "../../config/seriesConfig";
 // ─── MathJax Config ────────────────────────────────────────────────────────────
 const mathJaxConfig = {
   loader: { load: ["input/tex", "output/chtml"] },
@@ -59,14 +61,15 @@ const LOCK_THRESHOLD_INDEX = 24;
 // ─── Helper: normalise strings for comparison (lowercase, trim whitespace) ────
 const norm = (str) => (str || "").toLowerCase().trim().replace(/\s+/g, " ");
 const Quiz = () => {
+  const navigate = useNavigate();
   const [page, setPage] = useState("welcome");
+  const [authUser, setAuthUser] = useState(null);
+  const [isTestMode, setIsTestMode] = useState(false); // For teacher testing
   const [user, setUser] = useState({
     name: "",
     school: "",
     email: "",
     phone: "",
-    password: "",
-    role: "user",
     town: "",
     series: "",
   });
@@ -80,6 +83,7 @@ const Quiz = () => {
   const [saved, setSaved] = useState(false);
   const [mathReady, setMathReady] = useState(false);
   const [examSchedules, setExamSchedules] = useState({});
+  const [examEndTimes, setExamEndTimes] = useState({}); // New: End times for exams
   // Tracks whether the permanent lock record has already been written for this
   // session so we don't duplicate Firestore writes.
   const lockWrittenRef = useRef(false);
@@ -101,18 +105,14 @@ const Quiz = () => {
   const [testimonialCanClose, setTestimonialCanClose] = useState(false);
   const testimonialIntervalRef = useRef(null);
   const testimonialCloseTimerRef = useRef(null);
+
+  // Get subjects based on user's series (filtered)
+  const subjectOptions = useMemo(() => {
+    return user.series ? getSubjectsForSeries(user.series) : [];
+  }, [user.series]);
+
   const question = questions[index] || {};
-  const subjectOptions = [
-    { key: "Chemistry", label: "0715 CHEMISTRY" },
-    { key: "Physics", label: "0780 PHYSICS" },
-    { key: "PMM", label: "0765 PURE MATHEMATICS WITH MECHANICS" },
-    { key: "PMS", label: "0770 PURE MATHEMATICS WITH STATISTICS" },
-    { key: "Biology", label: "0710 BIOLOGY" },
-    { key: "Computer Science", label: "0795 COMPUTER SCIENCE" },
-    { key: "ICT", label: "0796 ICT" },
-    { key: "Further Maths", label: "0775 FURTHER MATHEMATICS" },
-    { key: "Food Science", label: "0740 FOOD SCIENCE & NUTRITION" },
-  ];
+
   const concoursInfo = [
     "Medicine (FMPS, FMBS, FHS and many others)",
     "IUT",
@@ -121,6 +121,7 @@ const Quiz = () => {
     "COLTECH",
     "PUBLIC WORKS",
   ];
+
   const promoMessages = [
     "With Leadex, you will have the best for your preparatory classes",
     "Choose Leadex today and celebrate tomorrow",
@@ -254,19 +255,38 @@ const Quiz = () => {
       }
       return;
     }
-    // 2. Check if student is locked out (any of the 3 fields already recorded)
-    try {
-      const locked = await isStudentLocked(subjectName);
-      if (locked) {
-        alert(
-          ` Access Denied\n\nYour session for "${subjectName}" has already been recorded.\n\nPlease wait for the next scheduled session to attempt it again.`
-        );
+
+    // 1b. Check if exam has ended (if end time is set)
+    const schedule = examSchedules[subjectName];
+    if (schedule && schedule.end_time) {
+      const now = new Date();
+      const [endHours, endMinutes] = schedule.end_time.split(":").map(Number);
+      const [endDateYear, endDateMonth, endDateDay] = schedule.date.split("-").map(Number);
+      const endDateTime = new Date(endDateYear, endDateMonth - 1, endDateDay, endHours, endMinutes, 0);
+      
+      if (now > endDateTime) {
+        alert(`${subjectName} exam has ended. You can no longer access this subject.`);
         return;
       }
-    } catch (err) {
-      alert("Error verifying your session: " + err.message);
-      return;
     }
+
+    // 2. Check if student is locked out (any of the 3 fields already recorded)
+    // Skip lock check if in test mode
+    if (!isTestMode) {
+      try {
+        const locked = await isStudentLocked(subjectName);
+        if (locked) {
+          alert(
+            ` Access Denied\n\nYour session for "${subjectName}" has already been recorded.\n\nPlease wait for the next scheduled session to attempt it again.`
+          );
+          return;
+        }
+      } catch (err) {
+        alert("Error verifying your session: " + err.message);
+        return;
+      }
+    }
+
     // 3. Load questions and start
     const data = localData[subjectName];
     if (data && data.length > 0) {
@@ -311,37 +331,84 @@ const Quiz = () => {
     }, 1000);
     return () => clearInterval(timer);
   }, [page, result, questions.length, showTestimonials]);
-  // ─── Login handler ──────────────────────────────────────────────────────────
-  const handleUnifiedLogin = async () => {
-    if (user.role === "user") {
-      if (!user.name || !user.email || !user.school || !user.phone || !user.town || !user.series) {
-        alert("Please fill all required fields");
-        return;
-      }
-      const emailRegex = /^[a-zA-Z0-9._%+-]+@(gmail|icloud)\.com$/;
-      if (!emailRegex.test(user.email.toLowerCase().trim())) {
-        alert("Access Denied: Please use a valid @gmail.com or @icloud.com email address.");
-        return;
-      }
-      const phoneRegex = /^6\d{2}-\d{3}-\d{3}$/;
-      if (!phoneRegex.test(user.phone)) {
-        alert("Invalid Phone Format: Please use the format 6xx-xxx-xxx");
-        return;
-      }
-      setPage("subject-select");
-    } else {
+
+  // ─── Check authentication on mount and load user data ──────────────────────
+  useEffect(() => {
+    // Check for test mode from teacher
+    const testModeData = localStorage.getItem("testMode");
+    if (testModeData) {
       try {
-        const userCredential = await signInWithEmailAndPassword(auth, user.email, user.password);
-        const userDocSnap = await getDoc(doc(db, "users", userCredential.user.uid));
-        if (userDocSnap.exists() && userDocSnap.data().role === user.role) {
-          window.location.href = user.role === "teacher" ? "/teacher" : "/admin";
-        } else {
-          alert("Unauthorized role.");
+        const testData = JSON.parse(testModeData);
+        if (testData.enabled) {
+          setIsTestMode(true);
+          // Set dummy user data for test mode
+          setUser({
+            name: "Teacher Test",
+            email: "teacher@test.com",
+            school: "Test School",
+            phone: "000-000-000",
+            town: "Test Town",
+            series: "S1",
+          });
+          setPage("subject-select");
+          localStorage.removeItem("testMode"); // Remove after reading
+          return;
         }
       } catch (error) {
-        alert("Login failed: " + error.message);
+        console.error("Error parsing test mode data:", error);
       }
     }
+
+    // Normal authentication flow
+    const unsubscribe = onAuthStateChanged(auth, async (authUserFromFirebase) => {
+      if (authUserFromFirebase) {
+        setAuthUser(authUserFromFirebase);
+        // Load user data from Firestore
+        const userDocSnap = await getDoc(doc(db, "users", authUserFromFirebase.uid));
+        if (userDocSnap.exists()) {
+          const userData = userDocSnap.data();
+          setUser({
+            name: userData.name,
+            email: userData.email,
+            school: userData.school,
+            phone: userData.phone,
+            town: userData.town,
+            series: userData.series,
+          });
+          setPage("subject-select");
+        }
+      } else {
+        // Check if user data exists in localStorage (student who just signed in)
+        const storedUserData = localStorage.getItem("studentUser");
+        if (storedUserData) {
+          try {
+            const userData = JSON.parse(storedUserData);
+            setUser({
+              name: userData.name,
+              email: userData.email,
+              school: userData.school,
+              phone: userData.phone,
+              town: userData.town,
+              series: userData.series,
+            });
+            setPage("subject-select");
+          } catch (error) {
+            console.error("Error parsing stored user data:", error);
+          }
+        }
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  // ─── Login handler (DEPRECATED - kept for reference but not used) ────────────
+  // Students now use SignIn/SignUp components
+  const handleUnifiedLogin = async () => {
+    // This is kept for backward compatibility but should not be called
+    // New authentication flow uses SignIn.jsx and SignUp.jsx components
+    alert("Please use the Sign In page to login");
+    navigate("/signin");
   };
   // ─── Answer checker ─────────────────────────────────────────────────────────
   const checkAns = (e, ansIndex) => {
@@ -428,8 +495,9 @@ const Quiz = () => {
     };
   }, [showTestimonials]);
   // ─── Save result to Firebase ─────────────────────────────────────────────────
+  // Skip saving if in test mode or if user is not properly authenticated
   useEffect(() => {
-    if (result && !saved && user.role === "user") {
+    if (result && !saved && !isTestMode && user.email) {
       const saveResult = async () => {
         try {
           await addDoc(collection(db, "results"), {
@@ -444,15 +512,19 @@ const Quiz = () => {
             total: questions.length,
             time_spent: QUIZ_TIME - timeLeft,
             submitted_at: new Date().toLocaleString(),
+            is_test: false, // Add flag for filtering if needed
           });
           setSaved(true);
         } catch (e) {
-          console.error(e);
+          console.error("Error saving result:", e);
         }
       };
       saveResult();
+    } else if (result && !saved && isTestMode) {
+      // In test mode, skip saving and just mark as saved
+      setSaved(true);
     }
-  }, [result, saved, questions.length, score, selectedSubject, timeLeft, user]);
+  }, [result, saved, isTestMode, questions.length, score, selectedSubject, timeLeft, user]);
   const handleCloseTestimonials = () => {
     if (!testimonialCanClose) return;
     if (testimonialIntervalRef.current) clearTimeout(testimonialIntervalRef.current);
@@ -604,83 +676,40 @@ const Quiz = () => {
                   Read each question carefully and manage your time wisely. This
                   is a vital step toward achieving academic excellence.
                 </p>
-                <button onClick={() => setPage("login")}>Get Started</button>
+                <button onClick={() => navigate("/signin")}>Get Started</button>
               </div>
             </div>
           </div>
         )}
-        {/* 
-── Login ── */}
-        {page === "login" && (
-          <div className="start-page">
-            <h2>Login / Identification</h2>
-            <select
-              value={user.role}
-              onChange={(e) => setUser({ ...user, role: e.target.value })}
-            >
-              <option value="user">User (Student)</option>
-              <option value="teacher">Teacher</option>
-              <option value="admin">Admin</option>
-            </select>
-            <input
-              type="email"
-              placeholder="Email (@gmail or @icloud)"
-              value={user.email}
-              onChange={(e) => setUser({ ...user, email: e.target.value })}
-            />
-            {user.role === "user" ? (
-              <>
-                <input
-                  type="text"
-                  placeholder="Full Name"
-                  onChange={(e) => setUser({ ...user, name: e.target.value })}
-                />
-                <input
-                  type="text"
-                  placeholder="School Name"
-                  onChange={(e) => setUser({ ...user, school: e.target.value })}
-                />
-                <input
-                  type="text"
-                  placeholder="Town"
-                  onChange={(e) => setUser({ ...user, town: e.target.value })}
-                />
-                <input
-                  type="text"
-                  placeholder="Series"
-                  onChange={(e) => setUser({ ...user, series: e.target.value })}
-                />
-                <input
-                  type="text"
-                  placeholder="Phone Number (6xx-xxx-xxx)"
-                  value={user.phone}
-                  onChange={(e) => {
-                    let val = e.target.value.replace(/\D/g, "");
-                    if (val.length > 9) val = val.slice(0, 9);
-                    let formatted = val;
-                    if (val.length > 3 && val.length <= 6) {
-                      formatted = `${val.slice(0, 3)}-${val.slice(3)}`;
-                    } else if (val.length > 6) {
-                      formatted = `${val.slice(0, 3)}-${val.slice(3, 6)}-${val.slice(6)}`;
-                    }
-                    setUser({ ...user, phone: formatted });
-                  }}
-                />
-              </>
-            ) : (
-              <input
-                type="password"
-                placeholder="Password"
-                onChange={(e) => setUser({ ...user, password: e.target.value })}
-              />
-            )}
-            <button onClick={handleUnifiedLogin}>Continue</button>
-          </div>
-        )}
-        {/* 
-── Subject Select ── */}
+        {/* ── Login Page Removed - Now Using Separate SignIn/SignUp Pages ── */}
         {page === "subject-select" && (
           <div className="start-page">
+            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px'}}>
+              <div style={{fontSize: '0.9rem', color: '#666'}}>
+                <strong>Welcome:</strong> {user.name} ({user.series}) 
+              </div>
+              <button
+                onClick={async () => {
+                  await signOut(auth);
+                  localStorage.removeItem("studentUser");
+                  setUser({name: "", school: "", email: "", phone: "", town: "", series: ""});
+                  setPage("welcome");
+                  navigate("/");
+                }}
+                style={{
+                  background: '#f44336',
+                  color: 'white',
+                  padding: '8px 16px',
+                  borderRadius: '4px',
+                  border: 'none',
+                  cursor: 'pointer',
+                  fontSize: '0.85rem',
+                  fontWeight: 'bold'
+                }}
+              >
+                Logout
+              </button>
+            </div>
             <p
               style={{
                 textAlign: "center",

@@ -1,22 +1,31 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-// Ensure these paths are correct based on your folder structure
+// Components
 import Quiz from "./Components/Quiz/Quiz";
 import TeacherDashboard from "./Components/Quiz/TeacherDashboard";
 import AdminDashboard from "./Components/Quiz/AdminDashboard";
+import SignIn from "./Components/Auth/SignIn";
+import SignUp from "./Components/Auth/SignUp";
 
 function App() {
   return (
     <Router>
       <Routes>
-        {/* The Student View */}
+        {/* Home/Welcome - Student Entry Point */}
         <Route path="/" element={<Quiz />} />
 
-        {/* The Teacher View */}
+        {/* Authentication Routes */}
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+
+        {/* Quiz Route (after signin) */}
+        <Route path="/quiz" element={<Quiz />} />
+
+        {/* Teacher Dashboard */}
         <Route path="/teacher" element={<TeacherDashboard />} />
 
-        {/* The Admin View */}
+        {/* Admin Dashboard */}
         <Route path="/admin" element={<AdminDashboard />} />
       </Routes>
     </Router>
