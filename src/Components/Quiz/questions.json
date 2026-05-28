@@ -286,454 +286,459 @@
   ],
   
   "Chemistry": [
-     {
-      "question": "Which of the following substances has the highest boiling point?",
-      "option1": "$H_2O$",
-      "option2": "$H_2S$",
-      "option3": "$NH_3$",
-      "option4": "$CH_4$",
-      "ans": 1,
-      "explanation": ""
-    },
+ {
+    "question": "Which technique(s) can be used for measuring the rate of the reaction: CH<sub>3</sub>COCH<sub>3</sub>(aq) + I<sub>2</sub>(aq) → CH<sub>3</sub>COCH<sub>2</sub>I(aq) + HI(aq)?",
+    "option1": "A) Colorimetry and pressure measurement",
+    "option2": "B) Titrimetry only",
+    "option3": "C) Colorimetry and titrimetry",
+    "option4": "D) Titrimetry and pressure measurement",
+    "ans": 3,
+    "explanation": "I2 is coloured (brown), so colorimetry monitors its disappearance. Titrimetry ($using Na_2S_2O_3$) can also measure $[I_2]$. Both are valid methods; no gas is produced so pressure measurement is unsuitable."
+  },
+  {
+    "question": "A mixture contains 1 mole of ammonia, 2.5 moles of hydrogen gas and 12 moles of nitrogen gas. Assuming that the total pressure is 3 atm, calculate the partial pressure of nitrogen in the mixture.",
+    "option1": "A) 15.5 atm",
+    "option2": "B) 0.484 atm",
+    "option3": "C) 0.194 atm",
+    "option4": "D) 2.32 atm",
+    "ans": 4,
+    "explanation": "Total moles = 1 + 2.5 + 12 = 15.5. Mole fraction of N2 = 12/15.5. Partial pressure = (12/15.5) × 3 = 2.32 atm."
+  },
+  {
+    "question": "An organic compound X gives a white precipitate if passed through an ammoniacal solution of silver nitrate. What is the possible structure of X?",
+    "option1": "A) R-C≡C-R",
+    "option2": "B) RCH<sub>2</sub>C≡CH",
+    "option3": "C) RCH=CHR",
+    "option4": "D) RCH<sub>2</sub>CH=CH<sub>2</sub>",
+    "ans": 2,
+    "explanation": "Tollens' reagent (ammoniacal $AgNO^3$) forms a white silver acetylide precipitate with terminal alkynes (R-C≡C-H). Only RCH2C≡CH has a terminal alkyne hydrogen."
+  },
+  {
+    "question": "Which product is formed when benzene reacts with chlorine in the presence of ultra-violet light?",
+    "option1": "A) 1-chlorobenzene",
+    "option2": "B) 1,2-dichlorobenzene",
+    "option3": "C) 1,2,3,4,5,6-hexachlorobenzene",
+    "option4": "D) 1,2,3,4,5,6-hexachlorocyclohexane",
+    "ans": 4,
+    "explanation": "Under UV light, Cl2 undergoes free radical addition (not substitution) across the benzene ring, producing 1,2,3,4,5,6-hexachlorocyclohexane (benzene hexachloride, BHC)."
+  },
+  {
+    "question": "With reference to the elements in group IV of the periodic table, what is the inert pair effect?",
+    "option1": "A) Inability of the outermost two s-electrons to take part in bonding.",
+    "option2": "B) Inability of the s-electrons to take part in bonding.",
+    "option3": "C) Inability of the inner 2s-electrons to take part in bonding.",
+    "option4": "D) Inability of the outermost p-electrons to take part in bonding.",
+    "ans": 1,
+    "explanation": "The inert pair effect is the inability or tendency of the outermost ns electron to participate in bonding, becoming more pronounced going down Group IV."
+  },
+  {
+    "question": "The mass of one mole of hydrogen atom is:",
+    "option1": "A) $6.02 × 10^{23} g$",
+    "option2": "B) $1/12 g$",
+    "option3": "C) $1 g$",
+    "option4": "D) $2 g$",
+    "ans": 3,
+    "explanation": "The molar mass of hydrogen atoms (H) is 1 g/mol, so 1 mole of H atoms has a mass of 1 g."
+  },
+
     {
-      "question": "The strong electrostatic forces of attraction between localized positive ions and delocalized electrons are called:",
-      "option1": "Covalent bonds",
-      "option2": "Metallic bonds",
-      "option3": "Hydrogen bonds",
-      "option4": "Dipole-induced dipole forces",
-      "ans": 2,
-      "explanation": ""
-    },
-    {
-      "question": "What happens to the strength of London dispersion forces as the size and molar mass of nonpolar molecules increase?",
-      "option1": "It increases",
-      "option2": "It decreases",
-      "option3": "It remains constant",
-      "option4": "It decreases then increases",
-      "ans": 1,
-      "explanation": ""
-    },
-    {
-      "question": "Which of the following molecules has a permanent dipole moment?",
-      "option1": "$CO_2$",
-      "option2": "$BF_3$",
-      "option3": "$NH_3$",
-      "option4": "$CH_4$",
-      "ans": 3,
-      "explanation": ""
-    },
-    {
-      "question": "According to Fajans' rules, which of the following conditions favors a higher degree of covalent character in an ionic bond?",
-      "option1": "Large cation and small anion",
-      "option2": "Small cation and large anion",
-      "option3": "Small cation and small anion",
-      "option4": "Large cation and large anion",
-      "ans": 2,
-      "explanation": ""
-    },
-    {
-      "question": "A binary liquid mixture shows a negative deviation from Raoult's law. What does this imply about the intermolecular forces within the solution?",
-      "option1": "The adhesive forces between unlike molecules ($A - B$) are stronger than cohesive forces ($A - A$ and $B - B$).",
-      "option2": "The adhesive forces between unlike molecules ($A - B$) are weaker than cohesive forces ($A - A$ and $B - B$).",
-      "option3": "There are no intermolecular forces between the components.",
-      "option4": "The mixing process is purely endothermic with an increase in total volume.",
-      "ans": 1,
-      "explanation": ""
-    },
-      {
-      "question": "A mixture of liquid A and liquid B shows an endothermic heat of mixing ($\\Delta H_{\\text{mix}} > 0$) and an excess volume of mixing ($\\Delta V_{\\text{mix}} > 0$). Based on these thermodynamic criteria, what type of deviation from Raoult's law does this system exhibit, and what is the relative vapor pressure compared to the ideal prediction?",
-      "option1": "Negative deviation; lower vapor pressure than ideal.",
-      "option2": "Negative deviation; higher vapor pressure than ideal.",
-      "option3": "Positive deviation; lower vapor pressure than ideal.",
-      "option4": "Positive deviation; higher vapor pressure than ideal.",
-      "ans": 4,
-      "explanation": ""
-    },
-    {
-      "question": "At a certain temperature, pure benzene has a vapor pressure of 100 kPa and pure toluene has a vapor pressure of 40 kPa. If the total vapor pressure of an ideal mixture of these two liquids is 76 kPa, what is the mole fraction of benzene ($x_{\\text{benzene}}$) in the liquid phase?",
-      "option1": "0.40",
-      "option2": "0.50",
-      "option3": "0.60",
-      "option4": "0.75",
-      "ans": 3,
-      "explanation": ""
-    },
-    {
-      "question": "What type of mechanism dominates when a tertiary alkyl halide (e.g., tert-butyl bromide) is reacted with a weak nucleophile/weak base like pure ethanol under reflux?",
-      "option1": "$S_N2$",
-      "option2": "$S_N1$",
-      "option3": "E2",
-      "option4": "$S_NAr$",
-      "ans": 2,
-      "explanation": ""
-    },
-    {
-      "question": "What is the role of $AlCl_3$ in a Friedel-Crafts alkylation reaction of benzene?",
-      "option1": "It acts as a Lewis acid to generate a highly reactive electrophile.",
-      "option2": "It acts as a nucleophile to attack the aromatic ring structure.",
-      "option3": "It serves as a protic solvent to stabilize the sigma complex intermediate.",
-      "option4": "It functions as a radical initiator to break C-H bonds.",
-      "ans": 1,
-      "explanation": ""
-    },
-    {
-      "question": "Why does the addition of hydrogen bromide ($HBr$) to propene in the presence of organic peroxides ($R - O - O - R$) yield 1-bromopropane instead of 2-bromopropane?",
-      "option1": "The reaction shifts from an electrophilic mechanism to a more stable secondary radical mechanism.",
-      "option2": "Peroxides polarize the $HBr$ molecule inversely.",
-      "option3": "The bromine radical attacks the terminal carbon to yield a more stable secondary carbon radical intermediate.",
-      "option4": "The steric bulk of the peroxide forces the hydrogen atom to attack the secondary position.",
-      "ans": 3,
-      "explanation": ""
-    },
-    {
-      "question": "Why are enthalpy changes calculated using average bond enthalpies generally less accurate than those calculated using standard enthalpies of formation ($\\Delta H^\\circ_f$)?",
-      "option1": "Bond enthalpies ignore the conservation of energy law entirely.",
-      "option2": "Bond enthalpies are average values measured across many different chemical environments rather than specific to a single molecule.",
-      "option3": "Enthalpies of formation only apply to gases, while bond enthalpies apply to solids.",
-      "option4": "Bond enthalpies vary drastically with the isotopic mass of the participating atoms.",
-      "ans": 2,
-      "explanation": ""
-    },
-    {
-      "question": "Given the following mean bond enthalpies:<br><ul><li>$C - H = 413\\text{ kJ/mol}$</li><li>$Cl - Cl = 242\\text{ kJ/mol}$</li><li>$C - Cl = 339\\text{ kJ/mol}$</li><li>$H - Cl = 413\\text{ kJ/mol}$</li></ul>What is the enthalpy change ($\\Delta H$) for the gas-phase reaction: $CH_4(g) + Cl_2(g) \\rightarrow CH_3Cl(g) + HCl(g)$?",
-      "option1": "$-115\\text{ kJ/mol}$",
-      "option2": "$+115\\text{ kJ/mol}$",
-      "option3": "$-655\\text{ kJ/mol}$",
-      "option4": "$+655\\text{ kJ/mol}$",
-      "ans": 1,
-      "explanation": ""
-    },
-    {
-      "question": "Consider the target reaction: $2C(s) + 2H_2(g) \\rightarrow C_2H_4(g)$. You are given the following standard enthalpies of combustion ($\\Delta H^\\circ_c$):<br><ul><li>$C(s) + O_2(g) \\rightarrow CO_2(g) \\quad \\Delta H_1 = -394\\text{ kJ/mol}$</li><li>$H_2(g) + \\frac{1}{2}O_2(g) \\rightarrow H_2O(l) \\quad \\Delta H_2 = -286\\text{ kJ/mol}$</li><li>$C_2H_4(g) + 3O_2(g) \\rightarrow 2CO_2(g) + 2H_2O(l) \\quad \\Delta H_3 = -1411\\text{ kJ/mol}$</li></ul>Using Hess's Law, what is the standard enthalpy of formation for ethene?",
-      "option1": "$-51\\text{ kJ/mol}$",
-      "option2": "$+51\\text{ kJ/mol}$",
-      "option3": "$-2377\\text{ kJ/mol}$",
-      "option4": "$+2377\\text{ kJ/mol}$",
-      "ans": 2,
-      "explanation": ""
-    },
-    {
-      "question": "Why does carbon tetrachloride ($CCl_4$) resist hydrolysis by water, whereas silicon tetrachloride ($SiCl_4$) hydrolyzes rapidly and violently?",
-      "option1": "The C-Cl bond is completely nonpolar compared to the polar Si-Cl bond.",
-      "option2": "Silicon is more electronegative than carbon, which attracts water molecules.",
-      "option3": "Carbon lacks vacant d-orbitals in its valence shell to accept a lone pair from water.",
-      "option4": "Carbon forms strong hydrogen bonds with water that shield it from chemical breakdown.",
-      "ans": 3,
-      "explanation": ""
-    },
-    {
-      "question": "Which of the following oxides of Group 14 elements is purely acidic in nature?",
-      "option1": "$SiO_2$",
-      "option2": "$SnO_2$",
-      "option3": "$PbO_2$",
-      "option4": "$GeO_2$",
-      "ans": 1,
-      "explanation": ""
-    },
-    {
-      "question": "Why is Fluorine ($F_2$) a much stronger oxidizing agent than Chlorine ($Cl_2$), despite having a lower electron affinity than chlorine?",
-      "option1": "Fluorine has a high positive hydration enthalpy.",
-      "option2": "Fluorine has a low F-F bond dissociation enthalpy and its ion ($F^-$) has an exceptionally high hydration enthalpy.",
-      "option3": "Fluorine atoms are larger, allowing them to accept electrons more easily.",
-      "option4": "Fluorine forms stable interstitial compounds with water.",
-      "ans": 2,
-      "explanation": ""
-    },
-    {
-  "question": "Lead(IV) chloride ($PbCl_4$) is highly unstable and easily decomposes into lead(II) chloride ($PbCl_2$) and chlorine gas upon heating. This behavior occurs because:",
-  "option1": "$Pb^{4+}$ is too small to pack into a stable crystal lattice.",
-  "option2": "The +4 oxidation state of lead is highly reducing.",
-  "option3": "The +2 oxidation state is much more stable than the +4 state due to poor shielding by 4f and 5d electrons.",
-  "option4": "Chlorine gas acts as a stabilizing agent for lower oxidation states.",
-  "ans": 3,
-  "explanation": ""
-},
-    {
-  "question": "Which of the following reagent combinations will successfully convert benzaldehyde into 1-phenylethan-1-ol?",
-  "option1": "$CH_3MgBr$, followed by $H_3O^+$",
-  "option2": "$NaBH_4$, followed by $CH_3I$",
-  "option3": "PCC in dichloromethane",
-  "option4": "$LiAlH_4$ in ether, followed by $H_3O^+$",
-  "ans": 1,
-  "explanation": ""
-},
+    "question": "Select an oxide which is acidic and a solid.",
+    "option1": "A) SiO<sub>2</sub>",
+    "option2": "B) CO<sub>2</sub>",
+    "option3": "C) PbO",
+    "option4": "D) SnO",
+    "ans": 1,
+    "explanation": "SiO2 (silicon dioxide) is an acidic oxide that exists as a solid at room temperature; CO2 is acidic but a gas. SiO and CO are neutral while the oxides of Ge, Sn, Pb are amphoteric."
+  },
+  {
+    "question": "Identify the element with a body-centred cubic packed arrangement.",
+    "option1": "A) Copper",
+    "option2": "B) Sodium",
+    "option3": "C) Magnesium",
+    "option4": "D) Silver",
+    "ans": 2,
+    "explanation": "Sodium adopts a body-centred cubic (BCC) structure; copper, silver, and magnesium are face-centred cubic or hexagonal close-packed."
+  },
+  
+  {
+    "question": "Identify the product formed from the reaction: (CH<sub>3</sub>)<sub>2</sub>CO + 4[H] Zn/Hg, Conc HCl",
+    "option1": "A) C<sub>2</sub>H<sub>5</sub>COOH",
+    "option2": "B) CH<sub>3</sub>CHOHCH<sub>3</sub>",
+    "option3": "C) CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>OH",
+    "option4": "D) CH<sub>3</sub>CH<sub>2</sub>CH<sub>3</sub>",
+    "ans": 2,
+    "explanation": "Zn/Hg with conc HCl (Clemmensen reduction) reduces a ketone C=O to CH2 only when there is no alpha-branching; here (CH3)2CO is reduced to (CH3)2CHOH (propan-2-ol) = CH3CHOHCH3."
+  },
+  {
+    "question": "At 50 °C, the ionic product of water, $Kw is 5.7 x 10^-14 mol^2/dm^6$. What is the pH of water at this temperature?",
+    "option1": "A) 2.3",
+    "option2": "B) 6.6",
+    "option3": "C) 7.0",
+    "option4": "D) 7.3",
+    "ans": 2,
+    "explanation": "$[H+] = \\sqrt{5.7x10^-14}$ = 2.39x10^-7 mol/dm^3. pH = -log(2.39x10^-7) ≈ 6.6. Water is still neutral but pH < 7 at higher temperature$."
+  },
+  {
+    "question": "The table below shows two half-cell equations and their corresponding values of standard redox potentials. A: $Pb^{2+}(aq) + 2e → Pb(s) E^0=-0.13V; B: I_2(s) + 2e → 2I-(aq) E^0=+1.36V$. Write the cell diagram that results when A and B are connected.",
+    "option1": "A) $Pb(s)/Pb^{2+}(aq)//I_2(aq),2I^-(aq)/Pt$",
+    "option2": "B) $Pb(s)/Pb^{2+}(aq)//2I^-(aq),I_2(aq)/Pt$",
+    "option3": "C) $Pt/2I^-(aq),I_2(aq)//Pb^{2+}(aq)/Pb(s)$",
+    "option4": "D) $Pt/I_2(aq),2I^-(aq)//Pb(s)/Pb^{2+}(aq)$",
+    "ans": 1,
+    "explanation": "Convention: anode (oxidation, more negative $E^0$) on left. Pb is oxidised ($E^0=-0.13V$), I2 is reduced ($E^0=+1.36V$). Cell: $Pb(s)/Pb^{2+}(aq)//I_2(aq),2I^-(aq)/Pt$."
+  },
+  {
+    "question": "Which experimental evidence indicates that a mixture of 2 miscible liquids shows positive deviation from Raoult's law?",
+    "option1": "A) The total volume of the mixture is equal to the sum of the volumes of the individual liquids.",
+    "option2": "B) The temperature of the solution falls slightly since bonds are broken.",
+    "option3": "C) The temperature of the solution rises slightly since bonds are formed.",
+    "option4": "D) The total volume of the mixture is slightly less than the sum of the volumes of the individual liquids.",
+    "ans": 2,
+    "explanation": "Positive deviation means A-B interactions are weaker than A-A/B-B, so energy must be absorbed to break existing bonds, causing the temperature to fall."
+  },
+  {
+    "question": "Identify the decomposition reaction which will NOT take place.",
+    "option1": "A) Li<sub>2</sub>CO<sub>3</sub> → Li<sub>2</sub>O + CO<sub>2</sub>",
+    "option2": "B) 2NaNO<sub>3</sub> → 2NaNO<sub>2</sub> + O<sub>2</sub>",
+    "option3": "C) 2Ca(NO<sub>3</sub>)<sub>2</sub> → 2CaO + 4NO<sub>2</sub> + O<sub>2</sub>",
+    "option4": "D) Na<sub>2</sub>CO<sub>3</sub> → Na<sub>2</sub>O + CO<sub>2</sub>",
+    "ans": 4,
+    "explanation": "$Na_2CO_3 is thermally stable and does not decompose on heating — sodium carbonate requires extremely high temperatures far above laboratory conditions, unlike carbonates of less reactive metals$."
+  },
+  {
+    "question": "Choose the correct colour and physical state of bromine.",
+    "option1": "A) Reddish brown gas",
+    "option2": "B) Yellow liquid",
+    "option3": "C) Reddish brown liquid",
+    "option4": "D) Pale yellow gas",
+    "ans": 3,
+    "explanation": "Bromine (Br2) is a reddish-brown (or dark red) liquid at room temperature with a boiling point of 59 °C."
+  },
+  {
+    "question": "Why do transition metals exhibit variable oxidation states?",
+    "option1": "A) They have electrons in both the 3d and 4s orbitals.",
+    "option2": "B) They are found in the d-block of the periodic table.",
+    "option3": "C) During bonding they can lose electrons from both the 3d and 4s orbitals since both orbitals have similar energies.",
+    "option4": "D) They have empty d-orbitals.",
+    "ans": 3,
+    "explanation": "The 3d and 4s orbitals are close in energy, so transition metals can lose varying numbers of electrons from both subshells, leading to multiple stable oxidation states."
+  },
+  {
+    "question": "What is the formula of amino ethanoic acid in neutral solution?",
+    "option1": "A) $H_3N^+CH_2COO^-$",
+    "option2": "B) $H_2NCH_2COOH$",
+    "option3": "C) $H_3N^+CH_2COOH$",
+    "option4": "D) $H_2NCH_2COO^-$",
+    "ans": 1,
+    "explanation": "Glycine (aminoethanoic acid) in neutral solution exists as a zwitterion: the amino group is protonated ($-NH_3^+$) and the carboxyl group is deprotonated ($-COO^-$)."
+  },
+  {
+    "question": "What is the shape of the nitrate ion, $NO3^-$?",
+    "option1": "A) Tetrahedral",
+    "option2": "B) Trigonal planar",
+    "option3": "C) Trigonal pyramidal",
+    "option4": "D) Trigonal bipyramidal",
+    "ans": 2,
+    "explanation": "$NO3^-$ has 3 bonding pairs and no lone pairs on nitrogen (resonance), giving a trigonal planar geometry with 120° bond angles."
+  },
+  {
+    "question": "How many isomers could be obtained from the compound with molecular formula C<sub>3</sub>H<sub>6</sub>O<sub>2</sub>?",
+    "option1": "A) 5",
+    "option2": "B) 4",
+    "option3": "C) 3",
+    "option4": "D) 2",
+    "ans": 3,
+    "explanation": "C3H6O2 yields 3 structural isomers: propionic acid, methyl acetate, and ethyl formate."
+  },
+  {
+    "question": "Which of the following techniques would be most appropriate in identifying the position of hydrogen atoms in an organic compound?",
+    "option1": "A) Infra-red spectroscopy",
+    "option2": "B) Mass spectroscopy",
+    "option3": "C) X-ray diffraction",
+    "option4": "D) Nuclear magnetic resonance",
+    "ans": 4,
+    "explanation": "NMR spectroscopy directly probes hydrogen (proton) environments, giving chemical shift data that identifies H atom positions."
+  },
+   
+  {
+    "question": "Calculate the number of moles of hydroxide ions present in 2.90 g of a solution of magnesium hydroxide, Mg(OH)<sub>2</sub>. (RAM: Mg=24; O=16; H=1)",
+    "option1": "A) 0.05 moles",
+    "option2": "B) 0.071 moles",
+    "option3": "C) 0.1 moles",
+    "option4": "D) 0.14 moles",
+    "ans": 3,
+    "explanation": "Molar mass of $Mg(OH)_2 = 58 g/mol$. Moles $Mg(OH)_2 = 2.90/58 = 0.05 mol$. Each formula unit gives 2 OH-, so moles OH- = 0.10 mol."
+  },
+  {
+    "question": "Which experiment led to the discovery of the nucleus?",
+    "option1": "A) Gold foil experiment",
+    "option2": "B) Beryllium foil experiment",
+    "option3": "C) Cathode ray experiment",
+    "option4": "D) Light scattering experiment",
+    "ans": 1,
+    "explanation": "Rutherford's gold foil (alpha-particle scattering) experiment (1911) showed that most atomic mass is concentrated in a tiny, dense, positive nucleus."
+  },
+  {
+    "question": "Choose the element with the highest value of the first ionisation energy.",
+    "option1": "A) Lithium",
+    "option2": "B) Beryllium",
+    "option3": "C) Sodium",
+    "option4": "D) Magnesium",
+    "ans": 2,
+    "explanation": "Among these s-block elements, Beryllium has the highest first ionisation energy because it has a smaller atomic radius and a filled 2s subshell with no shielding from p electrons."
+  },
+  {
+    "question": "Sulphuric acid is manufactured on a large scale by the contact process. State the conditions needed for an optimum yield of the acid.",
+    "option1": "A) Temperature of 200 °C, Pressure 250 atm, V<sub>2</sub>O<sub>5</sub> catalyst",
+    "option2": "B) Temperature of 600 °C, Pressure of 1 atm, V<sub>2</sub>O<sub>5</sub> catalyst",
+    "option3": "C) Temperature of 500 °C, Pressure of 250 atm, V<sub>2</sub>O<sub>5</sub> catalyst",
+    "option4": "D) Temperature of 500 °C, Pressure of 1 atm, V<sub>2</sub>O<sub>5</sub> catalyst",
+    "ans": 4,
+    "explanation": "The contact process uses ~450-500 °C (compromise between rate and yield), ~1 atm (high pressure uneconomical for small volume change), and V2O5 catalyst."
+  },
+  {
+    "question": "Which of these compounds will give a yellow precipitate with a characteristic smell when reacted with NaOH/I<sub>2</sub>?",
+    "option1": "A) C<sub>6</sub>H<sub>5</sub>OH",
+    "option2": "B) CH<sub>3</sub>CH<sub>2</sub>CHO",
+    "option3": "C) CH<sub>3</sub>CH(OH)CH<sub>3</sub>",
+    "option4": "D) CH<sub>3</sub>CH<sub>2</sub>COCH<sub>2</sub>CH<sub>3</sub>",
+    "ans": 2,
+    "explanation": "The iodoform test (NaOH/I2) gives a yellow CHI3 precipitate with compounds containing the CH3CO- or CH3CHOH- group. CH3CH2CHO has a CH3C=O unit after oxidation, giving a positive result."
+  },
+  {
+    "question": "Which of the following reactions leads to a reduction in the carbon chain?",
+    "option1": "A) $RCONH_2 + H_2O|H^+, heat$",
+    "option2": "B) $RCONH_2 + P_2O_5, heat$",
+    "option3": "C) $RCONH_2 + NaNO_2|dil HCl$",
+    "option4": "D) $RCONH_2 + Br_2 + 4KOH, heat$",
+    "ans": 4,
+    "explanation": "The Hofmann degradation $(RCONH_2 + Br_2/KOH)$ converts an amide to a primary amine with one fewer carbon: $RCONH_2 → RNH_2$, reducing the carbon chain by 1."
+  },
+  {
+    "question": "Give the composition of an acid buffer.",
+    "option1": "A) A weak acid and a soluble salt of the weak acid.",
+    "option2": "B) A strong acid and a soluble salt of the strong acid.",
+    "option3": "C) An acid and a soluble salt of the acid.",
+    "option4": "D) A weak acid and a soluble salt of a strong acid.",
+    "ans": 1,
+    "explanation": "An acid buffer is made from a weak acid and its conjugate base (a soluble salt of the same weak acid), e.g. CH3COOH/CH3COONa."
+  },
+  {
+    "question": "Which species are lost in converting the radioactive element X to Y in the equation: <super>162</super><sub>80</sub>X → <super>154</super><sub>77</sub>Y?",
+    "option1": "A) 1 alpha particle and 1 beta particle",
+    "option2": "B) 1 alpha particle and 2 beta particles",
+    "option3": "C) 2 alpha particles and 1 beta particle",
+    "option4": "D) 2 alpha particles and 2 beta particles",
+    "ans": 3,
+    "explanation": "Mass change: 162-154=8 (needs 2 alpha, each loses 4 mass). Atomic number change from alpha only: 80-4=76, but Y is 77, so 1 beta emission raises Z by 1 (76+1=77). Answer: 2 alpha + 1 beta."
+  },
+  {
+    "question": "The results in the table were obtained for the reaction: A + B → C. What is the order of the reaction with respect to A?",
+    "option1": "A) First order",
+    "option2": "B) Second order",
+    "option3": "C) Third order",
+    "option4": "D) Zero order",
+    "ans": 2,
+    "explanation": "Comparing Expt 1 and 3: [A] doubles (0.1→0.2), [B] constant, rate quadruples $(2.0→8.0 x10^-3)$. $Rate ∝ [A]^2$, so second order with respect to A."
+  },
+  {
+    "question": "Which pair of liquids when mixed will show a negative deviation from Raoult's law?",
+    "option1": "A) Benzene and methyl benzene",
+    "option2": "B) Ethanol and water",
+    "option3": "C) Propanone and hexane",
+    "option4": "D) Ethyl ethanoate and trichloromethane",
+    "ans": 4,
+    "explanation": "Negative deviation occurs when A-B interactions are stronger than A-A/B-B. Ethyl ethanoate and trichloromethane form hydrogen bonds with each other, creating stronger cross-interactions."
+  },
+  {
+    "question": "Identify an element in period 2 of the Periodic Table with a giant molecular structure.",
+    "option1": "A) Silicon",
+    "option2": "B) Aluminium",
+    "option3": "C) Boron",
+    "option4": "D) Beryllium",
+    "ans": 1,
+    "explanation": "Silicon is in Period 3, but among the options, only Silicon forms a giant covalent (macromolecular) structure. Note: The question may intend Period 3; Silicon is the correct answer as it has a giant covalent lattice."
+  },
+  {
+    "question": "In which of these compounds is the oxidation state of nitrogen -1?",
+    "option1": "A) N<sub>2</sub>H<sub>4</sub>",
+    "option2": "B) NH<sub>2</sub>OH",
+    "option3": "C) Mg<sub>3</sub>N<sub>2</sub>",
+    "option4": "D) N<sub>2</sub>O",
+    "ans": 2,
+    "explanation": "In NH2OH (hydroxylamine): O is -2, H is +1. Let N = x: x + 2(+1) + (-2) + (+1) = 0 → x = -1. So N has oxidation state -1."
+  },
+  {
+    "question": "Given that the standard enthalpy of combustion of methanol, CH3OH is -726 kJ/mol and of methanal, HCHO is -55 kJ/mol. Determine the enthalpy change for the reaction: CH3OH → HCHO.",
+    "option1": "A) +671 kJ/mol",
+    "option2": "B) +781 kJ/mol",
+    "option3": "C) -781 kJ/mol",
+    "option4": "D) -671 kJ/mol",
+    "ans": 4,
+    "explanation": "Using Hess's Law: ΔH = ΔHc(CH3OH) - ΔHc(HCHO) = -726 - (-55) = -671 kJ/mol."
+  },
+  {
+    "question": "Consider the equilibrium: 2SO<sub>2</sub>(g) + O<sub>2</sub>(g) ⇌ 2SO<sub>3</sub>(g), ΔH = -198 kJ. Which factor will cause an increase in the value of the equilibrium constant Kp?",
+    "option1": "A) Increase in temperature",
+    "option2": "B) Increase in pressure",
+    "option3": "C) Increase in concentration of the reactants",
+    "option4": "D) Decrease in temperature",
+    "ans": 4,
+    "explanation": "Kp only changes with temperature. For an exothermic reaction, decreasing temperature shifts equilibrium to the right (products), increasing Kp."
+  },
+  {
+    "question": "Give the reagent(s) and reaction condition(s) for the conversion: C<sub>2</sub>H<sub>4</sub> → C<sub>2</sub>H<sub>6</sub>",
+    "option1": "A) H<sub>2</sub>(g), Pt or Pd, 150 °C",
+    "option2": "B) H<sub>2</sub>(g), Zn/Cu in aq alcohol",
+    "option3": "C) H<sub>2</sub>(g), Cr<sub>2</sub>O<sub>3</sub>/Al<sub>2</sub>O<sub>3</sub>, 600 °C",
+    "option4": "D) H<sub>2</sub>(g), LiAlH<sub>4</sub>",
+    "ans": 1,
+    "explanation": "Catalytic hydrogenation of alkenes uses H2 gas with a Pt or Pd (or Ni) catalyst at moderate temperature (~150 °C) to add H2 across the double bond."
+  },
+  {
+    "question": "What is a nucleophile?",
+    "option1": "A) It is a reagent which is electron deficient and attacks the nucleus of an atom.",
+    "option2": "B) It is a reagent which is electron deficient and attacks electron rich sites.",
+    "option3": "C) It is a reagent which is electron rich and attacks the electron deficient site of a molecule.",
+    "option4": "D) It is a reagent which is electron rich and will attack electron rich sites.",
+    "ans": 3,
+    "explanation": "A nucleophile is an electron-rich species (lone pair or pi electrons) that seeks and attacks electron-deficient (positive) centres in a molecule."
+  },
+  {
+    "question": "Name the complex ion: [CrCl<sub>2</sub>(H<sub>2</sub>O)<sub>4</sub>]<super>+</super>",
+    "option1": "A) Tetraaquadichlorochromium(I) ion",
+    "option2": "B) Tetraaquadichlorochromium(III) ion",
+    "option3": "C) Tetraaquadichloroachromate(I) ion",
+    "option4": "D) Dichlorotetraaquachromate(III) ion",
+    "ans": 2,
+    "explanation": "4 water ligands (tetraaqua) + 2 Cl- ligands (dichloro) + Cr central ion. Charge: +1 overall, Cl contributes -2, H2O is neutral, so Cr = +3. Name: tetraaquadichlorochromium(III) ion."
+  },
+ 
+  {
+    "question": "Which statement(s) is/are correct concerning d-block elements? <br>1. Scandium and zinc are not considered transition metals because they both form compounds with completely filled d-orbitals.<br>2. A complex ion is formed when a central metal atom or ion is linked by dative covalent bonds to neutral molecules or negatively charged ions called ligands.<br>3. All ligands must possess at least a lone pair of electrons.",
+    "option1": "A) 1, 2 and 3 are all correct",
+    "option2": "B) 1 and 2 only are correct",
+    "option3": "C) 2 and 3 only are correct",
+    "option4": "D) 3 only is correct",
+    "ans": 3,
+    "explanation": "Statement 1 is partly incorrect (Sc has empty d in Sc3+, not filled). Statements 2 and 3 are correct: complex ions form via dative bonds from ligands which must have at least one lone pair."
+  },
+  {
+    "question": "Select the correct statement(s) below:<br>1. A covalent bond is an electrostatic force of attraction between the shared electron pair and the positive nuclei.<br>2. The polarizing power of a cation increases as its charge increases and as its ionic size decreases.<br>3. The bonding in AlCl3 is ionic with some degree of covalent character.",
+    "option1": "A) 1, 2 and 3 are all correct",
+    "option2": "B) 1 and 2 only are correct",
+    "option3": "C) 2 and 3 only are correct",
+    "option4": "D) 3 only is correct",
+    "ans": 1,
+    "explanation": "All three are correct: (1) defines a covalent bond correctly; (2) follows Fajans' rules; (3) Al3+ has high charge density, distorting Cl- electron cloud, giving some covalent character."
+  },
+  {
+    "question": "A sigma bond is formed:<br>1. during the overlap of an s and a p orbital.<br>2. during the overlap of different p orbitals linearly.<br>3. during the lateral overlap of 2 parallel p orbitals of adjacent atoms.",
+    "option1": "A) 1, 2 and 3 are all correct",
+    "option2": "B) 1 and 2 only are correct",
+    "option3": "C) 2 and 3 only are correct",
+    "option4": "D) 3 only is correct",
+    "ans": 2,
+    "explanation": "Sigma bonds form by head-on (axial) overlap: s-p (1) or p-p linearly (2). Lateral overlap of parallel p orbitals forms a pi bond, not sigma. So only 1 and 2 are correct."
+  },
+  {
+    "question": "Identify the correct statement(s) on racemic mixtures:<br>1. It can be separated into its enantiomers by chromatography.<br>2. It is a mixture of equal parts of enantiomers.<br>3. It is optically inactive.",
+    "option1": "A) 1, 2 and 3 are all correct",
+    "option2": "B) 1 and 2 only are correct",
+    "option3": "C) 2 and 3 only are correct",
+    "option4": "D) 3 only is correct",
+    "ans": 1,
+    "explanation": "All three are correct: a racemate is a 50:50 mix of enantiomers (2), is optically inactive due to cancellation (3), and can be resolved into enantiomers by chiral chromatography (1)."
+  },
+  {
+    "question": "Which of the statement(s) below is/are true concerning the elements or compounds of group VII of the periodic table?<br>1. HBr is prepared in the laboratory by the reaction of sodium bromide and concentrated sulphuric acid.<br>2. The bond energy of the Cl-Cl bond is greater than the bond energy of the F-F bond.<br>3. The acid strength of the oxoacids increases in the order: HClO < HClO2 < HClO3 < HClO4.",
+    "option1": "A) 1, 2 and 3 are all correct",
+    "option2": "B) 1 and 2 only are correct",
+    "option3": "C) 2 and 3 only are correct",
+    "option4": "D) 3 only is correct",
+    "ans": 3,
+    "explanation": "Statement 1 is false (conc H2SO4 oxidises HBr; HCl is used instead). Statements 2 and 3 are correct: Cl-Cl bond energy > F-F (F-F weakened by lone pair repulsion), and oxoacid strength increases with more O atoms."
+  },
+  {
+    "question": "The group IV element(s) that exhibit allotropy is/are:<br>1. Silicon<br>2. Germanium<br>3. Tin",
+    "option1": "A) 1, 2 and 3 are all correct",
+    "option2": "B) 1 and 2 only are correct",
+    "option3": "C) 2 and 3 only are correct",
+    "option4": "D) 3 only is correct",
+    "ans": 4,
+    "explanation": "Among group IV elements, only Tin (Sn) clearly exhibits allotropy (grey tin and white tin are allotropes). Silicon and germanium do not show common allotropic forms."
+  },
+  {
+    "question": "Alkenes can be prepared by the following method(s):<br>1. From alkynes by reduction using LiAlH4 in dry ether.<br>2. By the dehydration of an alcohol using concentrated sulphuric acid at 140 °C.<br>3. An alkene is produced when a halogenoalkane is refluxed with a concentrated solution of alcoholic potassium hydroxide.",
+    "option1": "A) 1, 2 and 3 are all correct",
+    "option2": "B) 1 and 2 only are correct",
+    "option3": "C) 2 and 3 only are correct",
+    "option4": "D) 3 only is correct",
+    "ans": 3,
+    "explanation": "Statement 1 is false: LiAlH4 reduces alkynes to alkanes, not alkenes (Na/liquid NH3 gives cis-alkenes). Statements 2 (dehydration) and 3 (elimination with alc. KOH) correctly produce alkenes."
+  },
+  {
+    "question": "What happens when a solution of barium sulphate is dissolved in a solution of 0.1 M sodium sulphate?<br>1. The concentration of the sulphate ion increases in the system.<br>2. The concentration of barium ions in solution reduces.<br>3. The solubility of barium sulphate is increased.",
+    "option1": "A) 1, 2 and 3 are all correct",
+    "option2": "B) 1 and 2 only are correct",
+    "option3": "C) 2 and 3 only are correct",
+    "option4": "D) 1 and 3 only are correct",
+    "ans": 4,
+    "explanation": "Adding $Na_2SO_4 increases [SO_4 ^{2-}] (statement 1 true). By the common ion effect, [Ba^{2+}] decreases (statement 2 true). The solubility of BaSO4 decreases (not increases), so statement 3 is false. Answer: 1 and 2 only$."
+  },
+  {
+    "question": "The reagent $LiAlH_4/dry ether is used as a reducing agent in:<br>1. The reduction of carbonyl compounds to alcohols$.<br>2. The reduction of carboxylic acids to alcohols.<br>3. The reduction of nitriles to amines.",
+    "option1": "A) 1, 2 and 3 are all correct",
+    "option2": "B) 1 and 2 only are correct",
+    "option3": "C) 2 and 3 only are correct",
+    "option4": "D) 3 only is correct",
+    "ans": 1,
+    "explanation": "$LiAlH_4 is a powerful reducing agent that reduces all three: carbonyl groups (C=O) to alcohols, carboxylic acids (-COOH) to primary alcohols, and nitriles (-CN) to primary amines.$"
+  },
 {
-  "question": "A compound with the molecular formula C₄H₁₀O does not react with chromic acid (H₂CrO₄), but it reacts immediately with the Lucas reagent (HCl/ZnCl₂) to form an insoluble layer. What is the structure of this compound?",
-  "option1": "Butan-1-ol",
-  "option2": "Butan-2-ol",
-  "option3": "2-Methylpropan-2-ol",
-  "option4": "2-Methylpropan-1-ol",
-  "ans": 3,
-  "explanation": ""
-},
-{
-  "question": "What is the main organic product when a primary alcohol (like ethanol) is completely oxidized using a strong oxidizing agent like Jones reagent (CrO₃/H₂SO₄)?",
-  "option1": "An alkene",
-  "option2": "A ketone",
-  "option3": "An aldehyde",
-  "option4": "A carboxylic acid",
+  "question": "Phenylamine is a stronger base than ammonia.<br><br>Second statement: The lone pair of electrons on the nitrogen atom in phenylamine is delocalized around the benzene ring making it less available for donation to an acid.",
+  "option1": "A) Both statements are True and the second explains the first.",
+  "option2": "B) Both statements are True but the second statement is not a correct explanation of the first.",
+  "option3": "C) The first statement is True and the second is False.",
+  "option4": "D) The first statement is False and the second is True.",
   "ans": 4,
-  "explanation": ""
+  "explanation": "Phenylamine is actually a weaker base than ammonia because delocalization of the lone pair reduces its availability. The second statement is true, so the correct choice is D."
 },
 {
-  "question": "In a standard electrochemical cell, which electrode is the site where oxidation occurs?",
-  "option1": "The cathode",
-  "option2": "The anode",
-  "option3": "The salt bridge",
-  "option4": "The voltmeter",
-  "ans": 2,
-  "explanation": ""
-},
-{
-  "question": "What is the main purpose of a salt bridge in a galvanic (voltaic) cell?",
-  "option1": "To deliver electrons directly from the anode to the cathode",
-  "option2": "To speed up the oxidation reaction at the anode",
-  "option3": "To maintain electrical neutrality by allowing ions to flow between half-cells",
-  "option4": "To measure the voltage generated by the chemical reaction",
+  "question": "The lattice energy of an ionic compound is exothermic.<br><br>Second statement: Heat is absorbed when bonds are formed.",
+  "option1": "A) Both statements are True and the second explains the first.",
+  "option2": "B) Both statements are True but the second statement is not a correct explanation of the first.",
+  "option3": "C) The first statement is True and the second is False.",
+  "option4": "D) The first statement is False and the second is True.",
   "ans": 3,
-  "explanation": ""
+  "explanation": "Lattice energy is exothermic because energy is released when ions form a solid lattice. The second statement is false since bond formation releases heat, not absorbs it."
 },
 {
-  "question": "Based on the standard reduction potentials below, which metal is the strongest reducing agent (most easily oxidized)?<br><br>Ag⁺ + e⁻ → Ag (E° = +0.80 V)<br>Ni²⁺ + 2e⁻ → Ni (E° = −0.25 V)<br>Al³⁺ + 3e⁻ → Al (E° = −1.66 V)",
-  "option1": "Ag ",
-  "option2": "Ni",
-  "option3": "Al",
-  "option4": "Al³⁺",
-  "ans": 3,
-  "explanation": ""
-},
-{
-  "question": "Sacrificial anodes are highly active metals attached to iron ship hulls or underground pipelines to prevent rusting (corrosion). Which metal would make the best sacrificial anode for iron (Fe)?<br><br>Fe²⁺ + 2e⁻ → Fe (E° = −0.44 V)",
-  "option1": "Copper (Cu) (E° = +0.34V)",
-  "option2": "Silver (Ag)  (E° = +0.80V)",
-  "option3": "Magnesium (Mg)  (E° = -2.37V)",
-  "option4": "Gold (Au)  (E° = +1.50V)",
-  "ans": 3,
-  "explanation": ""
-},
-{
-  "question": "According to the Brønsted-Lowry definition, what is the conjugate base of the hydrogen carbonate ion, HCO₃⁻?",
-  "option1": "CO₃²⁻",
-  "option2": "H₂CO₃",
-  "option3": "OH⁻",
-  "option4": "H₃O⁺",
+  "question": "In dilute solution, hydrofluoric acid is a weak acid.<br><br>Second statement: The bonding in the hydrogen fluoride molecule is very strong and there is also hydrogen bonding between molecules of hydrogen fluoride.",
+  "option1": "A) Both statements are True and the second explains the first.",
+  "option2": "B) Both statements are True but the second statement is not a correct explanation of the first.",
+  "option3": "C) The first statement is True and the second is False.",
+  "option4": "D) The first statement is False and the second is True.",
   "ans": 1,
-  "explanation": ""
+  "explanation": "HF is weak in dilute solution because strong H–F bonds and intermolecular hydrogen bonding hinder complete ionization. Both statements are true and the second explains the first."
 },
 {
-  "question": "A buffer solution is prepared with equal concentrations of a weak acid (HA) and its conjugate base (A⁻). If the acid dissociation constant (Kₐ) of the weak acid is 1.0 × 10⁻⁵, what is the pH of this buffer?",
-  "option1": "3.0",
-  "option2": "5.0",
-  "option3": "7.0",
-  "option4": "9.0",
-  "ans": 2,
-  "explanation": ""
-},
-{
-  "question": "Which of the following statements correctly describes a characteristic of a weak acid?",
-  "option1": "It dissociates completely into ions when dissolved in water.",
-  "option2": "It has a very large acid dissociation constant (Kₐ ≫ 1).",
-  "option3": "It establishes a dynamic equilibrium between its molecular form and its ions.",
-  "option4": "It cannot be neutralized by a strong base.",
-  "ans": 3,
-  "explanation": ""
-},
-{
-  "question": "What happens to the pH of an acetic acid/sodium acetate buffer solution if you add a very small amount of a strong base like NaOH?",
-  "option1": "The pH drops instantly to a highly acidic value.",
-  "option2": "The pH shoots up instantly to a highly basic value.",
-  "option3": "The pH stays completely unchanged at exactly 7.0.",
-  "option4": "The pH increases only very slightly.",
-  "ans": 4,
-  "explanation": ""
-},
-{
-  "question": "A buffer solution contains a mixture of ammonia (NH₃, a weak base) and ammonium chloride (NH₄Cl, its conjugate acid). If a small amount of hydrochloric acid (HCl) is added, which component of the buffer actively neutralizes it?",
-  "option1": "The NH₃ molecules",
-  "option2": "The NH₄⁺ ions",
-  "option3": "The Cl⁻ ions",
-  "option4": "The water molecules",
+  "question": "The concentration of a solution is the amount of solute dissolved in a known volume of solution.<br><br>Second statement: When a solution is diluted, the quantity of solute does not change.",
+  "option1": "A) Both statements are True and the second explains the first.",
+  "option2": "B) Both statements are True but the second statement is not a correct explanation of the first.",
+  "option3": "C) The first statement is True and the second is False.",
+  "option4": "D) The first statement is False and the second is True.",
   "ans": 1,
-  "explanation": ""
+  "explanation": "Concentration depends on solute per volume. Dilution increases volume but solute amount remains constant, so both statements are true and the second explains the first."
 },
 {
-  "question": "If the pH of an aqueous solution changes from 4.0 to 6.0, how has the concentration of hydronium ions ([H₃O⁺]) changed?",
-  "option1": "It has increased by a factor of 2.",
-  "option2": "It has decreased by a factor of 2.",
-  "option3": "It has increased by a factor of 100.",
-  "option4": "It has decreased by a factor of 100.",
-  "ans": 4,
-  "explanation": ""
-},
-{
-  "question": "Why do s-block elements (alkali and alkaline earth metals) never occur as free, uncombined elements in nature?",
-  "option1": "They are highly unreactive gases.",
-  "option2": "They are highly reactive metals that readily lose electrons to form compounds.",
-  "option3": "They decompose rapidly due to radioactive decay.",
-  "option4": "They evaporate instantly when exposed to air.",
+  "question": "With the exception of beryllium and magnesium, the s-block elements react rapidly with cold water to produce hydrogen and the metal hydroxide.<br><br>Second statement: The group II metals are less reactive towards water than their corresponding group I elements in the same period.",
+  "option1": "A) Both statements are True and the second explains the first.",
+  "option2": "B) Both statements are True but the second statement is not a correct explanation of the first.",
+  "option3": "C) The first statement is True and the second is False.",
+  "option4": "D) The first statement is False and the second is True.",
   "ans": 2,
-  "explanation": ""
-},
-{
-  "question": "What is the fundamental electronic reason why transition metal complexes are frequently brightly colored?",
-  "option1": "Electrons are completely ejected from the atom by visible light.",
-  "option2": "Electrons absorb light energy to transition between split d-orbitals (d–d transitions).",
-  "option3": "The metal atoms physically melt when dissolved in water.",
-  "option4": "The s-orbital electrons pair up with p-orbital electrons.",
-  "ans": 2,
-  "explanation": ""
-},
-{
-  "question": "Which of the following compounds can exist as a pair of cis/trans (geometric) isomers due to restricted rotation around a carbon-carbon double bond?",
-  "option1": "Propene",
-  "option2": "1,1-dichloroethene",
-  "option3": "1,2-dichloroethene",
-  "option4": "Ethene",
-  "ans": 3,
-  "explanation": ""
-},
-{
-  "question": "A transition metal complex is described as being paramagnetic. What does this physically mean about its electronic structure?",
-  "option1": "It contains only completely paired electrons and is repelled by magnetic fields.",
-  "option2": "It has a net overall negative charge.",
-  "option3": "It contains at least one unpaired electron and is attracted to magnetic fields.",
-  "option4": "It can conduct electricity through solid glass.",
-  "ans": 3,
-  "explanation": ""
-},
-{
-  "question": "A 5.00 g sample of a hydrated metal salt with the formula MSO₄ · xH₂O is thoroughly heated to drive away all water of crystallization. The mass of the anhydrous salt left behind is 3.24 g. If the anhydrous salt (MSO₄) has a molar mass of 161 g/mol, what is the integer value of x?",
-  "option1": "2",
-  "option2": "5",
-  "option3": "7",
-  "option4": "10",
-  "ans": 2,
-  "explanation": ""
-},
-{
-  "question": "A volume of 20.0 mL of a gaseous hydrocarbon (CₓHᵧ) is exploded with excess oxygen. After cooling the system back to the original room temperature, the total gas volume decreases by 60.0 mL. When the remaining gas is passed through an aqueous potassium hydroxide (KOH) solution, the volume shrinks by an additional 60.0 mL. What is the molecular formula of the hydrocarbon?",
-  "option1": "C₂H₆",
-  "option2": "C₃H₆",
-  "option3": "C₃H₈",
-  "option4": "C₄H₁₀",
-  "ans": 3,
-  "explanation": ""
-},
-{
-  "question": "An organic compound contains only carbon, hydrogen, and oxygen. Complete combustion of 0.450 g of this substance yields 0.660 g of CO₂ and 0.270 g of H₂O. If a separate freezing point depression measurement reveals the true molar mass of the compound is approximately 180 g/mol, what is its molecular formula?",
-  "option1": "C₃H₆O₃",
-  "option2": "C₄H₈O₄",
-  "option3": "C₅H₁₀O₅",
-  "option4": "C₆H₁₂O₆",
-  "ans": 4,
-  "explanation": ""
-},
-{
-  "question": "Equal volumes of 0.200 M silver nitrate (AgNO₃) and 0.100 M iron(III) chloride (FeCl₃) solutions are mixed together, resulting in the precipitation of silver chloride. What is the final concentration of the remaining iron(III) ions ([Fe³⁺]) in the solution immediately after the reaction goes to completion? (Assume volumes are strictly additive).",
-  "option1": "0.017 M",
-  "option2": "0.033 M",
-  "option3": "0.050 M",
-  "option4": "0.100 M",  "ans": 3,
-  "explanation": ""
-},
-{
-  "question": "For the general reaction 2A + B → 3C, if the rate of disappearance of reactant A is 0.40 M/s at a specific instant, what is the rate of appearance of product C at that same instant?",
-  "option1": "0.20 M/s",
-  "option2": "0.40 M/s",
-  "option3": "0.60 M/s",
-  "option4": "1.20 M/s",
-  "ans": 3,
-  "explanation": ""
-},
-{
-  "question": "Consider the following multi-step reaction mechanism proposed for a chemical process:<br>Step 1 (Slow): A + B → C + D<br>Step 2 (Fast): C + A → E<br>Which of the following expressions represents the correct experimentally observable rate law for the overall reaction (2A + B → D + E)?",
-  "option1": "Rate = k[A]²[B]",
-  "option2": "Rate = k[A][B]",
-  "option3": "Rate = k[C][A]",
-  "option4": "Rate = k[A]",
-  "ans": 2,
-  "explanation": ""
-},
-{
-  "question": "The gas-phase decomposition of a toxic pollutant, X → Products, is found to be a second-order reaction. If it takes exactly 30.0 minutes for the concentration of X to drop from an initial value of 0.500 M down to 0.200 M, what is the value of the rate constant (k) for this process?",
-  "option1": "0.100 M⁻¹·min⁻¹",
-  "option2": "0.200 M⁻¹·min⁻¹",
-  "option3": "0.306 M⁻¹·min⁻¹",
-  "option4": "0.600 M⁻¹·min⁻¹",
-  "ans": 1,
-  "explanation": ""
-},
-{
-"question": "If a methyl group (–CH₃) is already attached to a benzene ring (forming toluene), how does it influence a second Electrophilic Aromatic Substitution reaction?",
-  "option1": "It deactivates the ring and directs the next group to the meta position.",
-  "option2": "It activates the ring and directs the next group to the meta position.",
-  "option3": "It deactivates the ring and directs the next group to the ortho and para positions.",
-  "option4": "It activates the ring and directs the next group to the ortho and para positions.",
-  "ans": 4,
-  "explanation": ""
-},
-{
-  "question": "What is the correct order of decreasing acidity (most acidic to least acidic) for the following compounds?<br>I. Ethanol (CH₃CH₂OH)<br>II. Acetic acid (CH₃COOH)<br>III. Trichloroacetic acid (CCl₃COOH)<br>IV. Phenol (C₆H₅OH)",
-  "option1": "III > II > IV > I",
-  "option2": "II > III > IV > I",
-  "option3": "III > IV > II > I",
-  "option4": "I > IV > II > III",
-  "ans": 1,
-  "explanation": ""
-},
-{
-  "question": "Amides are significantly less basic than amines because:",
-  "option1": "Nitrogen is more electronegative than carbon.",
-  "option2": "The lone pair on the nitrogen atom is delocalized into the carbonyl group via resonance.",
-  "option3": "The carbonyl carbon pulls electron density away through induction only.",
-  "option4": "Amides easily lose a proton to form a stable conjugate base.",
-  "ans": 2,
-  "explanation": ""
-},
-{
-  "question": "You want to synthesize 2-bromobutane from 1-bromobutane. Which of the following reaction pathways represents the most efficient synthetic route?",
-  "option1": "1. H₂O, NaOH | 2. HBr",
-  "option2": "1. NaOCH₂CH₃, ethanol, Δ | 2. HBr",
-  "option3": "1. NaOCH₂CH₃, ethanol, Δ | 2. HBr, peroxides",
-  "option4": "1. LiAlH₄ | 2. Br₂, hv",
-  "ans": 2,
-  "explanation": ""
-},
-{
-  "question": "Identify the major organic product Y formed in the following reaction sequence:<br>Toluene → (Cl₂, hν) → X → (NaCN) → Intermediate → (H₃O⁺, Δ) → Y",
-  "option1": "2-Phenylethanoic acid (Phenylacetic acid)",
-  "option2": "Benzoic acid",
-  "option3": "4-Methylbenzoic acid",
-  "option4": "Benzylamine",
-  "ans": 1,
-  "explanation": ""
-},
-{
-  "question": "Which sequence of reagents will successfully convert aniline (aminobenzene) into 3-bromophenol?",
-  "option1": "1. Br₂, FeBr₃ | 2. NaNO₂, HCl, 0°C | 3. H₂O, Δ",
-  "option2": "1. NaNO₂, HCl, 0°C | 2. CuBr | 3. NaOH, Δ",
-  "option3": "1. NaNO₂, HCl, 0°C | 2. H₃PO₂ | 3. Br₂, FeBr₃ | 4. NaOH, Δ",
-  "option4": "1. NaNO₂, HCl, 0°C | 2. H₂O, Δ | 3. Br₂, FeBr₃",
-  "ans": 1,
-  "explanation": ""
-},
-{
-  "question": "An unknown alkene undergoes ozonolysis under reducing conditions (Zn, H₂O) to yield exactly two products: propanal and butanone. What is the correct IUPAC name of the original starting alkene?",
-  "option1": "3-Methylhex-2-ene",
-  "option2": "3-Methylhex-3-ene",
-  "option3": "Hex-3-ene",
-  "option4": "2-Methylhex-3-ene",
-  "ans": 2,
-  "explanation": ""
-},
-{
-  "question": "If the measured pH of a sample of pure distilled water at 60°C is 6.5, what is the chemical nature of this water sample?",
-  "option1": "Acidic, because its pH is below 7.00.",
-  "option2": "Basic, because it contains more hydroxide ions than hydronium ions.",
-  "option3": "Neutral, because [H⁺] = [OH⁻] is still true.",
-  "option4": "Highly corrosive, due to thermal degradation.",
-  "ans": 3,
-  "explanation": ""
+  "explanation": "Group I metals (alkali) are more reactive with water than Group II (alkaline earth). Both statements are true, but the second does not explain the exception of Be and Mg."
 }
   ],
     
